@@ -23,7 +23,7 @@ description
 	other_contributors = <>
 	other_details = <
 		["references"] = <"">
-		["MD5-CAM-1.0.1"] = <"CEE3E6FDF872EA2249FB69AFA6CE0087">
+		["MD5-CAM-1.0.1"] = <"93F084C53306188A54A78236639698FD">
 	>
 
 definition
@@ -1227,7 +1227,7 @@ ontology
 				>
 				["at5120"] = <
 					text = <"Type">
-					description = <"Attribute:Enlarged folds==>Type">
+					description = <"The differentiation between thick and giant folds should be based on the disappearance of the folds with stomach inflation.">
 				>
 				["at5121"] = <
 					text = <"Thick">
@@ -1275,7 +1275,7 @@ ontology
 				>
 				["at5400"] = <
 					text = <"Tumor/Mass">
-					description = <"TERM: Tumor/Mass">
+					description = <"Tumor-Mass is used instead of tumour in the USA.">
 				>
 				["at5410"] = <
 					text = <"Size">
@@ -1339,7 +1339,7 @@ ontology
 				>
 				["at6120"] = <
 					text = <"Extent">
-					description = <"Attribute: Extent">
+					description = <"Dispersed should be used instead of diffuse for multiple focal lesions disseminated to a whole site">
 				>
 				["at6122"] = <
 					text = <"Dispersed">

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
-using GastrOs.Wrapper.Helpers;
+using GastrOs.Sde.Support;
 
 namespace GastrOs.Wrapper.Reports.Representation
 {

@@ -174,7 +174,6 @@
     </Compile>
     <Compile Include="Helpers\Pair.cs" />
     <Compile Include="Helpers\SdeUtils.cs" />
-    <Compile Include="Helpers\StringUtils.cs" />
     <Compile Include="Forms\DataEntry\IntermediateForm.cs">
       <SubType>Form</SubType>
     </Compile>

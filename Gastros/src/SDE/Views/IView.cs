@@ -55,6 +55,11 @@ namespace GastrOs.Sde.Views
         bool ShowTitle { get; set; }
 
         /// <summary>
+        /// Further information shown on user request
+        /// </summary>
+        string FurtherInformation { get; set; }
+
+        /// <summary>
         /// Gets or sets whether this view is visible.
         /// Triggers the <see cref="VisibleChanged"/> event, as well as the
         /// <see cref="INotifyPropertyChanged.PropertyChanged"/> event,

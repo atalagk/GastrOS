@@ -1,5 +1,5 @@
 using System;
-using GastrOs.Wrapper.Helpers;
+using GastrOs.Sde.Support;
 using Iesi.Collections.Generic;
 
 namespace GastrOs.Wrapper.DataObjects

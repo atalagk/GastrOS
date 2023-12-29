@@ -23,6 +23,7 @@ namespace GastrOs.Sde.Views.WinForms.Generic
         private Dictionary<PresenceState, Image> icons = new Dictionary<PresenceState, Image>();
 
         private PresenceState state;
+        private ToolTip toolTip;
 
         public MultiStateCheck()
         {
@@ -33,6 +34,7 @@ namespace GastrOs.Sde.Views.WinForms.Generic
             icons[PresenceState.Absent] = Resources.red_X;
 
             InitializeComponent();
+            toolTip = new ToolTip();
 
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
             contextMenuStrip.Name = "contextMenuStrip";
@@ -143,6 +145,19 @@ namespace GastrOs.Sde.Views.WinForms.Generic
             set
             {
                 checkButton.ContextMenuStrip = value;
+            }
+        }
+
+        public string ToolTip
+        {
+            get
+            {
+                return toolTip.GetToolTip(checklabel);
+            }
+            set
+            {
+                toolTip.SetToolTip(checklabel, value);
+                toolTip.SetToolTip(checkButton, value);
             }
         }
 

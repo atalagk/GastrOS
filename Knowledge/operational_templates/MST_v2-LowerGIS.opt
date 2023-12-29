@@ -12778,7 +12778,7 @@
                           <items id="text">Single</items>
                         </term_definitions>
                         <term_definitions code="at4120">
-                          <items id="description">Attribute: FLAT LESIONS&gt;Angioectasia</items>
+                          <items id="description">Size could in this case also be given in mm for small angioectasia</items>
                           <items id="text">Size</items>
                         </term_definitions>
                         <term_definitions code="at4121">
@@ -12834,7 +12834,7 @@
                           <items id="text">Size</items>
                         </term_definitions>
                         <term_definitions code="at5140">
-                          <items id="description">Attribute: PROTRUDING LESIONS&gt;Polyp(s)</items>
+                          <items id="description">In case of multiple polyps, the application would allow the recording of multiple entries</items>
                           <items id="text">Pedicle</items>
                         </term_definitions>
                         <term_definitions code="at5141">
@@ -12866,7 +12866,7 @@
                           <items id="text">Diameter (mm)</items>
                         </term_definitions>
                         <term_definitions code="at5400">
-                          <items id="description">TERM: PROTRUDING LESIONS</items>
+                          <items id="description">Tumor-Mass is used instead of tumour in the USA.</items>
                           <items id="text">Tumor/Mass</items>
                         </term_definitions>
                         <term_definitions code="at5420">
@@ -12994,7 +12994,7 @@
                           <items id="text">Fistula</items>
                         </term_definitions>
                         <term_definitions code="at6700">
-                          <items id="description">TERM: EXCAVATED LESIONS</items>
+                          <items id="description">Fissure is the preferred term instead of erosion which could be confused with colonic erosions</items>
                           <items id="text">Anal fissure</items>
                         </term_definitions>
                         <term_bindings terminology="SNOMED-CT">
@@ -13292,7 +13292,7 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                   <lower>0</lower>
                   <upper>1</upper>
                 </occurrences>
-                <node_id>at0000.1</node_id>
+                <node_id>at0000.1.1</node_id>
                 <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
                   <rm_attribute_name>items</rm_attribute_name>
                   <existence>
@@ -13346,7 +13346,7 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                             <upper>1</upper>
                           </existence>
                           <children xsi:type="C_COMPLEX_OBJECT">
-                            <rm_type_name>ELEMENT</rm_type_name>
+                            <rm_type_name>CLUSTER</rm_type_name>
                             <occurrences>
                               <lower_included>true</lower_included>
                               <lower_unbounded>false</lower_unbounded>
@@ -13354,9 +13354,9 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                               <lower>0</lower>
                               <upper>4</upper>
                             </occurrences>
-                            <node_id>at0089</node_id>
-                            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-                              <rm_attribute_name>value</rm_attribute_name>
+                            <node_id>at0.210</node_id>
+                            <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+                              <rm_attribute_name>items</rm_attribute_name>
                               <existence>
                                 <lower_included>true</lower_included>
                                 <upper_included>true</upper_included>
@@ -13366,18 +13366,18 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                                 <upper>1</upper>
                               </existence>
                               <children xsi:type="C_COMPLEX_OBJECT">
-                                <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                                <rm_type_name>ELEMENT</rm_type_name>
                                 <occurrences>
                                   <lower_included>true</lower_included>
                                   <upper_included>true</upper_included>
                                   <lower_unbounded>false</lower_unbounded>
                                   <upper_unbounded>false</upper_unbounded>
-                                  <lower>1</lower>
+                                  <lower>0</lower>
                                   <upper>1</upper>
                                 </occurrences>
-                                <node_id />
+                                <node_id>at0.211</node_id>
                                 <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-                                  <rm_attribute_name>defining_code</rm_attribute_name>
+                                  <rm_attribute_name>value</rm_attribute_name>
                                   <existence>
                                     <lower_included>true</lower_included>
                                     <upper_included>true</upper_included>
@@ -13386,8 +13386,8 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                                     <lower>1</lower>
                                     <upper>1</upper>
                                   </existence>
-                                  <children xsi:type="C_CODE_PHRASE">
-                                    <rm_type_name>CODE_PHRASE</rm_type_name>
+                                  <children xsi:type="C_COMPLEX_OBJECT">
+                                    <rm_type_name>DV_CODED_TEXT</rm_type_name>
                                     <occurrences>
                                       <lower_included>true</lower_included>
                                       <upper_included>true</upper_included>
@@ -13397,49 +13397,152 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                                       <upper>1</upper>
                                     </occurrences>
                                     <node_id />
-                                    <terminology_id>
-                                      <value>local</value>
-                                    </terminology_id>
-                                    <code_list>at0005</code_list>
-                                    <code_list>at0091</code_list>
-                                    <code_list>at0092</code_list>
-                                    <code_list>at0093</code_list>
-                                    <code_list>at0094</code_list>
-                                    <code_list>at0095</code_list>
-                                    <code_list>at0096</code_list>
-                                    <code_list>at0097</code_list>
-                                    <code_list>at0098</code_list>
-                                    <code_list>at0099</code_list>
-                                    <code_list>at0100</code_list>
-                                    <code_list>at0101</code_list>
-                                    <code_list>at0102</code_list>
-                                    <code_list>at0103</code_list>
-                                    <code_list>at0104</code_list>
-                                    <code_list>at0105</code_list>
-                                    <code_list>at0106</code_list>
-                                    <code_list>at0107</code_list>
-                                    <code_list>at0108</code_list>
-                                    <code_list>at0109</code_list>
-                                    <code_list>at0110</code_list>
-                                    <code_list>at0111</code_list>
-                                    <code_list>at0112</code_list>
-                                    <code_list>at0113</code_list>
-                                    <code_list>at0114</code_list>
-                                    <code_list>at0115</code_list>
-                                    <code_list>at0116</code_list>
-                                    <code_list>at0117</code_list>
-                                    <code_list>at0118</code_list>
-                                    <code_list>at0119</code_list>
-                                    <code_list>at0120</code_list>
-                                    <code_list>at0121</code_list>
-                                    <code_list>at0122</code_list>
-                                    <code_list>at0.188</code_list>
-                                    <code_list>at0.189</code_list>
-                                    <code_list>at0.190</code_list>
-                                    <code_list>at0.191</code_list>
+                                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                                      <rm_attribute_name>defining_code</rm_attribute_name>
+                                      <existence>
+                                        <lower_included>true</lower_included>
+                                        <upper_included>true</upper_included>
+                                        <lower_unbounded>false</lower_unbounded>
+                                        <upper_unbounded>false</upper_unbounded>
+                                        <lower>1</lower>
+                                        <upper>1</upper>
+                                      </existence>
+                                      <children xsi:type="C_CODE_PHRASE">
+                                        <rm_type_name>CODE_PHRASE</rm_type_name>
+                                        <occurrences>
+                                          <lower_included>true</lower_included>
+                                          <upper_included>true</upper_included>
+                                          <lower_unbounded>false</lower_unbounded>
+                                          <upper_unbounded>false</upper_unbounded>
+                                          <lower>1</lower>
+                                          <upper>1</upper>
+                                        </occurrences>
+                                        <node_id />
+                                        <terminology_id>
+                                          <value>local</value>
+                                        </terminology_id>
+                                        <code_list>at0.188</code_list>
+                                        <code_list>at0.189</code_list>
+                                        <code_list>at0.190</code_list>
+                                        <code_list>at0.191</code_list>
+                                        <code_list>at0005</code_list>
+                                        <code_list>at0091</code_list>
+                                        <code_list>at0092</code_list>
+                                        <code_list>at0093</code_list>
+                                        <code_list>at0094</code_list>
+                                        <code_list>at0095</code_list>
+                                        <code_list>at0096</code_list>
+                                        <code_list>at0097</code_list>
+                                        <code_list>at0098</code_list>
+                                        <code_list>at0099</code_list>
+                                        <code_list>at0100</code_list>
+                                        <code_list>at0101</code_list>
+                                        <code_list>at0102</code_list>
+                                        <code_list>at0103</code_list>
+                                        <code_list>at0104</code_list>
+                                        <code_list>at0105</code_list>
+                                        <code_list>at0106</code_list>
+                                        <code_list>at0107</code_list>
+                                        <code_list>at0108</code_list>
+                                        <code_list>at0109</code_list>
+                                        <code_list>at0110</code_list>
+                                        <code_list>at0111</code_list>
+                                        <code_list>at0112</code_list>
+                                        <code_list>at0113</code_list>
+                                        <code_list>at0114</code_list>
+                                        <code_list>at0115</code_list>
+                                        <code_list>at0116</code_list>
+                                        <code_list>at0117</code_list>
+                                        <code_list>at0118</code_list>
+                                        <code_list>at0119</code_list>
+                                        <code_list>at0120</code_list>
+                                        <code_list>at0121</code_list>
+                                        <code_list>at0122</code_list>
+                                      </children>
+                                    </attributes>
                                   </children>
                                 </attributes>
                               </children>
+                              <children xsi:type="C_COMPLEX_OBJECT">
+                                <rm_type_name>ELEMENT</rm_type_name>
+                                <occurrences>
+                                  <lower_included>true</lower_included>
+                                  <upper_included>true</upper_included>
+                                  <lower_unbounded>false</lower_unbounded>
+                                  <upper_unbounded>false</upper_unbounded>
+                                  <lower>0</lower>
+                                  <upper>1</upper>
+                                </occurrences>
+                                <node_id>at0.195</node_id>
+                                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                                  <rm_attribute_name>value</rm_attribute_name>
+                                  <existence>
+                                    <lower_included>true</lower_included>
+                                    <upper_included>true</upper_included>
+                                    <lower_unbounded>false</lower_unbounded>
+                                    <upper_unbounded>false</upper_unbounded>
+                                    <lower>1</lower>
+                                    <upper>1</upper>
+                                  </existence>
+                                  <children xsi:type="C_COMPLEX_OBJECT">
+                                    <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                                    <occurrences>
+                                      <lower_included>true</lower_included>
+                                      <upper_included>true</upper_included>
+                                      <lower_unbounded>false</lower_unbounded>
+                                      <upper_unbounded>false</upper_unbounded>
+                                      <lower>1</lower>
+                                      <upper>1</upper>
+                                    </occurrences>
+                                    <node_id />
+                                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                                      <rm_attribute_name>defining_code</rm_attribute_name>
+                                      <existence>
+                                        <lower_included>true</lower_included>
+                                        <upper_included>true</upper_included>
+                                        <lower_unbounded>false</lower_unbounded>
+                                        <upper_unbounded>false</upper_unbounded>
+                                        <lower>1</lower>
+                                        <upper>1</upper>
+                                      </existence>
+                                      <children xsi:type="C_CODE_PHRASE">
+                                        <rm_type_name>CODE_PHRASE</rm_type_name>
+                                        <occurrences>
+                                          <lower_included>true</lower_included>
+                                          <upper_included>true</upper_included>
+                                          <lower_unbounded>false</lower_unbounded>
+                                          <upper_unbounded>false</upper_unbounded>
+                                          <lower>1</lower>
+                                          <upper>1</upper>
+                                        </occurrences>
+                                        <node_id />
+                                        <terminology_id>
+                                          <value>local</value>
+                                        </terminology_id>
+                                        <code_list>at0.199</code_list>
+                                        <code_list>at0.200</code_list>
+                                        <code_list>at0.201</code_list>
+                                        <code_list>at0.202</code_list>
+                                        <code_list>at0.203</code_list>
+                                        <code_list>at0.204</code_list>
+                                        <code_list>at0.205</code_list>
+                                        <code_list>at0.206</code_list>
+                                        <code_list>at0.207</code_list>
+                                      </children>
+                                    </attributes>
+                                  </children>
+                                </attributes>
+                              </children>
+                              <cardinality>
+                                <is_ordered>false</is_ordered>
+                                <is_unique>false</is_unique>
+                                <interval>
+                                  <lower_included>true</lower_included>
+                                  <lower_unbounded>false</lower_unbounded>
+                                  <upper_unbounded>true</upper_unbounded>
+                                  <lower>0</lower>
+                                </interval>
+                              </cardinality>
                             </attributes>
                           </children>
                           <children xsi:type="C_COMPLEX_OBJECT">
@@ -13513,7 +13616,7 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                   </cardinality>
                 </attributes>
                 <archetype_id>
-                  <value>openEHR-EHR-CLUSTER.mst_diagnoses-gastros.v1</value>
+                  <value>openEHR-EHR-CLUSTER.mst_diagnoses-gastros-CR7.v1</value>
                 </archetype_id>
                 <term_definitions code="at0.179">
                   <items id="description">Free text diagnoses</items>
@@ -13567,6 +13670,106 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                   <items id="description">Other Diagnoses</items>
                   <items id="text">Perianal abscess</items>
                 </term_definitions>
+                <term_definitions code="at0.192">
+                  <items id="description">Use for CR7</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.193">
+                  <items id="description">*</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.194">
+                  <items id="description">List of Main and Other diagnoses for Esophagus (CR7)</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.195">
+                  <items id="description">Qualifier/attribute for the diagnoses item</items>
+                  <items id="text">Qualifier</items>
+                </term_definitions>
+                <term_definitions code="at0.196">
+                  <items id="description">Use for CR7</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.197">
+                  <items id="description">List of Main and Other diagnoses for Stomach (CR7)</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.198">
+                  <items id="description">*</items>
+                  <items id="text">Qualifier</items>
+                </term_definitions>
+                <term_definitions code="at0.199">
+                  <items id="description">Qualifiers</items>
+                  <items id="text">... certain</items>
+                </term_definitions>
+                <term_definitions code="at0.200">
+                  <items id="description">Qualifiers</items>
+                  <items id="text">... suspected</items>
+                </term_definitions>
+                <term_definitions code="at0.201">
+                  <items id="description">Qualifiers</items>
+                  <items id="text">... probably not present</items>
+                </term_definitions>
+                <term_definitions code="at0.202">
+                  <items id="description">Qualifiers</items>
+                  <items id="text">... definitely excluded</items>
+                </term_definitions>
+                <term_definitions code="at0.203">
+                  <items id="description">Attributes</items>
+                  <items id="text">Suspicion of...</items>
+                </term_definitions>
+                <term_definitions code="at0.204">
+                  <items id="description">Attributes</items>
+                  <items id="text">Established...</items>
+                </term_definitions>
+                <term_definitions code="at0.205">
+                  <items id="description">Attributes</items>
+                  <items id="text">Exclusion of...</items>
+                </term_definitions>
+                <term_definitions code="at0.206">
+                  <items id="description">Attributes</items>
+                  <items id="text">Follow-up of...</items>
+                </term_definitions>
+                <term_definitions code="at0.207">
+                  <items id="description">Attributes</items>
+                  <items id="text">Treatment of...</items>
+                </term_definitions>
+                <term_definitions code="at0.208">
+                  <items id="description">Use for CR7</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.209">
+                  <items id="description">List of Main and Other diagnoses for Duodenum (CR7)</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.210">
+                  <items id="description">Use for CR7</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.211">
+                  <items id="description">List of Main and Other diagnoses for Colon (CR7)</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.212">
+                  <items id="description">Use for CR7</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.213">
+                  <items id="description">List of Main and Other diagnoses for Pancreas (CR7)</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.214">
+                  <items id="description">Use for CR7</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.215">
+                  <items id="description">Use for CR7</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
+                <term_definitions code="at0.216">
+                  <items id="description">List of Main and Other diagnoses for Biliary Tract (CR7)</items>
+                  <items id="text">Diagnoses</items>
+                </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">It defines the list of terms for diagnosis, single or multiple, that the endoscopist feels is most likely on the basis of macroscopic findings during gastrointestinal endoscopy as described by the Minimal Standard Terminology for Gastrointestinal Endoscopy version 2 (MST-2). This is the official terminology endorsed by the World Endoscopy Society (OMED).</items>
                   <items id="text">MST Diagnoses</items>
@@ -13574,6 +13777,10 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                 <term_definitions code="at0000.1">
                   <items id="description">It defines the list of terms for diagnosis, single or multiple, that the endoscopist feels is most likely on the basis of macroscopic findings during gastrointestinal endoscopy as described by the Minimal Standard Terminology for Gastrointestinal Endoscopy version 2 (MST-2). This is the official terminology endorsed by the World Endoscopy Society (OMED).!</items>
                   <items id="text">MST Diagnoses | GastrOS</items>
+                </term_definitions>
+                <term_definitions code="at0000.1.1">
+                  <items id="description">It defines the list of terms for diagnosis, single or multiple, that the endoscopist feels is most likely on the basis of macroscopic findings during gastrointestinal endoscopy as described by the Minimal Standard Terminology for Gastrointestinal Endoscopy version 2 (MST-2). This is the official terminology endorsed by the World Endoscopy Society (OMED).!!</items>
+                  <items id="text">MST Diagnoses | GastrOS | CR7</items>
                 </term_definitions>
                 <term_definitions code="at0001">
                   <items id="description">Location.</items>
@@ -13584,7 +13791,7 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                   <items id="text">Esophagus</items>
                 </term_definitions>
                 <term_definitions code="at0004">
-                  <items id="description">List of Main and Other diagnoses for Esophagus.</items>
+                  <items id="description">List of Main and Other diagnoses for Esophagus (disable for CR7).</items>
                   <items id="text">Diagnoses</items>
                 </term_definitions>
                 <term_definitions code="at0005">
@@ -13680,7 +13887,7 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                   <items id="text">Stomach</items>
                 </term_definitions>
                 <term_definitions code="at0029">
-                  <items id="description">List of Main and Other diagnoses for Stomach.</items>
+                  <items id="description">List of Main and Other diagnoses for Stomach (disable for CR7).</items>
                   <items id="text">Diagnoses</items>
                 </term_definitions>
                 <term_definitions code="at0032">
@@ -13804,7 +14011,7 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                   <items id="text">Duodenum</items>
                 </term_definitions>
                 <term_definitions code="at0062">
-                  <items id="description">List of Main and Other diagnoses for Duodenum.</items>
+                  <items id="description">List of Main and Other diagnoses for Duodenum (disable for CR7).</items>
                   <items id="text">Diagnoses</items>
                 </term_definitions>
                 <term_definitions code="at0065">
@@ -13900,7 +14107,7 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                   <items id="text">Colon</items>
                 </term_definitions>
                 <term_definitions code="at0089">
-                  <items id="description">List of Main and Other diagnoses for Colon.</items>
+                  <items id="description">List of Main and Other diagnoses for Colon (disable for CR7).</items>
                   <items id="text">Diagnoses</items>
                 </term_definitions>
                 <term_definitions code="at0091">
@@ -14040,7 +14247,7 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                   <items id="text">Pancreas</items>
                 </term_definitions>
                 <term_definitions code="at0126">
-                  <items id="description">List of Main and Other diagnoses for Pancreas.</items>
+                  <items id="description">List of Main and Other diagnoses for Pancreas (disable for CR7).</items>
                   <items id="text">Diagnoses</items>
                 </term_definitions>
                 <term_definitions code="at0128">
@@ -14100,7 +14307,7 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
                   <items id="text">Biliary Tract</items>
                 </term_definitions>
                 <term_definitions code="at0143">
-                  <items id="description">List of Main and Other diagnoses for Biliary Tract.</items>
+                  <items id="description">List of Main and Other diagnoses for Biliary Tract (disable for CR7).</items>
                   <items id="text">Diagnoses</items>
                 </term_definitions>
                 <term_definitions code="at0145">
@@ -22397,13 +22604,19 @@ It is intended to fit into the FINDINGS slot in the main COMPOSITION archetype.<
     <items id="default">isCoreConcept</items>
   </annotations>
   <annotations path="/content[openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1]">
-    <items id="default">formAspects(width=450,height=250)</items>
+    <items id="default">formAspects(width=450,height=350)</items>
   </annotations>
-  <annotations path="/content[openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.mst_diagnoses-gastros.v1]/items[at0087]/items[at0088]">
+  <annotations path="/content[openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.mst_diagnoses-gastros-CR7.v1]/items[at0087]/items[at0088]">
     <items id="default">isOrganiser</items>
   </annotations>
-  <annotations path="/content[openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.mst_diagnoses-gastros.v1]/items[at0087]/items[at0088]/items[at0089]">
-    <items id="default">showValueContext(organise);showInstances (4)</items>
+  <annotations path="/content[openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.mst_diagnoses-gastros-CR7.v1]/items[at0087]/items[at0088]/items[at0.210]">
+    <items id="default">showInstances(4)</items>
+  </annotations>
+  <annotations path="/content[openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.mst_diagnoses-gastros-CR7.v1]/items[at0087]/items[at0088]/items[at0.210]/items[at0.211]">
+    <items id="default">showValueContext(organise)</items>
+  </annotations>
+  <annotations path="/content[openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1]/data[at0001]/items[openEHR-EHR-CLUSTER.mst_diagnoses-gastros-CR7.v1]/items[at0087]/items[at0088]/items[at0.210]/items[at0.195]">
+    <items id="default">showValueContext(organise)</items>
   </annotations>
   <annotations path="/content[openEHR-EHR-ACTION.endoscopy_interventions.v1]/description[at0001]/items[openEHR-EHR-CLUSTER.mst_procedures-gastros.v1]/items[at0001]">
     <items id="default">isOrganiser</items>
