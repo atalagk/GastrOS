@@ -1,4 +1,4 @@
-archetype (adl_version=1.4)
+ï»¿archetype (adl_version=1.4)
 	openEHR-EHR-EVALUATION.adverse.v1
 
 concept
@@ -24,11 +24,11 @@ description
 	details = <
 		["de"] = <
 			language = <[ISO_639-1::de]>
-			purpose = <"Zur Dokumentation von Nebenwirkungen auf einen bestimmten Wirkstoff. Die Art dieses Stoffes kann ebenfalls Dokumentiert werden. Früherer Aufzeichnungen können hinzugefügt werden und auch die Art der Reaktion beim jeweiligen Ereignis.">
+			purpose = <"Zur Dokumentation von Nebenwirkungen auf einen bestimmten Wirkstoff. Die Art dieses Stoffes kann ebenfalls Dokumentiert werden. FrÃ¼herer Aufzeichnungen kÃ¶nnen hinzugefÃ¼gt werden und auch die Art der Reaktion beim jeweiligen Ereignis.">
 			use = <"">
 			keywords = <"Reaktion", "allergisch", "Allergie", "Intoleranz">
-			misuse = <"Nicht zur Dokumentation keines Verlaufs einer Reaktion auf eine Substanz. Für diesen Zweck openEHR-EVALUATION.excluded-adverse  benutzen. Für unbekannte Reaktionen auf beliebige Wirkstoffe openEHR-EVALUATION.excluded benutzen.">
-			copyright = <"© 2011 openEHR Foundation">
+			misuse = <"Nicht zur Dokumentation keines Verlaufs einer Reaktion auf eine Substanz. FÃ¼r diesen Zweck openEHR-EVALUATION.excluded-adverse  benutzen. FÃ¼r unbekannte Reaktionen auf beliebige Wirkstoffe openEHR-EVALUATION.excluded benutzen.">
+			copyright = <"Â© 2011 openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -38,7 +38,7 @@ Recordings may be added for subsequent exposures to the same Agent and the type 
 If recording an adverse event to a class or grouping of 'Agent', then exposure to different specific components of the class can be recorded as well.  For example, recording against the class of Penicillin it is possible to record the reaction (or absence) to specific types or brands of Penicillin. ">
 			keywords = <"reaction", "allergic", "allergy", "intolerance", "adverse">
 			misuse = <"Not to be used for recording the exclusion of a history of a reaction to a substance. Use openEHR-EVALUATION.excluded-adverse for this purpose.">
-			copyright = <"© 2011 openEHR Foundation">
+			copyright = <"Â© 2011 openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
@@ -157,7 +157,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Nebenwirkung">
-					description = <"Zur Dokumentation des Vorhandenseins von schädlichen oder unerwünschten Reaktionen auf einen Wirkstoff oder eine Substanz, einschließlich Nahrung, festgestellt von einem Klinikarzt - Vergiftungen und unsachgemäßer Gebrauch ausgeschlossen">
+					description = <"Zur Dokumentation des Vorhandenseins von schÃ¤dlichen oder unerwÃ¼nschten Reaktionen auf einen Wirkstoff oder eine Substanz, einschlieÃŸlich Nahrung, festgestellt von einem Klinikarzt - Vergiftungen und unsachgemÃ¤ÃŸer Gebrauch ausgeschlossen">
 				>
 				["at0002"] = <
 					text = <"Structure">
@@ -165,23 +165,23 @@ ontology
 				>
 				["at0003"] = <
 					text = <"Wirkstoff">
-					description = <"Der Wirkstoff, die Substanz oder die Klasse, welche die Nebenwirkung ausgelöst hat">
+					description = <"Der Wirkstoff, die Substanz oder die Klasse, welche die Nebenwirkung ausgelÃ¶st hat">
 				>
 				["at0004"] = <
-					text = <"Wahrscheinlichkeit für kausalen Zusammenhang">
-					description = <"Grad an Sicherheit, dass der Wirkstoff der Auslöser der Reaktion war">
+					text = <"Wahrscheinlichkeit fÃ¼r kausalen Zusammenhang">
+					description = <"Grad an Sicherheit, dass der Wirkstoff der AuslÃ¶ser der Reaktion war">
 				>
 				["at0005"] = <
 					text = <"Sicher/ sehr wahrscheinlich">
-					description = <"Die Reaktion ist laut einem Klinikarzt auf den Wirkstoff zurückzuführen">
+					description = <"Die Reaktion ist laut einem Klinikarzt auf den Wirkstoff zurÃ¼ckzufÃ¼hren">
 				>
 				["at0006"] = <
 					text = <"Wahrscheinlich">
-					description = <"Die Reaktion ist wahrscheinlich auf den Wirkstoff zurückzuführen">
+					description = <"Die Reaktion ist wahrscheinlich auf den Wirkstoff zurÃ¼ckzufÃ¼hren">
 				>
 				["at0007"] = <
-					text = <"Möglicherweise">
-					description = <"Die Reaktion ist möglicherweise auf den Wirkstoff zurückzuführen">
+					text = <"MÃ¶glicherweise">
+					description = <"Die Reaktion ist mÃ¶glicherweise auf den Wirkstoff zurÃ¼ckzufÃ¼hren">
 				>
 				["at0010"] = <
 					text = <"Wirkstoffgruppe">
@@ -189,7 +189,7 @@ ontology
 				>
 				["at0011"] = <
 					text = <"Nahrungsmittel">
-					description = <"Eine Substanz, die als Teil der Ernährung zugeführt wurde ">
+					description = <"Eine Substanz, die als Teil der ErnÃ¤hrung zugefÃ¼hrt wurde ">
 				>
 				["at0012"] = <
 					text = <"Tier">
@@ -197,7 +197,7 @@ ontology
 				>
 				["at0013"] = <
 					text = <"Medikament">
-					description = <"Eine Substanz, die aus medizinischen Gründen eingenommen oder verabreicht wurde">
+					description = <"Eine Substanz, die aus medizinischen GrÃ¼nden eingenommen oder verabreicht wurde">
 				>
 				["at0014"] = <
 					text = <"Andere Chemikalie oder Substanz">
@@ -209,15 +209,15 @@ ontology
 				>
 				["at0016"] = <
 					text = <"Intoleranz">
-					description = <"Führt zu unerfreulichen Symptomen, die ausreichen um einen Gebrauch in der Zukunft zu vermeiden">
+					description = <"FÃ¼hrt zu unerfreulichen Symptomen, die ausreichen um einen Gebrauch in der Zukunft zu vermeiden">
 				>
 				["at0017"] = <
 					text = <"Empfindlichkeit">
-					description = <"Führt zu Krankhaftigkeit die eventuell zum Wohle des Patienten behandelt werden muss">
+					description = <"FÃ¼hrt zu Krankhaftigkeit die eventuell zum Wohle des Patienten behandelt werden muss">
 				>
 				["at0018"] = <
 					text = <"Allergie">
-					description = <"Führt zu einer IgE Reaktion">
+					description = <"FÃ¼hrt zu einer IgE Reaktion">
 				>
 				["at0019"] = <
 					text = <"Exposition und Einzelheiten der Reaktion">
@@ -225,11 +225,11 @@ ontology
 				>
 				["at0020"] = <
 					text = <"Datum der Exposition">
-					description = <"Das Datum (+/- Zeit) wann die Person gegenüber dem Wirkstoff exponiert wurde">
+					description = <"Das Datum (+/- Zeit) wann die Person gegenÃ¼ber dem Wirkstoff exponiert wurde">
 				>
 				["at0021"] = <
 					text = <"Dauer der Exposition">
-					description = <"Die Dauer der Exposition gegenüber dem Wirkstoff">
+					description = <"Die Dauer der Exposition gegenÃ¼ber dem Wirkstoff">
 				>
 				["at0022"] = <
 					text = <"Beschreibung der Reaktion">
@@ -237,14 +237,14 @@ ontology
 				>
 				["at0023"] = <
 					text = <"Schweregrad der Reaktion">
-					description = <"Die Klasse der Reaktion für zukünftige Empfehlungen">
+					description = <"Die Klasse der Reaktion fÃ¼r zukÃ¼nftige Empfehlungen">
 				>
 				["at0024"] = <
 					text = <"Gelinde">
-					description = <"Eine Reaktion, die wenig Leiden und keinen Verlust der Arbeitsfähigkeit/ Schulfähigkeit verursacht">
+					description = <"Eine Reaktion, die wenig Leiden und keinen Verlust der ArbeitsfÃ¤higkeit/ SchulfÃ¤higkeit verursacht">
 				>
 				["at0025"] = <
-					text = <"Unfähig machend">
+					text = <"UnfÃ¤hig machend">
 					description = <"Eine Reaktion, die Krankheit und/oder den Verlust Funktionen verursacht">
 				>
 				["at0026"] = <

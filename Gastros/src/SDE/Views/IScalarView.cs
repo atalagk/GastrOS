@@ -1,4 +1,4 @@
-using GastrOs.Sde.Engine;
+﻿using GastrOs.Sde.Engine;
 
 namespace GastrOs.Sde.Views
 {

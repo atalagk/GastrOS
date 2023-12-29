@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using GastrOs.Sde.Support;
 using OpenEhr.AM.Archetype.ConstraintModel;
 using OpenEhr.AM.OpenehrProfile.DataTypes.Quantity;

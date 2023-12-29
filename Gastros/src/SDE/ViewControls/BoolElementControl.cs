@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using GastrOs.Sde.Engine;
 using GastrOs.Sde.Support;
 using GastrOs.Sde.Views;

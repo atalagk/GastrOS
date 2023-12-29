@@ -1,4 +1,4 @@
-using OpenEhr.RM.DataTypes.Basic;
+﻿using OpenEhr.RM.DataTypes.Basic;
 
 namespace GastrOs.Sde.Engine
 {

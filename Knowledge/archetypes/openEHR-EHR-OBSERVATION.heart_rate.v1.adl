@@ -1,4 +1,4 @@
-archetype (adl_version=1.4)
+ï»¿archetype (adl_version=1.4)
 	openEHR-EHR-OBSERVATION.heart_rate.v1
 
 concept
@@ -28,7 +28,7 @@ description
 			use = <"Zur allgemeinen Dokumentation der Herzfrequenz, besonders der elektrischen Frequenz.">
 			keywords = <"Frequenz", "Herzfrequenz", "Rhythmus">
 			misuse = <"Zur Dokumentation der mechanischen Frequenz Puls benutzen (OSBSERVATION.heart_reate-pulse.v1).">
-			copyright = <"© 2011 openEHR Foundation">
+			copyright = <"Â© 2011 openEHR Foundation">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -40,7 +40,7 @@ Heart rate and rhythm (or its specialisation, Pulse) are commonly recorded as on
 Not to be used to record the mechanical heart rate, rhythm and related characteristics - this is recorded using the specialisation of this archetype OBSERVATION.heart_rate-pulse.
 Not to be used to record other details of the broader cardiovascular examination or assessment.  Other specific archetypes will be used to record characteristics such as apex beat, murmurs, auscultatory findings etc.  
 Concepts such as Maximal or Target Heart Rate should be recorded in separate archetypes specifically related to exercise assessment.">
-			copyright = <"© 2011 openEHR Foundation">
+			copyright = <"Â© 2011 openEHR Foundation">
 		>
 	>
 	lifecycle_state = <"Initial">
@@ -202,8 +202,8 @@ ontology
 					description = <"*Heart rhythm is regularly irregular.(en)">
 				>
 				["at0008"] = <
-					text = <"Unregulär unregulär">
-					description = <"Unregulär in einer chaotischen Art und Weise">
+					text = <"UnregulÃ¤r unregulÃ¤r">
+					description = <"UnregulÃ¤r in einer chaotischen Art und Weise">
 				>
 				["at0009"] = <
 					text = <"*Comment(en)">
@@ -219,7 +219,7 @@ ontology
 				>
 				["at0013"] = <
 					text = <"Position">
-					description = <"Die Position des Patienten während der Messung der Herzfrequenz">
+					description = <"Die Position des Patienten wÃ¤hrend der Messung der Herzfrequenz">
 				>
 				["at1000"] = <
 					text = <"*Lying(en)">
@@ -231,7 +231,7 @@ ontology
 				>
 				["at1002"] = <
 					text = <"Liegesitz">
-					description = <"Person sitzt im 45° Winkel mit erhöhten Beinen">
+					description = <"Person sitzt im 45Â° Winkel mit erhÃ¶hten Beinen">
 				>
 				["at1003"] = <
 					text = <"Stehend">

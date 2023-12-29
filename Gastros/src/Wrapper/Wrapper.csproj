@@ -34,7 +34,7 @@
     <SuiteName>GastrOS</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>false</BootstrapperEnabled>
@@ -297,17 +297,15 @@
     <Content Include="configs\log4net-config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\GastrOS.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="GastrOS.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="configs\app.config" />
     <None Include="configs\app.config.1" />
-    <Content Include="data\gastros.db">
+    <None Include="gastros.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\printer_icon.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
+    <None Include="Resources\printer_icon.jpg" />
     <EmbeddedResource Include="Forms\DataEntry\SignoutPrintForm.resx">
       <DependentUpon>SignoutPrintForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -392,7 +390,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(SolutionDir)..\lib\sqlite3.dll $(TargetDir)
-robocopy /E $(SolutionDir)..\..\Knowledge $(TargetDir)\Knowledge</PostBuildEvent>
+    <PostBuildEvent>copy $(SolutionDir)..\lib\sqlite3.dll $(TargetDir)</PostBuildEvent>
   </PropertyGroup>
 </Project>
