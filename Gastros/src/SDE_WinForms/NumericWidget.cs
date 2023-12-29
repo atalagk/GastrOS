@@ -22,7 +22,7 @@ namespace GastrOs.Sde.Views.WinForms
             AddField(numericField, 0, 100, SizeType.Percent);
         }
         
-        public override object Value
+        public decimal? Value
         {
             get
             {
@@ -33,12 +33,10 @@ namespace GastrOs.Sde.Views.WinForms
             }
             set
             {
-                decimal decValue = Convert.ToDecimal(value);
-
-                if (Equals(Value, decValue))
+                if (Value == value)
                     return;
                 //if null then set text to empty
-                if (decValue == 0)
+                if (value == null)
                 {
                     //"silently" update text to avoid another valuechanged event being thrown
                     numericField.TextChanged -= HandleTextChange;
@@ -47,13 +45,9 @@ namespace GastrOs.Sde.Views.WinForms
                 }
                 else
                 {
-                    if (decValue > MaxValue || decValue < MinValue)
+                    if (value > MaxValue || value < MinValue)
                         return;
-                    numericField.TextChanged -= HandleTextChange;
-                    numericField.Value = decValue;
-                    //Hack? Sometimes the above doesn't force text to change...
-                    numericField.Text = decValue.ToString();
-                    numericField.TextChanged += HandleTextChange;
+                    numericField.Value = value.Value;
                 }
                 OnValueChanged(EventArgs.Empty);
             }

@@ -30,22 +30,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenEHR, Version=1.0.4055.35121, Culture=neutral, PublicKeyToken=a8f3e8f291015042, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -62,9 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckboxWidget.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="CodedTextWidget.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,9 +53,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CoreConceptWidget.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DateWidget.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ElementWidgetBase.cs">
@@ -91,9 +69,6 @@
     </Compile>
     <Compile Include="Generic\CustomPanel.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GridWidget.cs">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Generic\LockEditForm.cs">
       <SubType>Form</SubType>
@@ -165,9 +140,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GridWidget.resx">
-      <DependentUpon>GridWidget.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Generic\MultiStateCheck.resx">
       <DependentUpon>MultiStateCheck.cs</DependentUpon>
     </EmbeddedResource>

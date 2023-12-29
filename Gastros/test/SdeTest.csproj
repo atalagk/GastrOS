@@ -74,7 +74,6 @@
     <Compile Include="GuiTests\CodedTextElementViewTest.cs" />
     <Compile Include="GuiTests\CoreConceptViewTest.cs" />
     <Compile Include="GuiTests\CountElementViewTest.cs" />
-    <Compile Include="GuiTests\GridViewTest.cs" />
     <Compile Include="GuiTests\ModelViewTestBase.cs" />
     <Compile Include="GuiTests\QuantElementViewTest.cs" />
     <Compile Include="GuiTests\RadioViewTest.cs" />
@@ -118,12 +117,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="TestTemplate.opt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestTemplate1.opt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestTemplate2.opt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

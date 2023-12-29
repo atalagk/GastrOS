@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using GastrOs.Sde.Engine;
 using OpenEhr.DesignByContract;
 using GastrOs.Sde.Support;
 using GastrOs.Sde.Views;
@@ -24,12 +23,9 @@ namespace GastrOs.Sde.ViewControls
 
         ~QuantElementControl()
         {
-            if (View != null)
-            {
-                //Release event handler to avoid memory leak
-                View.ValueChanged -= UpdateMagnitudeFromView;
-                View.UnitChanged -= UpdateUnitFromView;
-            }
+            //Release event handler to avoid memory leak
+            View.ValueChanged -= UpdateMagnitudeFromView;
+            View.UnitChanged -= UpdateUnitFromView;
         }
 
         protected override void SetModelPostexecute(Element oldModel)
@@ -46,7 +42,6 @@ namespace GastrOs.Sde.ViewControls
             }
 
             View.AvailableUnits = quantConstraint.List.Select(quantItem => quantItem.Units).ToList();
-            View.DataValueProvider = new DvQuantityProvider(quantConstraint);
             
             View.ValueChanged += UpdateMagnitudeFromView;
             View.UnitChanged += UpdateUnitFromView;
@@ -64,8 +59,8 @@ namespace GastrOs.Sde.ViewControls
                 return;
             DvQuantity oldQuantity = Model.ValueAs<DvQuantity>();
             //NOTE Special (temporary) provision: if view's value is unset, set model value to 0.
-            double viewValue = Convert.ToDouble(View.Value);
-            Model.Value = new DvQuantity(viewValue, oldQuantity.Units);
+            decimal? viewValue = View.Value ?? 0;
+            Model.Value = new DvQuantity((double)viewValue, oldQuantity.Units);
         }
 
         /// <summary>
@@ -90,16 +85,13 @@ namespace GastrOs.Sde.ViewControls
             get { return false; }
         }
 
-        public override void RefreshViewFromModel()
+        public override void UpdateViewFromModel()
         {
             View.Title = TitleFunction();
-            View.ValueChanged -= UpdateMagnitudeFromView;
-            View.UnitChanged -= UpdateUnitFromView;
             DvQuantity quantity = Model.ValueAs<DvQuantity>();
-            View.Value = View.DataValueProvider.ToRawValue(Model.Value);
+            //NOTE Special (temporary) provision for zero-values: assume null
+            View.Value = quantity.Magnitude == 0 ? null : (decimal?)quantity.Magnitude;
             View.Unit = quantity.Units;
-            View.ValueChanged += UpdateMagnitudeFromView;
-            View.UnitChanged += UpdateUnitFromView;
             UpdateMinMaxValuesOnView();
         }
 

@@ -101,11 +101,6 @@ namespace GastrOs.Sde.Views
         bool CanRemoveInstance { get; set; }
 
         /// <summary>
-        /// Gets or sets foreground colour
-        /// </summary>
-        Color ForeColor { get; set; }
-
-        /// <summary>
         /// Resets this view to an empty state. May raise appropriate property
         /// change events as a result.
         /// </summary>

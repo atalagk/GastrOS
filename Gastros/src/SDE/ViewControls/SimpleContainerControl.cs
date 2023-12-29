@@ -1,11 +1,10 @@
 using GastrOs.Sde.Views;
 using OpenEhr.AM.Archetype.ConstraintModel;
-using OpenEhr.RM.Common.Archetyped.Impl;
 using OpenEhr.RM.DataStructures.ItemStructure.Representation;
 
 namespace GastrOs.Sde.ViewControls
 {
-    public class SimpleContainerControl<T> : TypedViewControl<T, IContainerView> where T : Locatable
+    public class SimpleContainerControl : TypedViewControl<Cluster, IContainerView>
     {
         private bool framed;
 
@@ -15,7 +14,7 @@ namespace GastrOs.Sde.ViewControls
             this.framed = framed;
         }
 
-        protected override void SetModelPostexecute(T oldModel)
+        protected override void SetModelPostexecute(Cluster oldModel)
         {
             // anything??
         }
@@ -25,7 +24,7 @@ namespace GastrOs.Sde.ViewControls
             View.Framed = framed;
         }
 
-        public override void RefreshViewFromModel()
+        public override void UpdateViewFromModel()
         {
             View.Title = TitleFunction();
         }

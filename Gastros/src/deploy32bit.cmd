@@ -15,9 +15,9 @@ if not exist %DeployDir% mkdir %DeployDir%
 if exist %ProjDeployDir% rd /s /q %ProjDeployDir%
 mkdir %ProjDeployDir%
 mkdir %ProjDeployDir%\data
-copy %Proj%\bin\x86\Release\GastrOS.mdb %ProjDeployDir%\data
-copy %Proj%\bin\x86\Release\gastros.db %ProjDeployDir%\data
-robocopy /E %Proj%\bin\x86\Release %ProjDeployDir% /XF *vshost* *.pdb *.mdb *.db *.log *.log.* Microsoft.*.xml log4net.xml NHibernate.xml *.1
+copy %Proj%\bin\Release\GastrOS.mdb %ProjDeployDir%\data
+copy %Proj%\bin\Release\gastros.db %ProjDeployDir%\data
+robocopy /E %Proj%\bin\Release %ProjDeployDir% /XF *vshost* *.pdb *.mdb *.db *.log *.log.* Microsoft.*.xml log4net.xml NHibernate.xml *.1
 robocopy /E %Knowl% %ProjDeployDir%\Knowledge /XD .svn
 copy /Y %Proj%\configs\app.config.1 %ProjDeployDir%\GastrOs.Wrapper.exe.config
 rem pushd %DeployDir%

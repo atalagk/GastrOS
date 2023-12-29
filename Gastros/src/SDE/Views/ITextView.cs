@@ -7,7 +7,7 @@ namespace GastrOs.Sde.Views
     /// <para>Represents a view that contains a text component (either
     /// one line text or free text).</para>
     /// </summary>
-    public interface ITextView : IScalarView
+    public interface ITextView : IView
     {
         /// <summary>
         /// Triggered when the text component has changed its value

@@ -41,7 +41,7 @@ namespace GastrOs.Sde.Views.WinForms.Generic
             ResumeLayout(false);
 
 #if (DEBUG)
-            //contents.MouseMove += relayMouseMove;
+            contents.MouseMove += relayMouseMove;
 #endif
         }
 

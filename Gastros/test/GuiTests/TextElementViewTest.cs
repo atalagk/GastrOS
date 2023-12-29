@@ -28,7 +28,7 @@ namespace GastrOs.Sde.Test.GuiTests
 
             _control = new TextElementControl(textConstraint);
             
-            model = new Element(new DvText("text1"), "at6230", null, null, textConstraint.ExtractArchetyped(), null, new DvText("Square"), null);
+            model = new Element(new DvText("text1"), "at6230", null, null, null, null, new DvText("Square"), null);
             view = container.Resolve<ITextView>("default");
         }
 
@@ -56,7 +56,7 @@ namespace GastrOs.Sde.Test.GuiTests
             InitialConstructionTest();
 
             //Introduce new view and model
-            Element textModel2 = new Element(new DvText("text2"), "at6230", null, null, textConstraint.ExtractArchetyped(), null, new DvText("Triangle"), null);
+            Element textModel2 = new Element(new DvText("text2"), "at6230", null, null, null, null, new DvText("Triangle"), null);
             ITextView textView2 = container.Resolve<ITextView>("multi");
 
             Assert.IsTrue(string.IsNullOrEmpty(textView2.Text));
@@ -101,7 +101,7 @@ namespace GastrOs.Sde.Test.GuiTests
         {
             InitialConstructionTest();
 
-            _control.Model = new Element(new DvText("text3"), "at0000", null, null, textConstraint.ExtractArchetyped(), null, new DvText("Invalid"), null);
+            _control.Model = new Element(new DvText("text3"), "at0000", null, null, null, null, new DvText("Invalid"), null);
         }
 
         [Test]
@@ -110,7 +110,7 @@ namespace GastrOs.Sde.Test.GuiTests
         {
             InitialConstructionTest();
 
-            _control.Model = new Element(new DvText("text3"), "at6230", null, null, textConstraint.ExtractArchetyped(), null, new DvBoolean(true), null);
+            _control.Model = new Element(new DvText("text3"), "at6230", null, null, null, null, new DvBoolean(true), null);
         }
 
         [Test]

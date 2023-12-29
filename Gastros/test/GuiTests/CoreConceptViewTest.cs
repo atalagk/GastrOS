@@ -39,10 +39,10 @@ namespace GastrOs.Sde.Test.GuiTests
             string stigTermId =
                 ((CComplexObject)stigConstraint.ExtractElemValueConstraint()).ExtractCodePhrase().TerminologyId.Value;
 
-            model = new Cluster(new DvText("Ulcer"), "at6200", null, null, constraint.ExtractArchetyped(), null, new Item[0]);
-            presenceModel = new Element(new DvText("Present?"), "at0105", null, null, presenceConstraint.ExtractArchetyped(), null,
+            model = new Cluster(new DvText("Ulcer"), "at6200", null, null, null, null, new Item[0]);
+            presenceModel = new Element(new DvText("Present?"), "at0105", null, null, null, null,
                 new DvCodedText("at1121", "", presenceTermId), null);
-            stigModel = new Element(new DvText("Stigmata of bleeding"), "at6250", null, null, stigConstraint.ExtractArchetyped(),
+            stigModel = new Element(new DvText("Stigmata of bleeding"), "at6250", null, null, null,
                 null, new DvCodedText("at6251", "", stigTermId), null);
             model.Items.Add(presenceModel);
             model.Items.Add(stigModel);

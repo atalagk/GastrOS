@@ -49,7 +49,6 @@ namespace GastrOs.Sde.ViewControls
             //Note this will implicitly invoke the TextChanged event, so important not to listen to it yet
             View.ChoiceList = codeList;
             View.TextChanged += UpdateModel;
-            View.DataValueProvider = new DvCodedTextProvider(valueConstraint);
         }
 
         public override bool AllowsChildren
@@ -57,16 +56,16 @@ namespace GastrOs.Sde.ViewControls
             get { return false; }
         }
 
-        public override void RefreshViewFromModel()
+        public override void UpdateViewFromModel()
         {
-            View.Title = TitleFunction();
+            View.Title = View.Title = TitleFunction();
             DvCodedText text = Model.ValueAs<DvCodedText>();
             if (text != null)
             {
                 //temporarily disable view-to-model update, since we're updating view manually
                 View.TextChanged -= UpdateModel;
                 //manually set view text
-                View.Value = View.DataValueProvider.ToRawValue(Model.Value);
+                View.Text = text.Value;
                 //then re-enable view-to-model update
                 View.TextChanged += UpdateModel;
             }
@@ -76,7 +75,7 @@ namespace GastrOs.Sde.ViewControls
         {
             if (Model == null || View.Text == null)
                 return;
-            Model.Value = View.DataValueProvider.ToDataValue(View.Value);
+            Model.Value = new DvCodedText(View.Text, "", termId);
         }
     }
 }

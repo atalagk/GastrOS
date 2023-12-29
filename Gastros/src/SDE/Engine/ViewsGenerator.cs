@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using OpenEhr.DesignByContract;
 using GastrOs.Sde.Directives;
@@ -10,15 +9,8 @@ using GastrOs.Sde.Views;
 using Microsoft.Practices.Unity;
 using OpenEhr.AM.Archetype.ConstraintModel;
 using OpenEhr.RM.Common.Archetyped.Impl;
-using OpenEhr.RM.Composition;
-using OpenEhr.RM.Composition.Content.Entry;
-using OpenEhr.RM.Composition.Content.Navigation;
-using OpenEhr.RM.DataStructures.History;
-using OpenEhr.RM.DataStructures.ItemStructure;
 using OpenEhr.RM.DataStructures.ItemStructure.Representation;
-using OpenEhr.RM.DataTypes.Basic;
 using OpenEhr.RM.DataTypes.Quantity;
-using OpenEhr.RM.DataTypes.Quantity.DateTime;
 using OpenEhr.RM.DataTypes.Text;
 using OpenEhr.Futures.OperationalTemplate;
 
@@ -57,35 +49,7 @@ namespace GastrOs.Sde.Engine
         {
             ViewControl control;
 
-            if (constraint.RmTypeMatches<Composition>())
-            {
-                control = GenerateForComposition(valueInstance as Composition, constraint);
-            }
-            else if (constraint.RmTypeMatches<Section>())
-            {
-                control = GenerateForSection(valueInstance as Section, constraint);
-            }
-            else if (constraint.RmTypeMatches<Evaluation>())
-            {
-                control = GenerateForEvaluation(valueInstance as Evaluation, constraint);
-            }
-            else if (constraint.RmTypeMatches<Observation>())
-            {
-                control = GenerateForObservation(valueInstance as Observation, constraint);
-            }
-            else if (constraint.RmTypeMatches<History<ItemStructure>>())
-            {
-                control = GenerateForHistory(valueInstance as History<ItemStructure>, constraint);
-            }
-            else if (constraint.RmTypeMatches<Event<ItemStructure>>())
-            {
-                control = GenerateForEvent(valueInstance as Event<ItemStructure>, constraint);
-            }
-            else if (constraint.RmTypeMatches<ItemTree>())
-            {
-                control = GenerateForItemTree(valueInstance as ItemTree, constraint);
-            }
-            else if (constraint.RmTypeMatches<Element>())
+            if (constraint.RmTypeMatches<Element>())
             {
                 control = GenerateForElement(valueInstance as Element, constraint);
             }
@@ -105,13 +69,11 @@ namespace GastrOs.Sde.Engine
             return control;
         }
 
-        #region(element)
-
         protected ViewControl GenerateForElement(Element valueInstance, CComplexObject constraint)
         {
             //first, do a rm-type consistency check
             Check.Require(constraint != null);
-            Check.Require(valueInstance.LightValidate(constraint));
+            Check.Require(constraint.RmTypeMatches<Element>());
 
             //indicates whether a stub value instance had to be created in order to display in GUI
             /*bool isStub = valueInstance == null;
@@ -177,16 +139,6 @@ namespace GastrOs.Sde.Engine
                 widget = new QuantElementControl(constraint);
                 widget.View = container.Resolve<INumericUnitView>();
             }
-            else if (elemValueConstraint.RmTypeMatches<DvDateTime>())
-            {
-                widget = new DateElementControl(constraint);
-                widget.View = container.Resolve<IDateView>();
-            }
-            else if (elemValueConstraint.RmTypeMatches<DvBoolean>())
-            {
-                widget = new BoolElementControl(constraint);
-                widget.View = container.Resolve<ICheckView>();
-            }
             else
             {
                 throw new InvalidOperationException("Sorry. GastrOS doesn't yet know how to generate a GUI control "+
@@ -245,10 +197,6 @@ namespace GastrOs.Sde.Engine
             return control;
         }
 
-        #endregion
-
-        #region(cluster)
-
         protected ViewControl GenerateForCluster(Cluster valueInstance, CComplexObject constraint)
         {
             return GenerateForCluster(valueInstance, constraint, null);
@@ -262,14 +210,14 @@ namespace GastrOs.Sde.Engine
         /// <param name="childrenSubset">if non-null & non-empty, limits children to constraints given in this
         /// list</param>
         /// <returns></returns>
-        protected ViewControl GenerateForCluster(Cluster valueInstance, CComplexObject constraint,
+        private ViewControl GenerateForCluster(Cluster valueInstance, CComplexObject constraint,
             IList<CObject> childrenSubset)
         {
             //basic non-null check
             Check.Require(valueInstance != null);
             Check.Require(constraint != null);
             //rm-type consistency check
-            Check.Require(valueInstance.LightValidate(constraint));
+            Check.Require(CObject.IsSameRmType(constraint.RmTypeName, valueInstance));
 
             ICollection<CObject> childConstraints = constraint.ExtractChildConstraints();
             if (childrenSubset != null && childrenSubset.Count > 0)
@@ -292,7 +240,7 @@ namespace GastrOs.Sde.Engine
             bool isOrganiser = directives.HasDirectiveOfType<OrganiserDirective>(constraint);
 
             //if isOrganiser directive is set, make sure frame is drawn
-            SimpleContainerControl<Cluster> control = new SimpleContainerControl<Cluster>(constraint, isOrganiser);
+            SimpleContainerControl control = new SimpleContainerControl(constraint, isOrganiser);
 
             //if showDesc directive set use a different function to use when displaying title
             if (showDesc)
@@ -311,155 +259,11 @@ namespace GastrOs.Sde.Engine
             foreach (CComplexObject childConstraint in childrenSubset)
             {
                 //add children to whichever is the most recent "split" portion of the view control
-                GenerateAndAddChildToCluster(control, childConstraint);
+                GenerateAndAddChildToParent(control, childConstraint);
             }
 
             return control;
         }
-
-        protected ViewControl GenerateForCoreConcept(Cluster coreConcept, CComplexObject constraint)
-        {
-            CoreConceptControl viewControl = new CoreConceptControl(constraint);
-
-            //process the showDesc directive and determine the exact function to use when
-            //displaying title
-            if (directives.HasDirectiveOfType<ShowDescriptionDirective>(constraint))
-            {
-                viewControl.TitleFunction = viewControl.GetOntologyTitleAndDesc;
-            }
-
-            viewControl.View = container.Resolve<ICoreConceptView>();
-            viewControl.Model = coreConcept;
-
-            ICollection<CObject> childConstraints = constraint.ExtractChildConstraints();
-            //go through child items and recursively generate and add sub-views/controls
-            foreach (CComplexObject childConstraint in childConstraints)
-            {
-                //skip presence element, since it's already "added"
-                if (viewControl.PresenceElement.LightValidate(childConstraint))
-                    continue;
-                GenerateAndAddChildToCluster(viewControl, childConstraint);
-            }
-
-            RegisterDirectives(viewControl.View, constraint);
-            return viewControl;
-        }
-        
-        #endregion
-
-        #region(default conventional container generation)
-
-        /// <summary>
-        /// A generic method for recursively generating a simple container control for
-        /// composite RM types such as Cluster, Observation, Evaluation, etc.
-        /// </summary>
-        /// <typeparam name="TM"></typeparam>
-        /// <param name="modelObject"></param>
-        /// <param name="constraint"></param>
-        /// <param name="childAttributes">if specified, determines the child attributes of the
-        /// given constraint to further recursively generate for. If unspecified, assumes the
-        /// first one (e.g. for Cluster, it will be "items")</param>
-        /// <returns></returns>
-        protected ViewControl GenerateForGenericContainer<TM>(TM modelObject, CComplexObject constraint,
-            params string[] childAttributes)
-            where TM: Locatable
-        {
-            //basic non-null check
-            Check.Require(modelObject != null);
-            Check.Require(constraint != null);
-            //rm-type consistency check
-            Check.Require(modelObject.LightValidate(constraint));
-
-            SimpleContainerControl<TM> control = new SimpleContainerControl<TM>(constraint, true);
-            control.View = container.Resolve<IContainerView>("default");
-            control.Model = modelObject;
-            RegisterDirectives(control.View, constraint);
-
-            //If no attributes specified, then pick the first one by default
-            if (childAttributes.Length == 0)
-            {
-                foreach (CComplexObject childConstraint in constraint.ExtractChildConstraints())
-                {
-                    GenerateAndAddChildToParent(control, childConstraint, null);
-                }
-            }
-            else
-            {
-                //For each specified child attribute, add the children corresponding to that attribute
-                foreach (string childAttributeName in childAttributes)
-                {
-                    foreach (CComplexObject childConstraint in constraint.ExtractChildConstraints(childAttributeName))
-                    {
-                        GenerateAndAddChildToParent(control, childConstraint, childAttributeName);
-                    }
-                }
-            }
-            return control;
-        }
-
-        protected ViewControl GenerateForSection(Section section, CComplexObject constraint)
-        {
-            GridDirective gridDirective = directives.GetDirectiveOfType<GridDirective>(constraint);
-            if (gridDirective != null)
-            {
-                IEnumerable<CComplexObject> contentConstraints = constraint.ExtractChildConstraints("items").Cast<CComplexObject>();
-                if (contentConstraints.Count() == 1 && contentConstraints.First().RmTypeMatches<Evaluation>())
-                {
-                    //case 1: single evaluation entry
-                    EvaluationGridControl control = new EvaluationGridControl(constraint, gridDirective.Attributes);
-                    control.View = container.Resolve<IGridView>();
-                    control.Model = section;
-                    RegisterDirectives(control.View, constraint);
-                    return control;
-                }
-                if (contentConstraints.All(c => c.RmTypeMatches<Observation>()))
-                {
-                    //case 2: all observation entries
-                    ObservationsGridControl control = new ObservationsGridControl(constraint, gridDirective.Attributes);
-                    control.View = container.Resolve<IGridView>();
-                    control.Model = section;
-                    RegisterDirectives(control.View, constraint);
-                    return control;
-                }
-            }
-
-            //All other cases
-            return GenerateForGenericContainer(section, constraint);
-        }
-
-        protected ViewControl GenerateForItemTree(ItemTree tree, CComplexObject constraint)
-        {
-            return GenerateForGenericContainer(tree, constraint);
-        }
-
-        protected ViewControl GenerateForEvent(Event<ItemStructure> evt, CComplexObject constraint)
-        {
-            return GenerateForGenericContainer(evt, constraint, "data", "state");
-        }
-
-        protected ViewControl GenerateForHistory(History<ItemStructure> history, CComplexObject constraint)
-        {
-            return GenerateForGenericContainer(history, constraint, "events");
-        }
-
-        protected ViewControl GenerateForObservation(Observation observation, CComplexObject constraint)
-        {
-            return GenerateForGenericContainer(observation, constraint, "data", "state", "protocol");
-        }
-
-        protected ViewControl GenerateForEvaluation(Evaluation evaluation, CComplexObject constraint)
-        {
-            return GenerateForGenericContainer(evaluation, constraint);
-        }
-
-        protected ViewControl GenerateForComposition(Composition composition, CComplexObject constraint)
-        {
-            return GenerateForGenericContainer(composition, constraint, "content");
-        }
-
-        #endregion
-
-        #region(general methods)
 
         /// <summary>
         /// "Splits" the children constraints of specified constraints into sub-sequences,
@@ -487,20 +291,49 @@ namespace GastrOs.Sde.Engine
             return subsets;
         }
 
+        protected ViewControl GenerateForCoreConcept(Cluster coreConcept, CComplexObject constraint)
+        {
+            CoreConceptControl viewControl = new CoreConceptControl(constraint);
+
+            //process the showDesc directive and determine the exact function to use when
+            //displaying title
+            if (directives.HasDirectiveOfType<ShowDescriptionDirective>(constraint))
+            {
+                viewControl.TitleFunction = viewControl.GetOntologyTitleAndDesc;
+            }
+
+            viewControl.View = container.Resolve<ICoreConceptView>();
+            viewControl.Model = coreConcept;
+
+            ICollection<CObject> childConstraints = constraint.ExtractChildConstraints();
+            //go through child items and recursively generate and add sub-views/controls
+            foreach (CComplexObject childConstraint in childConstraints)
+            {
+                //skip presence element, since it's already "added"
+                if (viewControl.PresenceElement.LightValidate(childConstraint))
+                    continue;
+                GenerateAndAddChildToParent(viewControl, childConstraint);
+            }
+
+            RegisterDirectives(viewControl.View, constraint);
+            return viewControl;
+        }
+
         /// <summary>
         /// A reusable method block for generating and adding children to a container
-        /// (cluster only)
         /// </summary>
+        /// <typeparam name="TM">type of model (value instance)</typeparam>
         /// <typeparam name="TV">type of view</typeparam>
         /// <param name="parentControl"></param>
         /// <param name="childConstraint"></param>
-        protected void GenerateAndAddChildToCluster<TV>(TypedViewControl<Cluster, TV> parentControl, CComplexObject childConstraint)
+        protected void GenerateAndAddChildToParent<TM, TV>(TypedViewControl<TM, TV> parentControl, CComplexObject childConstraint)
+            where TM : Cluster
             where TV : class, IContainerView
         {
             if (directives.HasDirectiveOfType<HideOnGuiDirective>(parentControl.Constraint))
                 return; //do what it says - omit! :)
 
-            Cluster valueInstance = parentControl.Model;
+            TM valueInstance = parentControl.Model;
             List<ViewControl> generatedControls = new List<ViewControl>();
 
             //Special case #1: if child constraint has an alternateStyle directive
@@ -524,7 +357,9 @@ namespace GastrOs.Sde.Engine
             else
             {
                 //amass all value instances based on the same constraint
-                List<Item> childrenWithSameConstraint = valueInstance.ChildInstances(childConstraint).ToList();
+                List<Item> childrenWithSameConstraint =
+                    valueInstance.Items.Where(
+                        itemInstance => itemInstance.LightValidate(childConstraint)).ToList();
 
                 //Special case: if child has further children with n > 0 break(parent) directives,
                 //then generate n+1 "split" view controls for the child
@@ -540,9 +375,9 @@ namespace GastrOs.Sde.Engine
                 //now generate the necessary number of children to "fill" the minimum
                 for (int i = childrenWithSameConstraint.Count; i < minInstances; i++)
                 {
-                    Locatable newChildInstance = RmFactory.Instantiate(childConstraint);
+                    Locatable newChildInstance = RmFactory.Instantiate(childConstraint, opTemplate);
                     Check.Assert(newChildInstance is Item);
-                    valueInstance.AddChild(newChildInstance, childConstraint);
+                    valueInstance.AddChild(newChildInstance);
                     childrenWithSameConstraint.Add(newChildInstance as Item);
                 }
                 
@@ -588,39 +423,6 @@ namespace GastrOs.Sde.Engine
             }
         }
 
-        /// <summary>
-        /// A reusable method block for generating and adding children to a container
-        /// (don't use this for Cluster's). Doesn't support any tabbing or splitting.
-        /// </summary>
-        /// <typeparam name="TM"></typeparam>
-        /// <typeparam name="TV"></typeparam>
-        /// <param name="parentControl"></param>
-        /// <param name="childConstraint"></param>
-        /// <param name="childAttribute"></param>
-        protected void GenerateAndAddChildToParent<TM, TV>(TypedViewControl<TM, TV> parentControl,
-            CComplexObject childConstraint, string childAttribute)
-            where TM : Locatable
-            where TV : class, IContainerView
-        {
-            if (directives.HasDirectiveOfType<HideOnGuiDirective>(parentControl.Constraint))
-                return; //do what it says - omit! :)
-
-            TM valueInstance = parentControl.Model;
-            
-            //amass all value instances based on the same constraint
-            List<Locatable> childrenWithSameConstraint = valueInstance.ChildInstances(childConstraint, childAttribute).ToList();
-
-            //for each, generate a control/view and add it to the cluster control
-            foreach (Locatable child in childrenWithSameConstraint)
-            {
-                //recursively generate child control
-                ViewControl childControl = GenerateFor(child, childConstraint);
-                Check.Assert(childControl != null, "Unable to generate GUI control for constraint " + childConstraint.Path);
-                parentControl.Children.Add(childControl);
-                parentControl.View.Children.Add(childControl.View);
-            }
-        }
-
         private int GetMinInstances(CComplexObject childConstraint)
         {
             int minInstances = 1;
@@ -650,7 +452,5 @@ namespace GastrOs.Sde.Engine
                 view.Directives.Add(directive);
             }
         }
-
-#endregion
     }
 }

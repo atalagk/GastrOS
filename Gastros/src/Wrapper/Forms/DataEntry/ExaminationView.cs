@@ -6,7 +6,6 @@ using System.Linq;
 using System.Windows.Forms;
 using GastrOs.Sde;
 using GastrOs.Sde.Directives;
-using GastrOs.Sde.Engine;
 using GastrOs.Sde.Support;
 using GastrOs.Sde.ViewControls;
 using GastrOs.Sde.Views.WinForms.Generic;
@@ -180,23 +179,11 @@ namespace GastrOs.Wrapper.Forms.DataEntry
             int i = 0;
             foreach (SdeConcept child in childConcepts)
             {
-                //TODO hard-wired to modify instance generation for these specific archetypes
-                RmFactory.RecursivelyGenerateSections = !child.ArchetypeId.Equals("openEHR-EHR-SECTION.adverse_reactions.v1");
-                RmFactory.RecursivelyGenerateHistory = !child.ArchetypeId.Equals("openEHR-EHR-SECTION.vital_signs.v1");
-                
                 ViewControl childWidget = SdeUtils.TryGenerateView(examination, opTemplate, child);
-
-                RmFactory.RecursivelyGenerateSections = true;
-                RmFactory.RecursivelyGenerateHistory = true;
-
                 if (childWidget == null)
                     return null;
-                CArchetypeRoot childArchetype = GastrOsService.OperationalTemplate.Definition.LocateArchetypeById(child.ArchetypeId);
-                BreakDirective breakDirective = GastrOsService.OperationalTemplate.FindDirectiveOfType<BreakDirective>(childArchetype);
-                BreakStyle breakStyle = breakDirective != null ? breakDirective.BreakStyle : BreakStyle.None;
-                contentPanel.AddChild(childWidget.View as Control, breakStyle);
-                if (breakStyle == BreakStyle.Tab)
-                    contentPanel.SetTabTitle(++i, child.Term);
+                contentPanel.AddChild(childWidget.View as Control, i > 0 ? BreakStyle.Tab : BreakStyle.None);
+                contentPanel.SetTabTitle(i++, child.Term);
                 //TODO find out why doing this before the above add screws size up
                 childWidget.View.Size = childWidget.View.IdealSize;
                 conceptToWidgetMap[child] = childWidget;
@@ -215,7 +202,7 @@ namespace GastrOs.Wrapper.Forms.DataEntry
             //TODO CR really a temporary workaround to manually getting directives in order to set form aspects
             if (parentConcept.ArchetypeId != null)
             {
-                CArchetypeRoot examRoot = GastrOsService.OperationalTemplate.Definition.LocateArchetypeById(parentConcept.ArchetypeId);
+                CArchetypeRoot examRoot = GastrOsService.OperationalTemplate.LocateArchetypeById(parentConcept.ArchetypeId);
                 if (examRoot != null)
                 {
                     FormAspectsDirective formAspects =
@@ -325,8 +312,6 @@ namespace GastrOs.Wrapper.Forms.DataEntry
             if (tag == null)
                 return;
 
-            bool dirty = false;
-
             foreach (SdeConcept concept in tag.Keys)
             {
                 ViewControl associatedWidget = tag[concept];
@@ -337,29 +322,24 @@ namespace GastrOs.Wrapper.Forms.DataEntry
                 string currentInstance = EhrSerialiser.PruneAndSave(model, constraint) ?? "";
                 string originalInstance = examination.GetSerialisedValue(concept) ?? "";
 
-                if (!string.Equals(currentInstance, originalInstance))
+                bool dirty = !string.Equals(currentInstance, originalInstance);
+                //If "dirty" (i.e. current instance is different from saved value) then prompt saving
+                if (dirty)
                 {
-                    dirty = true;
-                    break;
-                }
-            }
-
-            //If "dirty" (i.e. current instance is different from saved value) then prompt saving
-            if (dirty)
-            {
-                DialogResult result = MessageBox.Show(sourceForm, "Do you want to save before closing?", "Save?",
-                                                      MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information,
-                                                      MessageBoxDefaultButton.Button3);
-                switch (result)
-                {
-                    case DialogResult.Yes:
-                        //if "Yes", then save
-                        SaveAndPersist(sourceForm, EventArgs.Empty);
-                        return;
-                    case DialogResult.Cancel:
-                        //if "Cancel", then tell the form to cancel its close operation
-                        e.Cancel = true;
-                        return;
+                    DialogResult result = MessageBox.Show(sourceForm, "Do you want to save before closing?", "Save?",
+                                                          MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information,
+                                                          MessageBoxDefaultButton.Button3);
+                    switch (result)
+                    {
+                        case DialogResult.Yes:
+                            //if "Yes", then save
+                            SaveAndPersist(sourceForm, EventArgs.Empty);
+                            return;
+                        case DialogResult.Cancel:
+                            //if "Cancel", then tell the form to cancel its close operation
+                            e.Cancel = true;
+                            return;
+                    }
                 }
             }
         }
@@ -471,7 +451,7 @@ namespace GastrOs.Wrapper.Forms.DataEntry
                 try
                 {
                     EhrSerialiser.LoadFromXmlString(value, serialised);
-                    CArchetypeRoot constraint = opt.Definition.LocateArchetypeById(term.ArchetypeId);
+                    CArchetypeRoot constraint = opt.LocateArchetypeById(term.ArchetypeId);
                     if (constraint == null)
                     {
                         MessageBox.Show(this, "Can't locate archetype with id '" + term.ArchetypeId +

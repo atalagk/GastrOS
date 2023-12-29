@@ -3,15 +3,16 @@ using System.Drawing;
 using System.Windows.Forms;
 using GastrOs.Sde.Support;
 using GastrOs.Sde.ViewControls;
+using GastrOs.Sde.Views.WinForms.Generic;
 
 namespace GastrOs.Sde.Test
 {
     class GuiTestFormlet : Form
     {
         private string defaultKnowl = ".";
-        private string defaultArch = "openEHR-EHR-COMPOSITION.testcomp1.v1";
-        private string defaultOpt = "TestTemplate2.opt";
-        private string defaultLanguage = "en-NZ";
+        private string defaultArch = "openEHR-EHR-CLUSTER.testing.v1";
+        private string defaultOpt = "TestTemplate.opt";
+        private string defaultLanguage = "en";
 
         private Label label1;
         private Label label2;

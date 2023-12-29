@@ -39,12 +39,9 @@ namespace GastrOs.Sde.ViewControls
 
         ~ViewControl()
         {
-            if (View != null)
-            {
-                //Release event handler to avoid memory leak
-                View.NewInstanceRequest -= handleNewInstance;
-                View.RemoveInstanceRequest -= handleRemoveInstance;
-            }
+            //Release event handler to avoid memory leak
+            View.NewInstanceRequest -= handleNewInstance;
+            View.RemoveInstanceRequest -= handleRemoveInstance;
         }
 
         /// <summary>
@@ -147,7 +144,7 @@ namespace GastrOs.Sde.ViewControls
                 SetModelPostexecute(oldModel);
                 if (view != null)
                 {
-                    RefreshViewFromModel();
+                    UpdateViewFromModel();
                 }
             }
         }
@@ -179,7 +176,7 @@ namespace GastrOs.Sde.ViewControls
                 
                 if (model != null)
                 {
-                    RefreshViewFromModel();
+                    UpdateViewFromModel();
                 }
             }
         }
@@ -235,7 +232,7 @@ namespace GastrOs.Sde.ViewControls
         /// Called in order to force the view to update its values to match those
         /// of the model.
         /// </summary>
-        public virtual void RefreshViewFromModel() { }
+        public virtual void UpdateViewFromModel() { }
 
         /// <summary>
         /// Invoked when the view has changed, which would require a corresponding update

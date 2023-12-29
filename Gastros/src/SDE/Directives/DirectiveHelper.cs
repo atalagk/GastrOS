@@ -7,7 +7,7 @@ namespace GastrOs.Sde.Directives
 {
     public static class DirectiveHelper
     {
-        public static readonly Regex Format = new Regex(@"(\w+)\s*(?:\(\s*([^,\(\)]+)\s*(?:,\s*([^,\(\)]+))*\s*\))?");
+        public static readonly Regex Format = new Regex(@"(\w+)\s*(?:\(\s*([\w\d=]+)\s*(?:,\s*([\w\d=]+))*\s*\))?");
 
         private static readonly Dictionary<string, Type> directiveTypeMap;
 
@@ -28,7 +28,6 @@ namespace GastrOs.Sde.Directives
             directiveTypeMap["formAspects"] = typeof(FormAspectsDirective);
             directiveTypeMap["showDescription"] = typeof(ShowDescriptionDirective);
             directiveTypeMap["alternateStyle"] = typeof(AlternateStyleDirective);
-            directiveTypeMap["grid"] = typeof(GridDirective);
         }
 
         /// <summary>

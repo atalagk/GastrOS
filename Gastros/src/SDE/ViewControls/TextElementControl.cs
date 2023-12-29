@@ -1,6 +1,6 @@
 using System;
-using GastrOs.Sde.Engine;
 using OpenEhr.DesignByContract;
+using GastrOs.Sde.Support;
 using GastrOs.Sde.Views;
 using OpenEhr.AM.Archetype.ConstraintModel;
 using OpenEhr.RM.DataStructures.ItemStructure.Representation;
@@ -20,11 +20,8 @@ namespace GastrOs.Sde.ViewControls
 
         ~TextElementControl()
         {
-            if (View != null)
-            {
-                //Release event handler to avoid memory leak
-                View.TextChanged -= UpdateText;
-            }
+            //Release event handler to avoid memory leak
+            View.TextChanged -= UpdateText;
         }
 
         protected override void SetModelPostexecute(Element oldModel)
@@ -37,7 +34,6 @@ namespace GastrOs.Sde.ViewControls
             if (oldView != null)
                 oldView.TextChanged -= UpdateText;
 
-            View.DataValueProvider = new DvTextProvider();
             View.TextChanged += UpdateText;
         }
 
@@ -46,19 +42,19 @@ namespace GastrOs.Sde.ViewControls
             get { return false; }
         }
 
-        public override void RefreshViewFromModel()
+        public override void UpdateViewFromModel()
         {
             View.Title = TitleFunction();
-            View.TextChanged -= UpdateText;
-            View.Value = View.DataValueProvider.ToRawValue(Model.Value);
-            View.TextChanged += UpdateText;
+            DvText text = Model.ValueAs<DvText>();
+            if (text != null)
+                View.Text = text.Value;
         }
 
         private void UpdateText(object sender, EventArgs e)
         {
             if (Model == null || View.Text == null)
                 return;
-            Model.Value = View.DataValueProvider.ToDataValue(View.Value);
+            Model.Value = new DvText(View.Text);
         }
     }
 }

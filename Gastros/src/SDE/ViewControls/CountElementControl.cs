@@ -1,5 +1,4 @@
 using System;
-using GastrOs.Sde.Engine;
 using OpenEhr.DesignByContract;
 using GastrOs.Sde.Support;
 using GastrOs.Sde.Views;
@@ -48,7 +47,6 @@ namespace GastrOs.Sde.ViewControls
                 oldView.ValueChanged -= UpdateCount;
 
             View.ValueChanged += UpdateCount;
-            View.DataValueProvider = new DvCountProvider();
             UpdateMinMaxValues();
         }
 
@@ -70,7 +68,9 @@ namespace GastrOs.Sde.ViewControls
         {
             if (Model == null)
                 return;
-            Model.Value = View.DataValueProvider.ToDataValue(View.Value);
+            decimal? viewValue = View.Value ?? 0;
+            //NOTE Special (temporary) provision: if view's value is unset, set model value to 0.
+            Model.Value = new DvCount((long)viewValue);
         }
 
         public override bool AllowsChildren
@@ -78,12 +78,12 @@ namespace GastrOs.Sde.ViewControls
             get { return false; }
         }
 
-        public override void RefreshViewFromModel()
+        public override void UpdateViewFromModel()
         {
-            View.Title = TitleFunction();
-            View.ValueChanged -= UpdateCount;
-            View.Value = View.DataValueProvider.ToRawValue(Model.Value);
-            View.ValueChanged += UpdateCount;
+            View.Title = View.Title = TitleFunction();
+            DvCount count = Model.ValueAs<DvCount>();
+            //NOTE Special (temporary) provision for zero-values: assume null
+            View.Value = count.Magnitude == 0 ? null : (decimal?)count.Magnitude;
         }
     }
 }

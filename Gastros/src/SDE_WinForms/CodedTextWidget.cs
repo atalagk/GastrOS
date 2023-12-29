@@ -91,12 +91,6 @@ namespace GastrOs.Sde.Views.WinForms
             }
         }
 
-        public override object Value
-        {
-            get { return Text; }
-            set { Text = value as string; }
-        }
-
         public ShowValueContextMode ShowValueContext
         {
             get

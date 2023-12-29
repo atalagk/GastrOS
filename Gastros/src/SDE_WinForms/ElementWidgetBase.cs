@@ -2,11 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using GastrOs.Sde.Engine;
 using OpenEhr.DesignByContract;
 using GastrOs.Sde.Configuration;
 using GastrOs.Sde.Views.WinForms.Support;
-using OpenEhr.RM.DataTypes.Basic;
 
 namespace GastrOs.Sde.Views.WinForms
 {
@@ -14,7 +12,7 @@ namespace GastrOs.Sde.Views.WinForms
     /// Provides a base class for a widget that contains a label and a set of
     /// input fields. Suitable for representing OpenEHR Elements.
     /// </summary>
-    public abstract class ElementWidgetBase : WidgetBase, IScalarView
+    public abstract class ElementWidgetBase : WidgetBase
     {
         private TableLayoutPanel basePanel;
 
@@ -279,8 +277,5 @@ namespace GastrOs.Sde.Views.WinForms
                 for (Control focusTarget = this; focusTarget != null && !focusTarget.Focus(); focusTarget = focusTarget.Parent) { }
             }
         }
-
-        public IDataValueProvider DataValueProvider { get; set; }
-        public abstract object Value { get; set; }
     }
 }

@@ -125,7 +125,7 @@ namespace GastrOs.Sde.Views.WinForms.Generic
             }
 
 #if (DEBUG)
-            //currentColumn.MouseMove += currentColumn_MouseMove;
+            currentColumn.MouseMove += currentColumn_MouseMove;
 #endif
         }
 

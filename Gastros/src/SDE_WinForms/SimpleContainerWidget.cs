@@ -23,7 +23,7 @@ namespace GastrOs.Sde.Views.WinForms
             Controls.Add(basePanel);
 
 #if (DEBUG)
-            //basePanel.MouseMove += basePanel_MouseMove;
+            basePanel.MouseMove += basePanel_MouseMove;
 #endif
         }
 

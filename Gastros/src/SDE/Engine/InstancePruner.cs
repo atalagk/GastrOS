@@ -4,8 +4,6 @@ using System.Linq;
 using GastrOs.Sde.Support;
 using OpenEhr.AM.Archetype.ConstraintModel;
 using OpenEhr.RM.Common.Archetyped.Impl;
-using OpenEhr.RM.Composition.Content;
-using OpenEhr.RM.Composition.Content.Navigation;
 using OpenEhr.RM.DataStructures.ItemStructure.Representation;
 using OpenEhr.RM.DataTypes.Basic;
 using OpenEhr.RM.DataTypes.Quantity;
@@ -31,13 +29,6 @@ namespace GastrOs.Sde.Engine
         {
             if (!valueInstance.LightValidate(constraint))
                 throw new ArgumentException("Given value instance does not match given constraint");
-
-            if (valueInstance is Section)
-            {
-                Section section = valueInstance as Section;
-                //recursively prune children
-                //TODO
-            }
 
             if (valueInstance is Cluster)
             {

@@ -184,10 +184,5 @@ namespace GastrOs.Sde.Views.WinForms
         /// change events as a result.
         /// </summary>
         public abstract void Reset();
-
-        public virtual void SetForeground(Color colour)
-        {
-            ForeColor = colour;
-        }
     }
 }

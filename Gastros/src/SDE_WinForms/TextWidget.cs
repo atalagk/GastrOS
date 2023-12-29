@@ -43,12 +43,6 @@ namespace GastrOs.Sde.Views.WinForms
             }
         }
 
-        public override object Value
-        {
-            get { return Text; }
-            set { Text = value as string; }
-        }
-
         protected override void OnTextChanged(EventArgs e)
         {
             base.OnTextChanged(e);

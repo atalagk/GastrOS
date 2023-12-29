@@ -19,7 +19,7 @@ namespace GastrOs.Sde.Engine
     /// <summary>
     /// The main class that co-ordinates view creation and manipulation.
     /// </summary>
-    public class MasterController
+    public class Coordinator
     {
         private IUnityContainer container;
         private OperationalTemplate opTemplate;
@@ -29,7 +29,7 @@ namespace GastrOs.Sde.Engine
         //event listener for later deregistering (prevent memory leaks)
         private HashSet<ViewControl> generatedViewControls = new HashSet<ViewControl>();
 
-        public MasterController(OperationalTemplate opTemplate)
+        public Coordinator(OperationalTemplate opTemplate)
         {
             Check.Require(opTemplate != null, "Operational template must not be null");
             this.opTemplate = opTemplate;
@@ -42,7 +42,7 @@ namespace GastrOs.Sde.Engine
             viewsGenerator = new ViewsGenerator(opTemplate, container);
         }
 
-        ~MasterController()
+        ~Coordinator()
         {
             //Release event handlers
             foreach (ViewControl viewControl in generatedViewControls)
@@ -54,7 +54,7 @@ namespace GastrOs.Sde.Engine
 
         public ViewControl GenerateView(Locatable valueInstance, string archetypeId)
         {
-            CArchetypeRoot archetypeRoot = opTemplate.Definition.LocateArchetypeById(archetypeId);
+            CArchetypeRoot archetypeRoot = opTemplate.LocateArchetypeById(archetypeId);
             Check.Require(archetypeRoot != null, "Can't find archetype with id " + archetypeId + " from operational template");
 
             return GenerateView(valueInstance, archetypeRoot);
@@ -130,10 +130,10 @@ namespace GastrOs.Sde.Engine
             CComplexObject constraint = control.Constraint;
             
             //construct new instance of model
-            Locatable newModel = RmFactory.Instantiate(constraint);
+            Locatable newModel = RmFactory.Instantiate(constraint, opTemplate);
             Pathable parent = control.Model.Parent;
             if (parent == null) return;
-            parent.AddChild(newModel, constraint);
+            parent.AddChild(newModel);
             
             //construct new instance of view control
             ViewControl newInstance = viewsGenerator.GenerateFor(newModel, constraint);

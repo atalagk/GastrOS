@@ -1,10 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using GastrOs.Sde.Engine;
 using OpenEhr.DesignByContract;
 using GastrOs.Sde.Configuration;
 using GastrOs.Sde.Directives;
@@ -15,11 +13,6 @@ using OpenEhr.AM.OpenehrProfile.DataTypes.Text;
 using OpenEhr.RM.Common.Archetyped;
 using OpenEhr.RM.Common.Archetyped.Impl;
 using OpenEhr.RM.Common.Resource;
-using OpenEhr.RM.Composition;
-using OpenEhr.RM.Composition.Content;
-using OpenEhr.RM.Composition.Content.Entry;
-using OpenEhr.RM.Composition.Content.Navigation;
-using OpenEhr.RM.DataStructures.History;
 using OpenEhr.RM.DataStructures.ItemStructure;
 using OpenEhr.RM.DataStructures.ItemStructure.Representation;
 using OpenEhr.RM.DataTypes.Basic;
@@ -27,7 +20,6 @@ using OpenEhr.RM.DataTypes.Quantity;
 using OpenEhr.RM.DataTypes.Text;
 using OpenEhr.Futures.OperationalTemplate;
 using OpenEhr.RM.Impl;
-using Archetyped=OpenEhr.RM.Common.Archetyped.Impl.Archetyped;
 
 namespace GastrOs.Sde.Support
 {
@@ -41,7 +33,6 @@ namespace GastrOs.Sde.Support
 
         private static PropertyInfo constraintParent;
         private static Dictionary<Type, string> rmTypeNameCache;
-        private static HashSet<Type> supportedContainerTypes;
 
         static AomHelper()
         {
@@ -50,12 +41,6 @@ namespace GastrOs.Sde.Support
             Check.Assert(constraintParent != null);
             //stores a cache of frequently used rm type names, since reflection is expensive
             rmTypeNameCache = new Dictionary<Type, string>();
-            rmTypeNameCache[typeof(Composition)] = RmType.GetRmTypeName(typeof(Composition));
-            rmTypeNameCache[typeof(Section)] = RmType.GetRmTypeName(typeof(Section));
-            rmTypeNameCache[typeof(Evaluation)] = RmType.GetRmTypeName(typeof(Evaluation));
-            rmTypeNameCache[typeof(Observation)] = RmType.GetRmTypeName(typeof(Observation));
-            rmTypeNameCache[typeof(Event<ItemStructure>)] = RmType.GetRmTypeName(typeof(Event<ItemStructure>));
-            rmTypeNameCache[typeof(ItemTree)] = RmType.GetRmTypeName(typeof(ItemTree));
             rmTypeNameCache[typeof(Element)] = RmType.GetRmTypeName(typeof(Element));
             rmTypeNameCache[typeof(Cluster)] = RmType.GetRmTypeName(typeof(Cluster));
             rmTypeNameCache[typeof(Item)] = RmType.GetRmTypeName(typeof(Item));
@@ -64,17 +49,6 @@ namespace GastrOs.Sde.Support
             rmTypeNameCache[typeof(DvQuantity)] = RmType.GetRmTypeName(typeof(DvQuantity));
             rmTypeNameCache[typeof(DvCount)] = RmType.GetRmTypeName(typeof(DvCount));
             rmTypeNameCache[typeof(DvBoolean)] = RmType.GetRmTypeName(typeof(DvBoolean));
-
-            supportedContainerTypes = new HashSet<Type>();
-            supportedContainerTypes.Add(typeof(Composition));
-            supportedContainerTypes.Add(typeof(Section));
-            supportedContainerTypes.Add(typeof(Evaluation));
-            supportedContainerTypes.Add(typeof(Observation));
-            supportedContainerTypes.Add(typeof(History<ItemStructure>));
-            supportedContainerTypes.Add(typeof(PointEvent<ItemStructure>));
-            supportedContainerTypes.Add(typeof(Event<ItemStructure>));
-            supportedContainerTypes.Add(typeof(ItemTree));
-            supportedContainerTypes.Add(typeof(Cluster));
         }
 
         #region(directives processing)
@@ -164,15 +138,15 @@ namespace GastrOs.Sde.Support
         /// if not found
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="archRoot"></param>
+        /// <param name="opt"></param>
         /// <returns></returns>
-        public static CArchetypeRoot LocateArchetypeById(this CArchetypeRoot archRoot, string id)
+        public static CArchetypeRoot LocateArchetypeById(this OperationalTemplate opt, string id)
         {
-            if (archRoot == null)
+            if (opt == null)
                 throw new ArgumentNullException("opt");
             if (id == null)
                 throw new ArgumentNullException("id");
-            IDictionary<string, CArchetypeRoot> foundRoots = RetrieveAllArchetypeRoots(archRoot);
+            IDictionary<string, CArchetypeRoot> foundRoots = RetrieveAllArchetypeRoots(opt);
             if (foundRoots.ContainsKey(id))
                 return foundRoots[id];
             return null;
@@ -182,14 +156,14 @@ namespace GastrOs.Sde.Support
         /// Retrieves all archetype roots underneath the given op. template and returns
         /// a dictionary that maps each found archetype root's id to itself
         /// </summary>
-        /// <param name="archRoot"></param>
+        /// <param name="opt"></param>
         /// <returns></returns>
-        public static IDictionary<string, CArchetypeRoot> RetrieveAllArchetypeRoots(this CArchetypeRoot archRoot)
+        public static IDictionary<string, CArchetypeRoot> RetrieveAllArchetypeRoots(this OperationalTemplate opt)
         {
-            if (archRoot == null)
+            if (opt == null)
                 throw new ArgumentNullException("opt");
             IDictionary<string, CArchetypeRoot> foundRoots = new Dictionary<string, CArchetypeRoot>();
-            SimpleAomVisitor.Visit(archRoot, visitCObjectForRetrieveRoots, visitAttributeDoNothing, foundRoots);
+            SimpleAomVisitor.Visit(opt.Definition, visitCObjectForRetrieveRoots, visitAttributeDoNothing, foundRoots);
             return foundRoots;
         }
 
@@ -201,6 +175,17 @@ namespace GastrOs.Sde.Support
                 CArchetypeRoot currentRoot = (CArchetypeRoot) obj;
                 foundRoots[currentRoot.ArchetypeId.Value] = currentRoot;
             }
+        }
+
+        /// <summary>
+        /// Determines whether the given complex object represents a
+        /// container (e.g. RM type is a cluster or a tree).
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static bool IsContainer(this CObject obj)
+        {
+            return Regex.IsMatch(obj.RmTypeName, @"^((ITEM_\w+)|(CLUSTER)|(HISTORY)|(\w+_EVENT))$");
         }
 
         /// <summary>
@@ -269,34 +254,10 @@ namespace GastrOs.Sde.Support
         {
             List<CObject> children = new List<CObject>();
             CAttribute items = ExtractSingleAttribute(obj);
-            if (items != null && items.Children != null)
+            if (items.Children != null)
             {
                 foreach (CObject child in items.Children)
                 {
-                    //NOTE don't handle unfilled archetype slots
-                    if (child is ArchetypeSlot) continue;
-                    children.Add(child);
-                }
-            }
-            return children;
-        }
-
-        /// <summary>
-        /// Extracts child constraints from given constraint's given attribute
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <param name="attributeName"></param>
-        /// <returns></returns>
-        public static ICollection<CObject> ExtractChildConstraints(this CComplexObject obj, string attributeName)
-        {
-            List<CObject> children = new List<CObject>();
-            CAttribute items = GetAttributeByName(obj, attributeName);
-            if (items != null && items.Children != null)
-            {
-                foreach (CObject child in items.Children)
-                {
-                    //NOTE don't handle unfilled archetype slots
-                    if (child is ArchetypeSlot) continue;
                     children.Add(child);
                 }
             }
@@ -377,7 +338,7 @@ namespace GastrOs.Sde.Support
                 {
                     float parsed;
                     //the first capturing group must be a decimal indicating ordinal
-                    if (Single.TryParse(m.Groups[1].Value, out parsed))
+                    if (float.TryParse(m.Groups[1].Value, out parsed))
                         ontology.Ordinal = parsed;
                     //the second capturing group must be the remaining part of the description
                     ontology.Description = m.Groups[2].Value;
@@ -449,17 +410,6 @@ namespace GastrOs.Sde.Support
 
             return child as CCodePhrase;
         }
-
-        public static string ExtractArchId(this CComplexObject constraint)
-        {
-            return constraint is CArchetypeRoot ? (constraint as CArchetypeRoot).ArchetypeId.Value : constraint.NodeId;
-        }
-
-        public static Archetyped ExtractArchetyped(this CComplexObject constraint)
-        {
-            CArchetypeRoot root = constraint.GetArchetypeRoot();
-            return new Archetyped(root.ArchetypeId, RmFactory.RmVersion, root.TemplateId);
-        }
         #endregion
 
         #region(parent-child relationships)
@@ -470,70 +420,34 @@ namespace GastrOs.Sde.Support
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="child"></param>
-        /// <param name="childConstraint"></param>
-        public static bool AddChild(this Pathable parent, Locatable child, CComplexObject childConstraint)
+        public static bool AddChild(this Pathable parent, Locatable child)
         {
-            //Right now only limited to these RM types
-            Check.Require(supportedContainerTypes.Contains(parent.GetType()),
-                          "Sorry, don't yet support adding children to RM type " + parent.GetType());
-
-            child.AssignUniqueName(parent, childConstraint);
+            Check.Require(parent is Cluster || parent is ItemStructure);
             if (parent is Cluster)
             {
                 Check.Require(child is Item);
                 Cluster parentCluster = parent as Cluster;
+                //basically try and assign a unique id suffix to the name by brute-force
+                //searching for existing id's in children!
+                Func<Item, bool> sameNodeId = item => String.Equals(item.ArchetypeNodeId, child.ArchetypeNodeId);
+                IEnumerable<Item> existingInstances = parentCluster.Items.Where(sameNodeId);
+                int uniqueId = 1;
+                //This is rather tricky - the reason for wrapping name around a singleton
+                //array is so that the delegate function used below has an up-to-date value
+                //at each iteration of the loop
+                string[] uniqueName = new string[1];
+                uniqueName[0] = child.Name.Value;
+                //translation: while there are instances that already have the name we want
+                while (existingInstances.Where(item => String.Equals(item.Name.Value, uniqueName[0])).Count() > 0)
+                {
+                    uniqueName[0] = child.Name.Value + "__" + (uniqueId ++);
+                }
+                child.Name.Value = uniqueName[0];
                 parentCluster.Items.Add(child as Item);
                 return true;
             }
-            if (parent is ItemTree)
-            {
-                Check.Require(child is Item);
-                ItemTree parentTree = parent as ItemTree;
-                parentTree.Items.Add(child as Item);
-                return true;
-            }
-            if (parent is History<ItemStructure>)
-            {
-                Check.Require(child is Event<ItemStructure>);
-                History<ItemStructure> parentHist = parent as History<ItemStructure>;
-                parentHist.Events.Add(child as Event<ItemStructure>);
-            }
-            if (parent is Section)
-            {
-                Check.Require(child is ContentItem);
-                Section section = parent as Section;
-                section.Items.Add(child as ContentItem);
-                return true;
-            }
-
             //TODO do it for other container types
             return false;
-        }
-
-        /// <summary>
-        /// Basically assigns a unique id suffix to the name by brute-force searching for existing id's in
-        /// would-be-parent's children...
-        /// </summary>
-        /// <param name="parentToBe"></param>
-        /// <param name="child"></param>
-        /// <param name="childConstraint"></param>
-        /// <returns></returns>
-        public static void AssignUniqueName(this Locatable child, Pathable parentToBe, CComplexObject childConstraint)
-        {
-            Check.Require(child.LightValidate(childConstraint));
-            IEnumerable<Locatable> existingInstances = parentToBe.ChildInstances(childConstraint);
-            int uniqueId = 1;
-            //This is rather tricky - the reason for wrapping name around a singleton
-            //array is so that the delegate function used below has an up-to-date value
-            //at each iteration of the loop
-            string[] uniqueNames = new string[1];
-            uniqueNames[0] = child.Name.Value;
-            //translation: while there are instances that already have the name we want
-            while (existingInstances.Where(item => String.Equals(item.Name.Value, uniqueNames[0])).Count() > 0)
-            {
-                uniqueNames[0] = child.Name.Value + "__" + (uniqueId ++);
-            }
-            child.Name.Value = uniqueNames[0];
         }
 
         /// <summary>
@@ -544,10 +458,7 @@ namespace GastrOs.Sde.Support
         /// <returns></returns>
         public static bool RemoveChild(this Pathable parent, Locatable child)
         {
-            //Right now only limited to these RM types
-            Check.Require(supportedContainerTypes.Contains(parent.GetType()),
-                          "Sorry, don't yet support removing children from RM type " + parent.GetType());
-
+            Check.Require(parent is Cluster || parent is ItemStructure);
             if (parent is Cluster)
             {
                 Check.Require(child is Item);
@@ -555,106 +466,34 @@ namespace GastrOs.Sde.Support
                 parentCluster.Items.Remove(child as Item);
                 return true;
             }
-            if (parent is ItemTree)
-            {
-                Check.Require(child is Item);
-                ItemTree parentTree = parent as ItemTree;
-                parentTree.Items.Remove(child as Item);
-                return true;
-            }
-            if (parent is Section)
-            {
-                Check.Require(child is ContentItem);
-                Section section = parent as Section;
-                section.Items.Remove(child as ContentItem);
-                return true;
-            }
-
             //TODO do it for other container types
             return false;
         }
 
         /// <summary>
-        /// Generic method for returning the child instances that share the same constraint.
+        /// Returns the child instances that share the same constraint.
         /// </summary>
         /// <returns></returns>
         public static IEnumerable<Locatable> ChildInstances(this Pathable parent, CObject constraint)
         {
-            return ChildInstances(parent, constraint, null);
-        }
-
-        /// <summary>
-        /// Generic method for returning the child instances that share the same constraint.
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<Locatable> ChildInstances(this Pathable parent, CObject constraint, string attribute)
-        {
-            //Right now only limited to these RM types
-            Check.Require(supportedContainerTypes.Contains(parent.GetType()),
-                          "Sorry, don't yet support adding children to RM type " + parent.GetType());
-            
-            IEnumerable children;
+            Check.Require(parent is Cluster || parent is ItemStructure);
             if (parent is Cluster)
             {
-                children = (parent as Cluster).Items;
+                return (parent as Cluster).ChildInstances(constraint).Cast<Locatable>();
             }
-            else if (parent is ItemTree)
-            {
-                children = (parent as ItemTree).Items;
-            }
-            else if (parent is Event<ItemStructure>)
-            {
-                Event<ItemStructure> evt = parent as Event<ItemStructure>;
-                if (attribute == null || String.Equals(attribute, "data"))
-                    children = evt.Data != null ? new[] {evt.Data} : new Locatable[0];
-                else if (String.Equals(attribute, "state"))
-                    children = evt.State != null ? new[] {evt.State} : new Locatable[0];
-                else
-                    throw new ArgumentException("Unknown attribute "+(attribute)+" for RM type EVENT");
-            }
-            else if (parent is History<ItemStructure>)
-            {
-                children = (parent as History<ItemStructure>).Events;
-            }
-            else if (parent is Evaluation)
-            {
-                children = new Locatable[] {(parent as Evaluation).Data};
-            }
-            else if (parent is Observation)
-            {
-                Observation obs = parent as Observation;
-                if (attribute == null || String.Equals(attribute, "data"))
-                    children = obs.Data != null ? new[] { obs.Data } : new Locatable[0];
-                else if (String.Equals(attribute, "state"))
-                    children = obs.State != null ? new[] {obs.State} : new Locatable[0];
-                else if (String.Equals(attribute, "protocol"))
-                    children = obs.Protocol != null ? new[] { obs.Protocol } : new Locatable[0];
-                else
-                    throw new ArgumentException("Unknown attribute " + (attribute) + " for RM type OBSERVATION");
-            }
-            else if (parent is Section)
-            {
-                children = (parent as Section).Items;
-            }
-            else if (parent is Composition)
-            {
-                children = (parent as Composition).Content;
-            }
-            else
-            {
-                throw new NotSupportedException("Sorry... can't yet retrieve child instances for RM type "+parent.GetType());
-            }
-
-            return children.Cast<Locatable>().Where(child => child.LightValidate(constraint));
+            //TODO do it for other container types
+            return null;
         }
 
         /// <summary>
-        /// Returns the child items in the cluster that share the same constraint.
+        /// Returns the child instances that share the same constraint.
         /// </summary>
         /// <returns></returns>
         public static IEnumerable<Item> ChildInstances(this Cluster parent, CObject constraint)
         {
-            return ChildInstances(parent as Locatable, constraint).Cast<Item>();
+            Func<Item, bool> sameNodeId =
+                item => String.Equals(item.ArchetypeNodeId, constraint.NodeId);
+            return parent.Items.Where(sameNodeId);
         }
         #endregion
 
@@ -807,7 +646,7 @@ namespace GastrOs.Sde.Support
             DvCodedText presenceValue = presenceElement.Value as DvCodedText;
             Check.Assert(presenceValue != null);
             IDictionary<PresenceState, string> presenceSemantics = GetPresenceSemantics(presenceConstraint);
-            return presenceSemantics.Keys.FirstOrDefault(p => String.Equals(presenceSemantics[p], presenceValue.Value));
+            return presenceSemantics.Keys.FirstOrDefault(p => string.Equals(presenceSemantics[p], presenceValue.Value));
         }
         #endregion
 
@@ -827,15 +666,15 @@ namespace GastrOs.Sde.Support
             if (value == null)
                 throw new ArgumentNullException("value");
             //same RM type?
-            if (!CObject.IsSameRmType(constraint.RmTypeName, value))
+            if (!constraint.RmTypeMatches(value.GetType()))
                 return false;
             //same archetype?
-            if (value.ArchetypeDetails != null && !Equals(value.ArchetypeDetails.ArchetypeId, constraint.GetArchetypeRoot().ArchetypeId))
-                return false;
+            //if (!string.Equals(value.ArchetypeDetails.ArchetypeId, constraint.GetArchetypeRoot().ArchetypeId))
+            //    return false;
             //If given value is archetype root, then compare archetype id
-            if (value.IsArchetypeRoot)
-                return String.Equals(value.ArchetypeNodeId, constraint.GetArchetypeRoot().ArchetypeId.Value);
-            return String.Equals(value.ArchetypeNodeId, constraint.NodeId);
+//            if (value.IsArchetypeRoot)
+//                return string.Equals(value.ArchetypeNodeId, constraint.GetArchetypeRoot().ArchetypeId);
+            return string.Equals(value.ArchetypeNodeId, constraint.NodeId);
         }
 
         /// <summary>
@@ -873,39 +712,21 @@ namespace GastrOs.Sde.Support
         /// <returns></returns>
         public static bool RmTypeMatches<T>(this CObject constraint) where T : IRmType
         {
-            Type rmType = typeof (T);
-            string name = rmTypeNameCache.ContainsKey(rmType)
-                              ? rmTypeNameCache[rmType]
-                              : RmType.GetRmTypeName(rmType);
-            return String.Equals(constraint.RmTypeName, name);
+            return RmTypeMatches(constraint, typeof(T));
         }
 
         /// <summary>
-        /// Works out the path of the constraint relative to the given parent constraint.
-        /// E.g. path of constraint "/content/items[at0000]/items[at0001]" relative to
-        /// constraint "/content/items[at0000]" is "items[at0001]".
+        /// Returns whether specified constraint has the specified RM type
         /// </summary>
-        /// <param name="parentConstraint"></param>
         /// <param name="constraint"></param>
+        /// <param name="rmType"></param>
         /// <returns></returns>
-        public static string RelativePath(this CObject constraint, CObject parentConstraint)
+        public static bool RmTypeMatches(this CObject constraint, Type rmType)
         {
-            if (!parentConstraint.IsParentOf(constraint))
-                throw new ArgumentException("Constraint at path " + constraint.Path +
-                                            " is not a child of constraint at path " + parentConstraint.Path);
-            
-            //Position of the '/'
-            int startOfRelativePath = parentConstraint.Path.Length + 1;
-
-            //Means self
-            if (startOfRelativePath >= constraint.Path.Length)
-                return "";
-            return constraint.Path.Substring(startOfRelativePath);
-        }
-
-        public static bool IsParentOf(this CObject constraint, CObject potentialChild)
-        {
-            return potentialChild.Path.IndexOf(constraint.Path) == 0;
+            string name = rmTypeNameCache.ContainsKey(rmType)
+                              ? rmTypeNameCache[rmType]
+                              : RmType.GetRmTypeName(rmType);
+            return string.Equals(constraint.RmTypeName, name);
         }
     }
 

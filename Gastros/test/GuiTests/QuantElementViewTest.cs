@@ -28,7 +28,7 @@ namespace GastrOs.Sde.Test.GuiTests
 
             _control = new QuantElementControl(quantConstraint);
 
-            model = new Element(new DvText("quantity1"), "at6220", null, null, quantConstraint.ExtractArchetyped(), null, new DvQuantity(10, "mm"), null);
+            model = new Element(new DvText("quantity1"), "at6220", null, null, null, null, new DvQuantity(10, "mm"), null);
             view = container.Resolve<INumericUnitView>();
         }
 
@@ -62,7 +62,7 @@ namespace GastrOs.Sde.Test.GuiTests
             InitialConstructionTest();
 
             //Introduce new view and model
-            Element model2 = new Element(new DvText("quantity2"), "at6220", null, null, quantConstraint.ExtractArchetyped(), null, new DvQuantity(1, "in"), null);
+            Element model2 = new Element(new DvText("quantity2"), "at6220", null, null, null, null, new DvQuantity(1, "in"), null);
             INumericUnitView view2 = container.Resolve<INumericUnitView>();
 
             Assert.AreEqual(0, view2.Value);
@@ -149,7 +149,7 @@ namespace GastrOs.Sde.Test.GuiTests
         {
             InitialConstructionTest();
 
-            _control.Model = new Element(new DvText("text3"), "at0000", null, null, quantConstraint.ExtractArchetyped(), null, new DvText("Invalid"), null);
+            _control.Model = new Element(new DvText("text3"), "at0000", null, null, null, null, new DvText("Invalid"), null);
         }
 
         [Test]
@@ -158,7 +158,7 @@ namespace GastrOs.Sde.Test.GuiTests
         {
             InitialConstructionTest();
 
-            _control.Model = new Element(new DvText("text3"), "at6230", null, null, quantConstraint.ExtractArchetyped(), null, new DvBoolean(true), null);
+            _control.Model = new Element(new DvText("text3"), "at6230", null, null, null, null, new DvBoolean(true), null);
         }
     }
 }

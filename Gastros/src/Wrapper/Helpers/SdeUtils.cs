@@ -5,10 +5,8 @@ using GastrOs.Sde;
 using GastrOs.Sde.Support;
 using GastrOs.Sde.ViewControls;
 using GastrOs.Wrapper.DataObjects;
-using OpenEhr.Factories;
 using OpenEhr.Futures.OperationalTemplate;
 using OpenEhr.RM.Common.Archetyped.Impl;
-using OpenEhr.RM.Composition.Content.Navigation;
 using OpenEhr.RM.DataStructures.ItemStructure.Representation;
 
 namespace GastrOs.Wrapper.Helpers
@@ -18,7 +16,6 @@ namespace GastrOs.Wrapper.Helpers
         private static Dictionary<string, Type> tempTypeMap = new Dictionary<string, Type>();
         static SdeUtils()
         {
-            tempTypeMap["SECTION"] = typeof (Section);
             tempTypeMap["ELEMENT"] = typeof (Element);
             tempTypeMap["CLUSTER"] = typeof (Cluster);
         }
@@ -51,9 +48,9 @@ namespace GastrOs.Wrapper.Helpers
             {
                 try
                 {
-                    CArchetypeRoot root = GastrOsService.OperationalTemplate.Definition.LocateArchetypeById(concept.ArchetypeId);
-                    valueInstance = RmFactory.CreateRmType(root.RmTypeName) as Locatable;
-                    //valueInstance = rmType.GetConstructor(new Type[0]).Invoke(new object[0]) as Locatable;
+                    CArchetypeRoot root = GastrOsService.OperationalTemplate.LocateArchetypeById(concept.ArchetypeId);
+                    Type rmType = tempTypeMap[root.RmTypeName];
+                    valueInstance = rmType.GetConstructor(new Type[0]).Invoke(new object[0]) as Locatable;
                     if (valueInstance != null)
                         EhrSerialiser.LoadFromXmlString(valueInstance, serialisedValueInstance);
                 }

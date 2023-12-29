@@ -15,13 +15,13 @@ description
 			purpose = <"">
 			use = <"">
 			misuse = <"">
-			copyright = <"">
 		>
 	>
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"B50399214218D4466306E4AA7C8A78CB">
+		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"162D989B0D4667908799101AD45F6A72">
 	>
 
 definition
@@ -86,9 +86,9 @@ definition
 				include
 					archetype_id/value matches {/.*/}
 			}
-			allow_archetype SECTION[at0025] occurrences matches {0..*} matches {	-- EXAMINATION
+			allow_archetype OBSERVATION[at0022] occurrences matches {0..*} matches {	-- EXAMINATION
 				include
-					archetype_id/value matches {/openEHR-EHR-SECTION\.endoscopy_examination(-[a-zA-Z0-9_]+)*\.v1/}
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.endoscopy_examination(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 			allow_archetype OBSERVATION[at0023] occurrences matches {0..*} matches {	-- FINDINGS
 				include
@@ -185,12 +185,12 @@ ontology
 					text = <"PATHOLOGY">
 					description = <"*">
 				>
-				["at0023"] = <
-					text = <"FINDINGS">
+				["at0022"] = <
+					text = <"EXAMINATION">
 					description = <"*">
 				>
-				["at0025"] = <
-					text = <"EXAMINATION">
+				["at0023"] = <
+					text = <"FINDINGS">
 					description = <"*">
 				>
 			>

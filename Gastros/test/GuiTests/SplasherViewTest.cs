@@ -27,7 +27,7 @@ namespace GastrOs.Sde.Test.GuiTests
             elemConstraint = root.ConstraintAtPath("/items[at6000]/items[at6200]/items[at0500]") as CComplexObject;
             Assert.IsNotNull(constraint);
 
-            model = new Cluster(new DvText("Ulcer"), "at6200", null, null, constraint.ExtractArchetyped(), null, new Item[0]);
+            model = new Cluster(new DvText("Ulcer"), "at6200", null, null, null, null, new Item[0]);
             control = new SplasherControl(constraint, elemConstraint);
             view = container.Resolve<ISplasherView<IMultiChoiceView>>();
             IMultiChoiceView innerView = container.Resolve<IMultiChoiceView>();

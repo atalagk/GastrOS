@@ -61,66 +61,27 @@
     </other_details>
   </description>
   <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.endoscopy_report_composition.v1" concept_name="Endoscopy Report">
-    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.endoscopy_exam.v1" concept_name="Endoscopy exam" path="/content[at0025]">
-      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.endoscopy_examination.v1" concept_name="Endoscopy Examination" path="/items[at0001]" annotation="formAspects(width=800,height=500)">
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_exam_characteristics-gastros.v1" concept_name="MST Examination Characteristics | GastrOS" path="/data[at0001]/events[at0002]/data[at0005]/items[at0007]">
-          <Rule path="/items[at0005]" max="0" />
-          <Rule path="/items[at0144]/items[at0146]" annotation="isOrganiser" />
-          <Rule path="/items[at0144]/items[at0152]" annotation="isOrganiser" />
-          <Rule path="/items[at0144]/items[at0172]" annotation="isOrganiser;break(next)" />
-        </Items>
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_reasons_for_endoscopy.v1" concept_name="MST Reasons for Endoscopy" path="/data[at0001]/events[at0002]/data[at0005]/items[at0008]" annotation="break(tab)">
-          <Rule path="/items[at0001]" max="0" />
-          <Rule path="/items[at0002]" max="0" />
-          <Rule path="/items[at0003]/items[at0062]" annotation="alternateStyle(align=vertical, label=true, border=true)" />
-          <Rule path="/items[at0003]/items[at0065]" annotation="alternateStyle(align=vertical, label=true, border=true)" />
-          <Rule path="/items[at0003]/items[at0094]" annotation="showText(multi)" />
-          <Rule path="/items[at0003]/items[at0069]" annotation="alternateStyle(align=vertical, label=true, border=true); break(next)" />
-          <Rule path="/items[at0003]/items[at0081]" annotation="alternateStyle(align=vertical, label=true, border=true)" />
-          <Rule path="/items[at0003]/items[at0061]" annotation="showText(multi);break(next)" />
-          <Rule path="/items[at0003]/items[at0085]" annotation="alternateStyle(align=vertical, label=true, border=true)" />
-        </Items>
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_complications.v1" concept_name="MST Complications" path="/data[at0001]/events[at0002]/data[at0005]/items[at0009]" annotation="break(tab)">
-          <Rule path="/items[at0001]" annotation="alternateStyle(align=vertical, label=true)" />
-        </Items>
-      </Item>
-      <Item xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.vital_signs.v1" concept_name="Vital Signs" path="/items[at0003]" annotation="break(tab); grid(detailedEditor, composite{name=BP;separator=/;component=items[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/data[at0003]/items[at0004];component=items[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/data[at0003]/items[at0005]}, column{name=Systolic;path=items[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/data[at0003]/items[at0004]}, column{name=Diastolic;path=items[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/data[at0003]/items[at0005]}, column{name=Cuff size;path=items[openEHR-EHR-OBSERVATION.blood_pressure.v1]/protocol[at0011]/items[at0013]}, column{name=Position;path=items[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/state[at0007]/items[at0008]}, column{name=Pulse;path=items[openEHR-EHR-OBSERVATION.heart_rate.v1]/data[at0002]/events[at0003]/data[at0001]/items[at0004];showCell}, column{name=Description;path=items[openEHR-EHR-OBSERVATION.vital_signs_generic.v1]/data[at0001]/events[at0002]/data[at0003]/items[at0004];showCell})">
-        <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.vital_signs_generic.v1" concept_name="Vital Signs generic information" path="/items[at0001]" />
-        <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.heart_rate.v1" concept_name="Heart rate and rhythm" path="/items[at0001]">
-          <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0005]" max="0" />
-          <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0009]" max="0" />
-          <Rule path="/data[at0002]/events[at0003]/state[at0012]/items[at0013]" max="0" />
-          <Rule path="/data[at0002]/events[at0003]/state[at0012]/items[at1018]" max="0" />
-          <Rule path="/protocol[at0010]/items[at1019]" max="0" />
-          <Rule path="/protocol[at0010]/items[at1014]" max="0" />
-        </Item>
-        <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.blood_pressure.v1" concept_name="Blood Pressure" path="/items[at0001]">
-          <Rule path="/data[at0001]/events[at0006]/data[at0003]/items[at1006]" max="0" />
-          <Rule path="/data[at0001]/events[at0006]/data[at0003]/items[at1007]" max="0" />
-          <Rule path="/data[at0001]/events[at0006]/data[at0003]/items[at0033]" max="0" />
-          <Rule path="/data[at0001]/events[at0006]/state[at0007]/items[at1052]" max="0" />
-          <Rule path="/data[at0001]/events[at0006]/state[at0007]/items[at1043]" max="0" />
-          <Rule path="/data[at0001]/events[at0006]/state[at0007]/items[at1005]" max="0" />
-          <Rule path="/data[at0001]/events[at1042]" max="0" />
-          <Rule path="/protocol[at0011]/items[at1033]" max="0" />
-          <Rule path="/protocol[at0011]/items[at1035]" max="0" />
-          <Rule path="/protocol[at0011]/items[at1038]" max="0" />
-          <Rule path="/protocol[at0011]/items[at1010]" max="0" />
-        </Item>
-      </Item>
-      <Item xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adverse_reactions.v1" concept_name="Adverse reactions" path="/items[at0004]" annotation="break(next); grid(cellEditable, column{name=Date/time;path=items[openEHR-EHR-EVALUATION.adverse.v1]/data[at0002]/items[at0019]/items[at0027];showCell}, column{name=Cause;path=items[openEHR-EHR-EVALUATION.adverse.v1]/data[at0002]/items[at0019]/items[at0022];showCell}, column{name=Description;path=items[openEHR-EHR-EVALUATION.adverse.v1]/data[at0002]/items[at0003];showCell})">
-        <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.adverse.v1" concept_name="Adverse reaction" path="/items[at0001]">
-          <Rule path="/data[at0002]/items[at0010]" max="0" />
-          <Rule path="/data[at0002]/items[at0019]" max="1" />
-          <Rule path="/data[at0002]/items[at0019]/items[at0032]" max="0" />
-          <Rule path="/data[at0002]/items[at0019]/items[at0015]" max="0" />
-          <Rule path="/data[at0002]/items[at0019]/items[at0004]" max="0" />
-          <Rule path="/data[at0002]/items[at0019]/items[at0020]" max="0" />
-          <Rule path="/data[at0002]/items[at0019]/items[at0021]" max="0" />
-          <Rule path="/data[at0002]/items[at0019]/items[at0023]" max="0" />
-          <Rule path="/data[at0002]/items[at0019]/items[at0028]" max="0" />
-        </Item>
-      </Item>
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.endoscopy_examination.v1" concept_name="Endoscopy Examination" path="/content[at0022]" annotation="formAspects(width=750,height=380)">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_exam_characteristics-gastros.v1" concept_name="MST Examination Characteristics | GastrOS" path="/data[at0001]/events[at0002]/data[at0005]/items[at0007]">
+        <Rule path="/items[at0005]" max="0" />
+        <Rule path="/items[at0144]/items[at0146]" annotation="isOrganiser" />
+        <Rule path="/items[at0144]/items[at0152]" annotation="isOrganiser" />
+        <Rule path="/items[at0144]/items[at0172]" annotation="isOrganiser;break(next)" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_reasons_for_endoscopy.v1" concept_name="MST Reasons for Endoscopy" path="/data[at0001]/events[at0002]/data[at0005]/items[at0008]">
+        <Rule path="/items[at0001]" max="0" />
+        <Rule path="/items[at0002]" max="0" />
+        <Rule path="/items[at0003]/items[at0062]" annotation="alternateStyle(align=vertical, label=true, border=true)" />
+        <Rule path="/items[at0003]/items[at0065]" annotation="alternateStyle(align=vertical, label=true, border=true)" />
+        <Rule path="/items[at0003]/items[at0094]" annotation="showText(multi)" />
+        <Rule path="/items[at0003]/items[at0069]" annotation="alternateStyle(align=vertical, label=true, border=true); break(next)" />
+        <Rule path="/items[at0003]/items[at0081]" annotation="alternateStyle(align=vertical, label=true, border=true)" />
+        <Rule path="/items[at0003]/items[at0061]" annotation="showText(multi);break(next)" />
+        <Rule path="/items[at0003]/items[at0085]" annotation="alternateStyle(align=vertical, label=true, border=true)" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_complications.v1" concept_name="MST Complications" path="/data[at0001]/events[at0002]/data[at0005]/items[at0009]">
+        <Rule path="/items[at0001]" annotation="alternateStyle(align=vertical, label=true)" />
+      </Items>
     </Content>
     <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.endoscopy_findings.v1" concept_name="Endoscopy Findings" path="/content[at0023]">
       <Rule path="/data[at0001]/events[at0002]/data[at0005]/items[at0008]" max="0" />
@@ -534,20 +495,14 @@
         <Rule path="/items[at1000]/items[at6527]/items[at0500]" annotation="showAs(splash,smart);showWithParent (simple)" />
       </Items>
     </Content>
-    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1" concept_name="Endoscopy Diagnosis" path="/content[at0018]" annotation="formAspects(width=450,height=600)">
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_diagnoses-gastros-CR7.v1" concept_name="MST Diagnoses | GastrOS | CR7" path="/data[at0001]/items[at0002]">
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1" concept_name="Endoscopy Diagnosis" path="/content[at0018]" annotation="formAspects(width=450,height=400)">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_diagnoses-gastros.v1" concept_name="MST Diagnoses | GastrOS" path="/data[at0001]/items[at0002]">
         <Rule path="/items[at0001]" max="0" />
         <Rule path="/items[at0087]" max="0" />
         <Rule path="/items[at0124]/items[at0125]" annotation="isOrganiser" />
-        <Rule path="/items[at0124]/items[at0125]/items[at0.212]" max="4" annotation="showInstances (4)" />
-        <Rule path="/items[at0124]/items[at0125]/items[at0.212]/items[at0.213]" annotation="showValueContext(organise)" />
-        <Rule path="/items[at0124]/items[at0125]/items[at0.212]/items[at0.195]" annotation="showValueContext(organise)" />
-        <Rule path="/items[at0124]/items[at0125]/items[at0126]" max="0" />
+        <Rule path="/items[at0124]/items[at0125]/items[at0126]" max="4" annotation="showValueContext(organise);showInstances (4)" />
         <Rule path="/items[at0124]/items[at0142]" annotation="isOrganiser" />
-        <Rule path="/items[at0124]/items[at0142]/items[at0.215]" max="4" annotation="showInstances (4)" />
-        <Rule path="/items[at0124]/items[at0142]/items[at0.215]/items[at0.216]" annotation="showValueContext(organise)" />
-        <Rule path="/items[at0124]/items[at0142]/items[at0.215]/items[at0.195]" annotation="showValueContext(organise)" />
-        <Rule path="/items[at0124]/items[at0142]/items[at0143]" max="0" />
+        <Rule path="/items[at0124]/items[at0142]/items[at0143]" max="4" annotation="showValueContext(organise);showInstances (4)" />
       </Items>
     </Content>
     <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.endoscopy_interventions.v1" concept_name="Endoscopy Interventions" path="/content[at0019]">

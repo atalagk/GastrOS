@@ -4,7 +4,6 @@ using GastrOs.Sde.Support;
 using GastrOs.Wrapper.DataObjects;
 using GastrOs.Wrapper.Reports.Representation;
 using OpenEhr.AM.Archetype.ConstraintModel;
-using OpenEhr.DesignByContract;
 using OpenEhr.Futures.OperationalTemplate;
 using OpenEhr.RM.DataStructures.ItemStructure.Representation;
 using OpenEhr.RM.DataTypes.Basic;
@@ -203,8 +202,6 @@ namespace GastrOs.Wrapper.Reports
 
         internal static Diagnoses ExtractDiagnoses(CArchetypeRoot root, Cluster diagnosesCluster, SdeConcept concept)
         {
-            //"<Organ>: Dx1, Dx2, ... Dx4"
-
             Diagnoses diagnoses = new Diagnoses();
             
             //MST diagnoses -> [Upper/Lower/ERCP] -> Organ *
@@ -213,63 +210,21 @@ namespace GastrOs.Wrapper.Reports
             if (tract == null || tractConstraint == null)
                 return diagnoses;
 
-            //_Organ_ -> Dx -> DxText, Qualifier/Attribute
             foreach (CComplexObject organConstraint in tractConstraint.ExtractChildConstraints())
             {
+                //"<Organ>: Dx1, Dx2, ... Dx4"
                 foreach (Cluster organ in tract.ChildInstances(organConstraint))
                 {
                     OrganDiagnoses organDiagnoses = new OrganDiagnoses(organConstraint.ExtractOntologyText());
-
-                    //Organ -> _Dx_ -> DxText, Qualifier/Attribute
-                    foreach (CComplexObject dxConstraint in organConstraint.ExtractChildConstraints())
+                    foreach (Element diag in organ.Items.Cast<Element>())
                     {
-                        foreach (Item dx in organ.ChildInstances(dxConstraint))
-                        {
-                            //Could either be dx-tuple or "other free text"
-                            if (dx is Element)
-                            { //if Element, then must be other free text
-                                string value = FormatDataValue(root, dx as Element);
-                                if (string.IsNullOrEmpty(value))
-                                    continue;
-                                organDiagnoses.FreeText = value;
-                            }
-                            else if (dx is Cluster)
-                            { //otherwise, then must be usual dx text + qualifier
-                                Cluster dxCluster = dx as Cluster;
-
-                                //Implicit, domain-specific assumption: always the case that
-                                //DxText is followed by qualifier
-                                ICollection<CObject> dxConstraints = dxConstraint.ExtractChildConstraints();
-                                Check.Assert(dxConstraints.Count == 2);
-                                CComplexObject dxTextConstraint = dxConstraints.First() as CComplexObject;
-                                CComplexObject dxQualConstraint = dxConstraints.Last() as CComplexObject;
-                                Check.Assert(dxTextConstraint != null);
-                                Check.Assert(dxQualConstraint != null);
-
-                                //try retrieving the child Element that corresponds to "dx text" portion
-                                Element dxTextElem = dxCluster.ChildInstances(dxTextConstraint).FirstOrDefault() as Element;
-                                Element dxQualElem = dxCluster.ChildInstances(dxQualConstraint).FirstOrDefault() as Element;
-                                string dxText = FormatDataValue(root, dxTextElem);
-                                if (string.IsNullOrEmpty(dxText))
-                                    continue;
-                                if (dxQualElem != null)
-                                {
-                                    DvCodedText dxQualValue = dxQualElem.ValueAs<DvCodedText>();
-                                    Check.Assert(dxQualValue != null);
-                                    string dxQualCode = dxQualValue.Value; //the atcode for qualifier
-                                    OntologyItem ontology = AomHelper.ExtractOntology(dxQualCode, root);
-                                    if (ontology != null && !string.Equals(dxText, "Normal"))
-                                    {
-                                        //Now determine whether the qualifier is an actual qualifier or an attribute
-                                        string dxQual = ontology.Text.Replace("...", "");
-                                        //NOTE hard-coded value dependency!!! Only a temporary workaround
-                                        bool isQualifier = string.Equals(ontology.Description, "Qualifiers");
-                                        dxText = isQualifier ? dxText + " " + dxQual : dxQual + " " + dxText;
-                                    }
-                                }
-                                organDiagnoses.Diagnoses.Add(dxText);
-                            }
-                        }
+                        string value = FormatDataValue(root, diag);
+                        if (string.IsNullOrEmpty(value))
+                            continue;
+                        if (diag.ArchetypeNodeId.Equals(FreeText))
+                            organDiagnoses.FreeText = value;
+                        else
+                            organDiagnoses.Diagnoses.Add(value);
                     }
                     diagnoses.Organs.Add(organDiagnoses);
                 }

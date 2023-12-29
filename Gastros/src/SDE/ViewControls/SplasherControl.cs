@@ -53,11 +53,8 @@ namespace GastrOs.Sde.ViewControls
 
         ~SplasherControl()
         {
-            if (View != null)
-            {
-                //Release event handler to avoid memory leak
-                View.SplashedView.ItemSelectionChanged -= UpdateModelAndSelectability;
-            }
+            //Release event handler to avoid memory leak
+            View.SplashedView.ItemSelectionChanged -= UpdateModelAndSelectability;
         }
 
         protected override void SetViewPostexecute(ISplasherView<IMultiChoiceView> oldView)
@@ -138,7 +135,7 @@ namespace GastrOs.Sde.ViewControls
             /*
             //NOTE Bulk updating isn't reliable:
             //consider the case of loading view from model where more than one item is selected.
-              first RefreshViewFromModel() is going to be called, which in turn will select
+              first UpdateViewFromModel() is going to be called, which in turn will select
               the first item in the view, effectively feeding back to this method and trying to
               update the model to have just that one corresponding item (thereby deleting the
               rest).
@@ -184,7 +181,7 @@ namespace GastrOs.Sde.ViewControls
             get { return false; }
         }
 
-        public override void RefreshViewFromModel()
+        public override void UpdateViewFromModel()
         {
             View.Title = TitleFunction();
             IEnumerable<string> selectedCodes = GetPresentCodesFromModel();

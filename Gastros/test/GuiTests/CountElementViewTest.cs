@@ -28,7 +28,7 @@ namespace GastrOs.Sde.Test.GuiTests
 
             _control = new CountElementControl(constraint);
 
-            model = new Element(new DvText("count1"), "at6210", null, null, constraint.ExtractArchetyped(), null, new DvCount(99), null);
+            model = new Element(new DvText("count1"), "at6210", null, null, null, null, new DvCount(99), null);
             view = container.Resolve<INumericView>();
         }
 
@@ -73,7 +73,7 @@ namespace GastrOs.Sde.Test.GuiTests
         {
             InitialConstructionTest();
 
-            Element model2 = new Element(new DvText("count2"), "at6210", null, null, constraint.ExtractArchetyped(), null, new DvCount(11), null);
+            Element model2 = new Element(new DvText("count2"), "at6210", null, null, null, null, new DvCount(11), null);
             INumericUnitView view2 = container.Resolve<INumericUnitView>();
 
             _control.Model = model2;
@@ -123,7 +123,7 @@ namespace GastrOs.Sde.Test.GuiTests
         {
             InitialConstructionTest();
 
-            _control.Model = new Element(new DvText("text3"), "at0000", null, null, constraint.ExtractArchetyped(), null, new DvText("Invalid"), null);
+            _control.Model = new Element(new DvText("text3"), "at0000", null, null, null, null, new DvText("Invalid"), null);
         }
 
         [Test]
@@ -132,7 +132,7 @@ namespace GastrOs.Sde.Test.GuiTests
         {
             InitialConstructionTest();
 
-            _control.Model = new Element(new DvText("text3"), "at6230", null, null, constraint.ExtractArchetyped(), null, new DvBoolean(true), null);
+            _control.Model = new Element(new DvText("text3"), "at6230", null, null, null, null, new DvBoolean(true), null);
         }
     }
 }

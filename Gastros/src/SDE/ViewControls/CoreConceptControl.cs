@@ -73,7 +73,7 @@ namespace GastrOs.Sde.ViewControls
             get { return true; }
         }
 
-        public override void RefreshViewFromModel()
+        public override void UpdateViewFromModel()
         {
             View.Title = TitleFunction();
             View.Presence = Model.GetPresence(Constraint);

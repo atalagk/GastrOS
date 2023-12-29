@@ -120,7 +120,7 @@ namespace GastrOs.Sde.ViewControls
             /*
             //NOTE Bulk updating isn't reliable:
             //consider the case of loading view from model where more than one item is selected.
-              first RefreshViewFromModel() is going to be called, which in turn will select
+              first UpdateViewFromModel() is going to be called, which in turn will select
               the first item in the view, effectively feeding back to this method and trying to
               update the model to have just that one corresponding item (thereby deleting the
               rest).
@@ -160,7 +160,7 @@ namespace GastrOs.Sde.ViewControls
             get { return false; }
         }
 
-        public override void RefreshViewFromModel()
+        public override void UpdateViewFromModel()
         {
             View.Title = TitleFunction();
             IEnumerable<string> selectedCodes = GetPresentCodesFromModel();
@@ -168,6 +168,19 @@ namespace GastrOs.Sde.ViewControls
             {
                 View.SetSelected(selectable, selectedCodes.Contains(selectable));
             }
+        }
+
+        public override string GetOntologyTitleAndDesc()
+        {
+            OntologyItem ontology = elementConstraint.ExtractOntology();
+            if (ontology == null)
+                return null;
+            return ontology.Text + " " + ontology.Description;
+        }
+
+        public override string GetOntologyTitle()
+        {
+            return elementConstraint.ExtractOntologyText();
         }
     }
 }

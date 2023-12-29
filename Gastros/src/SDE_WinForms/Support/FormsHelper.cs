@@ -201,10 +201,6 @@ namespace GastrOs.Sde.Views.WinForms.Support
             {
                 (control as MonthCalendar).Enabled = editable;
             }
-            else if (control is DataGridView)
-            {
-                (control as DataGridView).Enabled = editable;
-            }
             else if (control is TabControl)
             {
                 foreach (TabPage tab in (control as TabControl).TabPages)

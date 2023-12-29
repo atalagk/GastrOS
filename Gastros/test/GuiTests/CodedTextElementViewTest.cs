@@ -6,7 +6,6 @@ using GastrOs.Sde.Views;
 using NUnit.Framework;
 using OpenEhr.AM.Archetype.ConstraintModel;
 using Microsoft.Practices.Unity;
-using OpenEhr.RM.Common.Archetyped.Impl;
 using OpenEhr.RM.DataStructures.ItemStructure.Representation;
 using OpenEhr.RM.DataTypes.Text;
 
@@ -45,7 +44,7 @@ namespace GastrOs.Sde.Test.GuiTests
             control = new CodedTextElementControl(constraint);
 
             termId = ((CComplexObject)constraint.ExtractElemValueConstraint()).ExtractCodePhrase().TerminologyId.Value;
-            model = new Element(new DvCodedText("text1"), "at6250", null, null, constraint.ExtractArchetyped(), null, new DvCodedText("at6251", "", termId), null);
+            model = new Element(new DvCodedText("text1"), "at6250", null, null, null, null, new DvCodedText("at6251", "", termId), null);
             view = container.Resolve<IListView>("default");
         }
 
@@ -79,7 +78,7 @@ namespace GastrOs.Sde.Test.GuiTests
             InitialConstructionTest();
 
             //Introduce new view and model
-            Element textModel2 = new Element(new DvText("text2"), "at6250", null, null, constraint.ExtractArchetyped(), null, new DvCodedText("at6252", "", termId), null);
+            Element textModel2 = new Element(new DvText("text2"), "at6250", null, null, null, null, new DvCodedText("at6252", "", termId), null);
             IListView textView2 = container.Resolve<IListView>("default");
 
             Assert.IsTrue(string.IsNullOrEmpty(textView2.Text));

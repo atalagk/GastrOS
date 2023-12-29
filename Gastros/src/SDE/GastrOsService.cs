@@ -85,10 +85,10 @@ namespace GastrOs.Sde
         {
             if (currentOpt == null)
                 throw new InvalidOperationException("Operational template hasn't been specified yet");
-            MasterController masterController = new MasterController(currentOpt);
+            Coordinator coordinator = new Coordinator(currentOpt);
             if (instance == null)
-                instance = RmFactory.Instantiate(archId, currentOpt.Definition);
-            return masterController.GenerateView(instance, archId);
+                instance = RmFactory.Instantiate(archId, currentOpt);
+            return coordinator.GenerateView(instance, archId);
         }
 
         public static ViewControl GenerateView(string archId)
