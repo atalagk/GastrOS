@@ -1,0 +1,170 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FE77437-80B7-429C-B86C-91F57F20CA49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GastrOs.Sde</RootNamespace>
+    <AssemblyName>GastrOs.Sde</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DBC_CHECK_ALL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;DBC_CHECK_INVARIANT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DBC_CHECK_ALL</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;DBC_CHECK_INVARIANT</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Elements\CustomConfigSection.cs" />
+    <Compile Include="Configuration\Elements\MarginElement.cs" />
+    <Compile Include="Configuration\Elements\CustomConfigElement.cs" />
+    <Compile Include="Configuration\Elements\FontElement.cs" />
+    <Compile Include="Configuration\Elements\FormSizeElement.cs" />
+    <Compile Include="Configuration\Elements\PresenceSemanticsElement.cs" />
+    <Compile Include="Configuration\EngineConfigurationSection.cs" />
+    <Compile Include="Configuration\GastrOsConfig.cs" />
+    <Compile Include="Configuration\GastrOsConfigurationSectionGroup.cs" />
+    <Compile Include="Directives\AlternateStyleDirective.cs" />
+    <Compile Include="Directives\BreakDirective.cs" />
+    <Compile Include="Directives\CoreConceptDirective.cs" />
+    <Compile Include="Directives\DirectiveHelper.cs" />
+    <Compile Include="Directives\DirectiveStore.cs" />
+    <Compile Include="Directives\FormAspectsDirective.cs" />
+    <Compile Include="Directives\GridDirective.cs" />
+    <Compile Include="Directives\HideChildrenDirective.cs" />
+    <Compile Include="Directives\HideOnGuiDirective.cs" />
+    <Compile Include="Directives\IDirective.cs" />
+    <Compile Include="Directives\OrganiserDirective.cs" />
+    <Compile Include="Directives\ShowAsDirective.cs" />
+    <Compile Include="Directives\ShowDescriptionDirective.cs" />
+    <Compile Include="Directives\ShowInstancesDirective.cs" />
+    <Compile Include="Directives\ShowTextDirective.cs" />
+    <Compile Include="Directives\ShowValueContextDirective.cs" />
+    <Compile Include="Directives\ShowWithParentDirective.cs" />
+    <Compile Include="Engine\DataValueProviders.cs" />
+    <Compile Include="Engine\IDataValueProvider.cs" />
+    <Compile Include="Engine\InstancePruner.cs" />
+    <Compile Include="Engine\RmFactory.cs" />
+    <Compile Include="Engine\ViewsGenerator.cs" />
+    <Compile Include="GastrOsService.cs" />
+    <Compile Include="Engine\MasterController.cs" />
+    <Compile Include="Support\AomHelper.cs" />
+    <Compile Include="Configuration\LayoutConfigurationSection.cs" />
+    <Compile Include="Support\AttributeDescriptor.cs" />
+    <Compile Include="Support\EventRaisingList.cs" />
+    <Compile Include="Support\Logger.cs" />
+    <Compile Include="Support\EhrSerialiser.cs" />
+    <Compile Include="Support\OntologyItem.cs" />
+    <Compile Include="Support\SimpleAomVisitor.cs" />
+    <Compile Include="Support\StringUtils.cs" />
+    <Compile Include="ViewControls\BoolElementControl.cs" />
+    <Compile Include="ViewControls\CodedTextElementControl.cs" />
+    <Compile Include="ViewControls\CoreConceptControl.cs" />
+    <Compile Include="ViewControls\CountElementControl.cs" />
+    <Compile Include="ViewControls\DateElementControl.cs" />
+    <Compile Include="ViewControls\EvaluationGridControl.cs" />
+    <Compile Include="ViewControls\GridControlBase.cs" />
+    <Compile Include="ViewControls\MultiChoiceControl.cs" />
+    <Compile Include="ViewControls\ObservationsGridControl.cs" />
+    <Compile Include="ViewControls\SimpleContainerControl.cs" />
+    <Compile Include="ViewControls\SplasherControl.cs" />
+    <Compile Include="ViewControls\TypedViewControl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ICheckView.cs" />
+    <Compile Include="Views\IDateView.cs" />
+    <Compile Include="Views\IGridView.cs" />
+    <Compile Include="Views\IListView.cs" />
+    <Compile Include="Views\IContainerView.cs" />
+    <Compile Include="Views\ICoreConceptView.cs" />
+    <Compile Include="Views\IMultiChoiceView.cs" />
+    <Compile Include="Views\INumericView.cs" />
+    <Compile Include="Views\INumericUnitView.cs" />
+    <Compile Include="Views\IScalarView.cs" />
+    <Compile Include="Views\ISplasherView.cs" />
+    <Compile Include="Views\ITextView.cs" />
+    <Compile Include="Views\IView.cs">
+    </Compile>
+    <Compile Include="ViewControls\ViewControl.cs" />
+    <Compile Include="ViewControls\QuantElementControl.cs" />
+    <Compile Include="ViewControls\TextElementControl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.315.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.315.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenEHR, Version=1.0.4055.35121, Culture=neutral, PublicKeyToken=a8f3e8f291015042, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\OpenEHR.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core, Version=3.5.0.0">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logging.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

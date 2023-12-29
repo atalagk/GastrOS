@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="GastrOs.Wrapper" namespace="GastrOs.Wrapper.DataObjects">
+  <class name="Patient" table="Patient">
+    <id name="ID">
+      <column name="PID" sql-type="bigint" not-null="true"/>
+      <generator class="identity"/>
+    </id>
+    <property name="PatientNo" column="Patient_No" not-null="true" />
+    <property name="LastName" column="Surname" />
+    <property name="FirstName" column="Name" />
+    <property name="MidName" column="Midname" />
+    <property name="Birthdate" column="DoB" />
+    <property name="Gender" column="Gender" />
+    <property name="Ethnicity" column="Ethnicity" />
+    <one-to-one name="Clinical" class="Clinical"/>
+    <many-to-one name="Insurer" class="Insurer" column="Insurer"/>
+    <set name="Examinations" inverse="true">
+      <key column="Patient_ID"/>
+      <one-to-many class="Examination"/>
+    </set>
+  </class>
+
+  <class name="Clinical" table="Clinical">
+    <id name="ID" column="Clinical_ID">
+      <generator class="foreign">
+        <param name="property">Patient</param>
+      </generator>
+    </id>
+    <one-to-one name="Patient" class="Patient" constrained="true"/>
+    <property name="CRF" column="CRF" />
+    <property name="HBV" column="HBV" />
+    <property name="HCV" column="HCV" />
+    <property name="HDV" column="HDV" />
+    <property name="HIV" column="HIV" />
+    <property name="Details" column="details" />
+  </class>
+
+  <class name="Insurer" table="Insurer">
+    <id name="ID">
+      <column name="Ins_ID" sql-type="bigint" not-null="true"/>
+      <generator class="identity"/>
+    </id>
+    <property name="Name" column="Ins_Name" />
+  </class>
+</hibernate-mapping>

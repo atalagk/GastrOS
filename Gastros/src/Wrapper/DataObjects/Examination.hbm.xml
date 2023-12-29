@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="GastrOs.Wrapper" namespace="GastrOs.Wrapper.DataObjects">
+  <class name="Examination" table="Examination">
+    <id name="ID">
+      <column name="Report_ID" sql-type="bigint" not-null="true" />
+      <generator class="identity" />
+    </id>
+    <many-to-one name="Patient" class="Patient" column="Patient_ID" cascade="all"/>
+    <property name="ReportDate" column="Report_Date"/>
+    <property name="EndoscopyDate" column="Endoscopy_Date" not-null="true" />
+    <property name="Doctor" column="Doctor" />
+    <many-to-one name="Dept" class="Department" column="Department" />
+    <many-to-one name="EndoscopyType" class="EndoscopyType" column="Endoscopy_Type" />
+    <many-to-one name="Device" class="EndoscopyDevice" column="Device" />
+    <property name="Premedication" column="Premedication" />
+    <property name="ReportText" column="Report_Text" />
+    <property name="ExamInfoText" column="Exam_Info_Text" />
+    <property name="FindingsText" column="Findings_Text" />
+    <property name="DiagnosesText" column="Diagnoses_Text" />
+    <property name="InterventionsText" column="Interventions_Text" />
+    <property name="Notes" column="Notes" />
+    <map name="SerialisedValues" table="Exam_Report">
+      <key column="Exam_Id"/>
+      <index-many-to-many class="SdeConcept" column="Term_Id"/>
+      <element column="XmlText" type="String"/>
+    </map>
+    <many-to-one name="Signout1" class="SignoutEndoscopist" column="Signout1" />
+    <many-to-one name="Signout2" class="SignoutEndoscopist" column="Signout2" />
+    <many-to-one name="Signout3" class="SignoutEndoscopist" column="Signout3" />
+    <many-to-one name="Signout4" class="SignoutEndoscopist" column="Signout4" />
+    <property name="LogText" column="Log" />
+  </class>
+
+  <class name="EndoscopyType" table="Endoscopy_Type">
+    <id name="ID">
+      <column name="Type_ID" sql-type="bigint" not-null="true"/>
+      <generator class="identity"/>
+    </id>
+    <property name="Name" column="Type_Name" />
+    <property name="OpTemplate" column="Op_Template" />
+    <map name="OrganOrdinals" table="Endoscopy_Type_Organs">
+      <key column="Endoscopy_Type_Id"/>
+      <index-many-to-many class="SdeConcept" column="Organ_Id"/>
+      <element column="Ordinal"/>
+    </map>
+  </class>
+
+  <class name="SdeConcept" table="ArchIdMapping">
+    <id name="ID">
+      <column name="ID" sql-type="bigint" not-null="true"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one name="Parent" class="SdeConcept" column="Parent"/>
+    <set name="Children" inverse="true">
+      <key column="Parent"/>
+      <one-to-many class="SdeConcept"/>
+    </set>
+    <property name="Term" column="Term"/>
+    <property name="ArchetypeId" column="Archetype_Id"/>
+  </class>
+  
+  <class name="Department" table="Department">
+    <id name="ID">
+      <column name="Dept_ID" sql-type="bigint" not-null="true"/>
+      <generator class="identity"/>
+    </id>
+    <property name="Name" column="Dept_Name" />
+  </class>
+
+  <class name="EndoscopyDevice" table="Device">
+    <id name="ID">
+      <column name="Device_ID" sql-type="bigint" not-null="true"/>
+      <generator class="identity"/>
+    </id>
+    <property name="Name" column="Device_Name" />
+  </class>
+  
+  <class name="SignoutEndoscopist" table="Endoscopist">
+    <id name="ID">
+      <column name="ID" sql-type="bigint" not-null="true"/>
+      <generator class="identity"/>
+    </id>
+    <property name="Name" column="Signout_Name" />
+  </class>
+</hibernate-mapping>

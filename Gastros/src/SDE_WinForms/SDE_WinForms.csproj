@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BC5A783-784A-4701-854B-BB2541CAEFCF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GastrOs.Sde.Views.WinForms</RootNamespace>
+    <AssemblyName>GastrOs.Sde.Views.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenEHR, Version=1.0.4055.35121, Culture=neutral, PublicKeyToken=a8f3e8f291015042, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\OpenEHR.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckboxWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CodedTextWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainerWidgetBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CoreConceptWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DateWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementWidgetBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Generic\AutoHideForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generic\AutoTabPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Generic\BoxPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Generic\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GridWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Generic\LockEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generic\MultiStateCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Generic\MultiStateCheck.Designer.cs">
+      <DependentUpon>MultiStateCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generic\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MultiChoiceWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MultilineTextWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NumericWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="QuantityWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RadioWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SimpleContainerWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SplasherWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Support\LocalisedGuiStrings.tr-TR.Designer.cs">
+      <DependentUpon>LocalisedGuiStrings.tr-TR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Support\FormInvoker.cs" />
+    <Compile Include="Support\FormsHelper.cs" />
+    <Compile Include="Support\GuiDictionary.cs" />
+    <Compile Include="Support\LocalisedGuiStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalisedGuiStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TabbedContainerWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WidgetBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SDE\SDE.csproj">
+      <Project>{4FE77437-80B7-429C-B86C-91F57F20CA49}</Project>
+      <Name>SDE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GridWidget.resx">
+      <DependentUpon>GridWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generic\MultiStateCheck.resx">
+      <DependentUpon>MultiStateCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Support\LocalisedGuiStrings.tr-TR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalisedGuiStrings.tr-TR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Support\LocalisedGuiStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalisedGuiStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
