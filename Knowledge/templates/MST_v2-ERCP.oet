@@ -495,14 +495,20 @@
         <Rule path="/items[at1000]/items[at6527]/items[at0500]" annotation="showAs(splash,smart);showWithParent (simple)" />
       </Items>
     </Content>
-    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1" concept_name="Endoscopy Diagnosis" path="/content[at0018]" annotation="formAspects(width=450,height=400)">
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_diagnoses-gastros.v1" concept_name="MST Diagnoses | GastrOS" path="/data[at0001]/items[at0002]">
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1" concept_name="Endoscopy Diagnosis" path="/content[at0018]" annotation="formAspects(width=450,height=600)">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_diagnoses-gastros-CR7.v1" concept_name="MST Diagnoses | GastrOS | CR7" path="/data[at0001]/items[at0002]">
         <Rule path="/items[at0001]" max="0" />
         <Rule path="/items[at0087]" max="0" />
         <Rule path="/items[at0124]/items[at0125]" annotation="isOrganiser" />
-        <Rule path="/items[at0124]/items[at0125]/items[at0126]" max="4" annotation="showValueContext(organise);showInstances (4)" />
+        <Rule path="/items[at0124]/items[at0125]/items[at0.212]" max="4" annotation="showInstances (4)" />
+        <Rule path="/items[at0124]/items[at0125]/items[at0.212]/items[at0.213]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0124]/items[at0125]/items[at0.212]/items[at0.195]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0124]/items[at0125]/items[at0126]" max="0" />
         <Rule path="/items[at0124]/items[at0142]" annotation="isOrganiser" />
-        <Rule path="/items[at0124]/items[at0142]/items[at0143]" max="4" annotation="showValueContext(organise);showInstances (4)" />
+        <Rule path="/items[at0124]/items[at0142]/items[at0.215]" max="4" annotation="showInstances (4)" />
+        <Rule path="/items[at0124]/items[at0142]/items[at0.215]/items[at0.216]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0124]/items[at0142]/items[at0.215]/items[at0.195]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0124]/items[at0142]/items[at0143]" max="0" />
       </Items>
     </Content>
     <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.endoscopy_interventions.v1" concept_name="Endoscopy Interventions" path="/content[at0019]">

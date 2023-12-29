@@ -127,8 +127,7 @@
             <excludedValues>local::at0126</excludedValues>
           </constraint>
         </Rule>
-        <Rule path="/items[at0005]/items[at0.210]" annotation="isOrganiser" />
-        <Rule path="/items[at0005]/items[at0.210]/items[at0.218]" annotation="showText(multi)" />
+        <Rule path="/items[at0005]/items[at0.210]" max="0" />
         <Rule path="/items[at0144]" max="0" />
       </Items>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_reasons_for_endoscopy.v1" concept_name="MST Reasons for Endoscopy" path="/data[at0001]/events[at0002]/data[at0005]/items[at0008]">
@@ -566,14 +565,23 @@
         <Rule path="/items[at1000]/items[at6527]/items[at0500]" annotation="showAs(splash,smart);showWithParent (simple)" />
       </Items>
     </Content>
-    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1" concept_name="Endoscopy Diagnosis" path="/content[at0018]" annotation="formAspects(width=450,height=550)">
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_diagnoses-gastros.v1" concept_name="MST Diagnoses | GastrOS" path="/data[at0001]/items[at0002]">
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.endoscopy_diagnosis.v1" concept_name="Endoscopy Diagnosis" path="/content[at0018]" annotation="formAspects(width=450,height=600)">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mst_diagnoses-gastros-CR7.v1" concept_name="MST Diagnoses | GastrOS | CR7" path="/data[at0001]/items[at0002]">
         <Rule path="/items[at0001]/items[at0002]" annotation="isOrganiser" />
-        <Rule path="/items[at0001]/items[at0002]/items[at0004]" max="4" annotation="showValueContext(organise);showInstances (4)" />
+        <Rule path="/items[at0001]/items[at0002]/items[at0.192]" max="4" annotation="showInstances(4)" />
+        <Rule path="/items[at0001]/items[at0002]/items[at0.192]/items[at0.194]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0001]/items[at0002]/items[at0.192]/items[at0.195]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0001]/items[at0002]/items[at0004]" max="0" />
         <Rule path="/items[at0001]/items[at0028]" annotation="isOrganiser" />
-        <Rule path="/items[at0001]/items[at0028]/items[at0029]" max="4" annotation="showValueContext(organise);showInstances (4)" />
+        <Rule path="/items[at0001]/items[at0028]/items[at0.196]" max="4" annotation="showInstances(4)" />
+        <Rule path="/items[at0001]/items[at0028]/items[at0.196]/items[at0.197]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0001]/items[at0028]/items[at0.196]/items[at0.195]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0001]/items[at0028]/items[at0029]" max="0" />
         <Rule path="/items[at0001]/items[at0061]" annotation="isOrganiser" />
-        <Rule path="/items[at0001]/items[at0061]/items[at0062]" max="4" annotation="showValueContext(organise);showInstances (4)" />
+        <Rule path="/items[at0001]/items[at0061]/items[at0.208]" max="4" annotation="showInstances(4)" />
+        <Rule path="/items[at0001]/items[at0061]/items[at0.208]/items[at0.209]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0001]/items[at0061]/items[at0.208]/items[at0.195]" annotation="showValueContext(organise)" />
+        <Rule path="/items[at0001]/items[at0061]/items[at0062]" max="0" />
         <Rule path="/items[at0087]" max="0" />
         <Rule path="/items[at0124]" max="0" />
       </Items>
