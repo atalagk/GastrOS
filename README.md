@@ -1,6 +1,6 @@
 # GastrOS – Gastrointestinal Endoscopy Reporting Application
 
-GastrOS is an endoscopic reporting application based on open standards: _open_EHR and MST. GUI is driven by Archetypes/Templates. It is part of our research at the University of Auckland to investigate software maintainability and interoperability.
+GastrOS is an endoscopic reporting application based on open standards: openEHR and MST. GUI is driven by Archetypes/Templates. It is part of our research at the University of Auckland to investigate software maintainability and interoperability.
 
 **Features:**
 * Uses openEHR Archetypes and Templates
