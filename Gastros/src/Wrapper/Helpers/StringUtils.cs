@@ -5,8 +5,7 @@ using System.Text;
 
 /* Author: Hong Yul Yang
  * (c) 2010 The University of Auckland */
-
-namespace GastrOs.Sde.Support
+namespace GastrOs.Wrapper.Helpers
 {
     public static class StringUtils
     {
@@ -29,23 +28,23 @@ namespace GastrOs.Sde.Support
             return ToPrettyString(col, delim, ToPrettyString);
         }
         public static String ToPrettyString<T>(this IEnumerable<T> col, string delim,
-                                               ToString<T> stringFunc)
+            ToString<T> stringFunc)
         {
             return ToPrettyString(col, delim, stringFunc, false, false);
         }
         public static string ToPrettyString<T>(this IEnumerable<T> col, string delim,
-                                               bool brackets)
+            bool brackets)
         {
             return ToPrettyString(col, delim, ToPrettyString, brackets, false);
         }
         public static String ToPrettyString<T>(this IEnumerable<T> col, string delim,
-                                               bool brackets, bool skipEmpty)
+            bool brackets, bool skipEmpty)
         {
             return ToPrettyString(col, delim, ToPrettyString, brackets, skipEmpty);
         }
 
         public static String ToPrettyString<T>(this IEnumerable<T> col, string delim,
-                                               ToString<T> stringFunc, bool brackets, bool skipEmpty)
+            ToString<T> stringFunc, bool brackets, bool skipEmpty)
         {
             if (col == null)
                 return null;

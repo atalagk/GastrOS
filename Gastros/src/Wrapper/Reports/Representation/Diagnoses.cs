@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using GastrOs.Sde.Support;
+using GastrOs.Wrapper.Helpers;
 
 namespace GastrOs.Wrapper.Reports.Representation
 {

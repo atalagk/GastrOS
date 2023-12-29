@@ -153,19 +153,6 @@ namespace GastrOs.Sde.Views.WinForms
             }
         }
 
-        public override string FurtherInformation
-        {
-            get
-            {
-                return GetToolTip(TitleLabel);
-            }
-            set
-            {
-                SetToolTip(TitleLabel, value);
-                //TitleLabel.Font = new Font(TitleLabel.Font, string.IsNullOrEmpty(value) ? FontStyle.Regular : FontStyle.Italic);
-            }
-        }
-
         /// <summary>
         /// To be called by subclass to add specific input fields to this widget.
         /// </summary>

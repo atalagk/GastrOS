@@ -23,7 +23,7 @@ description
 	other_contributors = <>
 	other_details = <
 		["references"] = <"">
-		["MD5-CAM-1.0.1"] = <"DAA5CEA2B9E9045071D4C99B2AA96E00">
+		["MD5-CAM-1.0.1"] = <"BF41C4A3F7C53BAE7B5B6099B53E3015">
 	>
 
 definition
@@ -905,7 +905,7 @@ ontology
 				>
 				["at1300"] = <
 					text = <"Extrinsic Impression">
-					description = <"This term should apply only in the absence of stenosis of the lumen">
+					description = <"TERM: Extrinsic Impression">
 				>
 				["at1310"] = <
 					text = <"Size">
@@ -949,7 +949,7 @@ ontology
 				>
 				["at1700"] = <
 					text = <"Lower Esophageal Sphincter">
-					description = <"Cardia may be used instead of Lower esophageal sphincter">
+					description = <"TERM: Lower Esophageal Sphincter">
 				>
 				["at1710"] = <
 					text = <"Tone">
@@ -1097,7 +1097,7 @@ ontology
 				>
 				["at3210"] = <
 					text = <"Grade">
-					description = <"Grades are defined according to the classification of Savary-Miller (Scand. J. Gastroenterol. 1984; 19: 26-44).">
+					description = <"Attribute: MUCOSA==>Esophagitis ==> Grade">
 				>
 				["at3211"] = <
 					text = <"Grade I">
@@ -1141,7 +1141,7 @@ ontology
 				>
 				["at3500"] = <
 					text = <"Mucosal Sclerosis">
-					description = <"Fibrosis could be used as well.">
+					description = <"TERM:MUCOSA==>Mucosal Sclerosis">
 				>
 				["at3510"] = <
 					text = <"Type">
@@ -1205,7 +1205,7 @@ ontology
 				>
 				["at5200"] = <
 					text = <"Tumor/Mass">
-					description = <"Tumor-Mass is used instead of tumour in the USA.">
+					description = <"TERM: Tumor/Mass">
 				>
 				["at5220"] = <
 					text = <"Type">
@@ -1249,7 +1249,7 @@ ontology
 				>
 				["at5310"] = <
 					text = <"Grade">
-					description = <"Grades are defined according to the classification mostly used in the literature (e.g. Gastroenterology 1967; 52: 810-818; Gastroenterology 1990; 98: 156-162).">
+					description = <"Attribute: Varices==> Grade">
 				>
 				["at5311"] = <
 					text = <"Grade I">

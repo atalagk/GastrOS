@@ -47,7 +47,7 @@ namespace GastrOs.Sde.Engine
         /// <returns></returns>
         public ViewControl GenerateFor(Locatable valueInstance, CComplexObject constraint)
         {
-            ViewControl control;
+            ViewControl control = null;
 
             if (constraint.RmTypeMatches<Element>())
             {
@@ -57,14 +57,6 @@ namespace GastrOs.Sde.Engine
             {
                 control = GenerateForCluster(valueInstance as Cluster, constraint);
             }
-            else
-            {
-                throw new NotSupportedException("GUI generation for "+constraint.RmTypeName+" not yet supported. Sorry!");
-            }
-
-            OntologyItem ontology = constraint.ExtractOntology();
-            if (ontology != null && !string.IsNullOrEmpty(ontology.Description))
-                control.View.FurtherInformation = ontology.Description;
 
             return control;
         }

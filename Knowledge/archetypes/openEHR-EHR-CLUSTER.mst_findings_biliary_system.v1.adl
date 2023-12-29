@@ -21,7 +21,7 @@ description
 	other_contributors = <>
 	other_details = <
 		["references"] = <"">
-		["MD5-CAM-1.0.1"] = <"2C009BE28B0AE54B7895E047B1641632">
+		["MD5-CAM-1.0.1"] = <"272B692EEE3143D968368B9761EB1709">
 	>
 
 definition
@@ -600,11 +600,11 @@ ontology
 				>
 				["at6557"] = <
 					text = <"Size">
-					description = <"Give here the diameter of the largest stone">
+					description = <"(diameter of the largest stone)">
 				>
 				["at6559"] = <
 					text = <"Filling defect (other than stone)">
-					description = <"This term should never be used for stones">
+					description = <"*">
 				>
 				["at6560"] = <
 					text = <"Appearance">

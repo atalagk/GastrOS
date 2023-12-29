@@ -96,18 +96,6 @@ namespace GastrOs.Sde.Views.WinForms
             }
         }
 
-        public override string FurtherInformation
-        {
-            get
-            {
-                return presenceCheck.ToolTip;
-            }
-            set
-            {
-                presenceCheck.ToolTip = value;
-            }
-        }
-
         public void SetAvailablePresenceStates(PresenceState states)
         {
             presenceCheck.SetAvailableStates(states);

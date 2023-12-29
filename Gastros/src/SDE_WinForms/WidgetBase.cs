@@ -26,21 +26,6 @@ namespace GastrOs.Sde.Views.WinForms
         private bool canAddNewInstance;
         private bool canRemoveInstance;
 
-        private ToolTip toolTip;
-
-        protected string GetToolTip(Control control)
-        {
-            if (toolTip == null) return null;
-            return toolTip.GetToolTip(control);
-        }
-
-        protected void SetToolTip(Control control, string text)
-        {
-            if (toolTip == null)
-                toolTip = new ToolTip();
-            toolTip.SetToolTip(control, text);
-        }
-
         /// <summary>
         /// The list of directives associated with this view
         /// </summary>
@@ -66,8 +51,6 @@ namespace GastrOs.Sde.Views.WinForms
         }
 
         public virtual bool ShowTitle { get; set; }
-
-        public virtual string FurtherInformation { get; set;}
 
         /// <summary>
         /// Raises the <see cref="TitleChanged"/> event. Also raises

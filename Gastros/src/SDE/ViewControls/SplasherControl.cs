@@ -18,8 +18,6 @@ namespace GastrOs.Sde.ViewControls
     /// a one-to-one mapping between a model object and view, we represent
     /// this in terms of the Cluster containing the multiply-occurable
     /// Element.
-    /// 
-    /// TODO refactor
     /// </summary>
     public class SplasherControl : TypedViewControl<Cluster, ISplasherView<IMultiChoiceView>>
     {
@@ -81,20 +79,11 @@ namespace GastrOs.Sde.ViewControls
         /// (i.e. that should be selected). Note: returns a live collection
         /// </summary>
         /// <returns></returns>
-        private IList<string> GetPresentCodesFromModel()
+        private IEnumerable<string> GetPresentCodesFromModel()
         {
-            List<string> presentCodes = new List<string>();
-            foreach (Item item in Model.Items)
-            {
-                if (!item.LightValidate(elementConstraint) || !(item is Element)) continue;
-                Element elem = (Element) item;
-                if (!(elem.Value is DvCodedText)) continue;
-                DvCodedText value = (DvCodedText)elem.Value;
-                //TODO should really eliminate the need for "atxxxx" values at some point soon
-                if (value.Value != RmFactory.DummyCodedValue)
-                    presentCodes.Add(value.Value);
-            }
-            return presentCodes;
+            IEnumerable<Item> instances = Model.Items.Where(item => item.LightValidate(elementConstraint));
+            //TODO Implicit invariant that all instances are of type Element with DvCodedText values - may be worth making explicit
+            return instances.Cast<Element>().Select(elem => elem.ValueAs<DvCodedText>().Value);
         }
 
         /// <summary>
@@ -165,15 +154,9 @@ namespace GastrOs.Sde.ViewControls
             //match the number of corresponding items selected in the view, as the thread may
             //be in the process of populating a fresh view from an existing model
 
-            IList<string> selectedCodesFromModel = GetPresentCodesFromModel();
+            IEnumerable<string> selectedCodesFromModel = GetPresentCodesFromModel();
             //update view as to whether more items can be selected
             View.SplashedView.CanSelectMore = selectedCodesFromModel.Count() < maxInstances;
-
-            //update tooltip - display contents
-            string toolTip = selectedCodesFromModel.Count > 0
-                                 ? selectedCodesFromModel.Select(s => CodeToString(s)).ToPrettyString(", ")
-                                 : null;
-            View.FurtherInformation = toolTip;
         }
 
         public override bool AllowsChildren

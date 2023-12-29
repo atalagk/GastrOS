@@ -91,7 +91,6 @@
     <Compile Include="Support\EhrSerialiser.cs" />
     <Compile Include="Support\OntologyItem.cs" />
     <Compile Include="Support\SimpleAomVisitor.cs" />
-    <Compile Include="Support\StringUtils.cs" />
     <Compile Include="ViewControls\CodedTextElementControl.cs" />
     <Compile Include="ViewControls\CoreConceptControl.cs" />
     <Compile Include="ViewControls\CountElementControl.cs" />

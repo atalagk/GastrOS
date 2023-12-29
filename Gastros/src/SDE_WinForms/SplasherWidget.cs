@@ -1,6 +1,5 @@
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using OpenEhr.DesignByContract;
 using GastrOs.Sde.Configuration;
@@ -49,23 +48,6 @@ namespace GastrOs.Sde.Views.WinForms
 
             popupDialog.Width = MaxSplashWidth;
             popupDialog.Height = MaxSplashHeight;
-
-            splashButton.Paint += splashButton_Paint;
-        }
-
-        void splashButton_Paint(object sender, PaintEventArgs e)
-        {
-            //Draw a little flag on the top-right corner
-            if (!string.IsNullOrEmpty(FurtherInformation))
-            {
-                Point[] corners = new[]
-                                      {
-                                          new Point(splashButton.ClientRectangle.Right - 8, splashButton.ClientRectangle.Top),
-                                          new Point(splashButton.ClientRectangle.Right, splashButton.ClientRectangle.Top),
-                                          new Point(splashButton.ClientRectangle.Right, splashButton.ClientRectangle.Top + 8)
-                                      };
-                e.Graphics.FillPolygon(new SolidBrush(Color.Red), corners);
-            }
         }
 
         public override string Title
@@ -79,21 +61,6 @@ namespace GastrOs.Sde.Views.WinForms
                 popupDialog.Text = value;
                 //fire off event as per interface contract
                 OnTitleChanged(EventArgs.Empty);
-            }
-        }
-
-        public override string FurtherInformation
-        {
-            get
-            {
-                return GetToolTip(splashButton);
-            }
-            set
-            {
-                if (FurtherInformation == value)
-                    return;
-                SetToolTip(splashButton, value);
-                Refresh();
             }
         }
 
@@ -169,7 +136,7 @@ namespace GastrOs.Sde.Views.WinForms
         {
             get
             {
-                return new Size(75, 25); //CFG
+                return new Size(60, 20); //CFG
             }
         }
 

@@ -4,7 +4,7 @@ specialize
 	openEHR-EHR-CLUSTER.mst_findings_duodenum.v1
 
 concept
-	[at0000.1]	-- MST Findings for Duodenum | GastrOS
+	[at0000.1]	-- Duedenum için MST Bulguları | GastrOS
 language
 	original_language = <[ISO_639-1::en]>
 	translations = <
@@ -37,17 +37,17 @@ description
 	other_contributors = <>
 	other_details = <
 		["references"] = <"">
-		["MD5-CAM-1.0.1"] = <"B8C59F7AB31263A584EA8B73DC3F6668">
+		["MD5-CAM-1.0.1"] = <"5385DAECD67BDAD3B71167B4D6FFEA33">
 	>
 
 definition
-	CLUSTER[at0000.1] matches {	-- MST Findings for Duodenum | GastrOS
+	CLUSTER[at0000.1] matches {	-- Duedenum için MST Bulguları | GastrOS
 		items cardinality matches {1..*; ordered} matches {
 			CLUSTER[at0050] occurrences matches {0..1} matches {	-- NORMAL
 				items cardinality matches {1; ordered} matches {
 					CLUSTER[at0100] occurrences matches {0..1} matches {	-- Normal
 						items cardinality matches {1..*; ordered} matches {
-							ELEMENT[at0105] matches {	-- Present?
+							ELEMENT[at0105] matches {	-- Mevcut?
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
@@ -60,23 +60,23 @@ definition
 									}
 								}
 							}
-							ELEMENT[at0500] occurrences matches {0..*} matches {	-- Site(s)
+							ELEMENT[at0500] occurrences matches {0..*} matches {	-- Bölge(ler)
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at0501, 	-- Bulb
-											at0502, 	-- Anterior Bulb
-											at0503, 	-- Posterior Bulb
-											at0504, 	-- Proximal Bulb
-											at0505, 	-- Distal Bulb
-											at0506, 	-- 2nd part of the duodenum
-											at0507, 	-- Area of papilla
-											at0508, 	-- Anastomosis
-											at0509, 	-- Whole examined duodenum
-											at0510, 	-- Afferent jejunal loop
-											at0511, 	-- Efferent jejunal loop
-											at0512]	-- Jejunal crest
+											at0501, 	-- Tüm bulbus
+											at0502, 	-- Anterior bulbus
+											at0503, 	-- Posterior bulbus
+											at0504, 	-- Proksimal bulbus
+											at0505, 	-- Distal bulbus
+											at0506, 	-- Duodenumun 2.kıtası
+											at0507, 	-- Papilla
+											at0508, 	-- Anastomoz
+											at0509, 	-- Tüm duodenum
+											at0510, 	-- Afferent jejunal lup
+											at0511, 	-- Efferent jejunal lup
+											at0512]	-- Jejunal güdük
 										}
 									}
 								}
@@ -85,329 +85,329 @@ definition
 					}
 				}
 			}
-			CLUSTER[at1000] occurrences matches {0..1} matches {	-- LUMEN
+			CLUSTER[at1000] occurrences matches {0..1} matches {	-- LÜMEN
 				items cardinality matches {1..*; ordered} matches {
-					CLUSTER[at1100] occurrences matches {0..*} matches {	-- Stenosis
+					CLUSTER[at1100] occurrences matches {0..*} matches {	-- Stenoz
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at1110] occurrences matches {0..1} matches {	-- Appearance
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at1110] occurrences matches {0..1} matches {	-- Görünüm
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at1111, 	-- Extrinsic
-											at1112, 	-- Benign intrinsic
-											at1113]	-- Malignant intrinsic
+											at1111, 	-- Ekstrensek
+											at1112, 	-- Benign intrensek
+											at1113]	-- Malign intrensek
 										}
 									}
 								}
 							}
-							ELEMENT[at1120] occurrences matches {0..1} matches {	-- Traversed
+							ELEMENT[at1120] occurrences matches {0..1} matches {	-- Endoskopla geçilebilme
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at0106, 	-- Yes
-											at0107]	-- No
+											at0106, 	-- Evet
+											at0107]	-- Hayır
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at1200] occurrences matches {0..*} matches {	-- Deformity
+					CLUSTER[at1200] occurrences matches {0..*} matches {	-- Deformite
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at1210] occurrences matches {0..1} matches {	-- Appearance
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at1210] occurrences matches {0..1} matches {	-- Görünüm
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at1211, 	-- Extrinsic
-											at1212]	-- Post-ulcer
+											at1211, 	-- Ekstrensek
+											at1212]	-- Ülser sonrası
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at1300] occurrences matches {0..*} matches {	-- Evidence of Previous Surgery
+					CLUSTER[at1300] occurrences matches {0..*} matches {	-- Daha önceki cerrrahiye ait kanıt
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at1310] occurrences matches {0..1} matches {	-- Specify
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at1310] occurrences matches {0..1} matches {	-- Belirt
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at1320] occurrences matches {0..1} matches {	-- Suture material visible
+							ELEMENT[at1320] occurrences matches {0..1} matches {	-- Sutür materyali görünüyor
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at0106, 	-- Yes
-											at0107]	-- No
+											at0106, 	-- Evet
+											at0107]	-- Hayır
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
 				}
 			}
-			CLUSTER[at2000] occurrences matches {0..1} matches {	-- CONTENTS
+			CLUSTER[at2000] occurrences matches {0..1} matches {	-- İÇERİKLER
 				items cardinality matches {1..*; ordered} matches {
-					CLUSTER[at2100] occurrences matches {0..*} matches {	-- Blood
+					CLUSTER[at2100] occurrences matches {0..*} matches {	-- Kan
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at2110] occurrences matches {0..1} matches {	-- Kind of blood
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at2110] occurrences matches {0..1} matches {	-- Kanın cinsi
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at2111, 	-- Red
-											at2112, 	-- Clot
-											at2113]	-- Hematin(Altered blood)
+											at2111, 	-- Kırmızı
+											at2112, 	-- Pıhtı
+											at2113]	-- Hematin
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at2200] occurrences matches {0..*} matches {	-- Parasites
+					CLUSTER[at2200] occurrences matches {0..*} matches {	-- Parazitler
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at2300] occurrences matches {0..*} matches {	-- Foreign Body
+					CLUSTER[at2300] occurrences matches {0..*} matches {	-- Yabancı cisim
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
 					CLUSTER[at2400] occurrences matches {0..*} matches {	-- Stent
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at2410] occurrences matches {0..1} matches {	-- Type
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at2410] occurrences matches {0..1} matches {	-- Tip
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
 				}
 			}
-			CLUSTER[at3000] occurrences matches {0..1} matches {	-- MUCOSA
+			CLUSTER[at3000] occurrences matches {0..1} matches {	-- MUKOZA
 				items cardinality matches {1..*; ordered} matches {
-					CLUSTER[at3100] occurrences matches {0..*} matches {	-- Erythematous (Hyperemic)
+					CLUSTER[at3100] occurrences matches {0..*} matches {	-- Eritematöz (Hiperemik)
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at3110] occurrences matches {0..1} matches {	-- Extent
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at3110] occurrences matches {0..1} matches {	-- Yayılım
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at3111, 	-- Localised
-											at3112, 	-- Patchy
-											at3113]	-- Diffuse
+											at3111, 	-- Lokalize
+											at3112, 	-- Yamalı
+											at3113]	-- Diffüz
 										}
 									}
 								}
 							}
-							ELEMENT[at3120] occurrences matches {0..1} matches {	-- Bleeding
+							ELEMENT[at3120] occurrences matches {0..1} matches {	-- Kanama
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at0106, 	-- Yes
-											at0107]	-- No
+											at0106, 	-- Evet
+											at0107]	-- Hayır
 										}
 									}
 								}
 							}
-							ELEMENT[at3130] occurrences matches {0..1} matches {	-- Stigmata of bleeding
+							ELEMENT[at3130] occurrences matches {0..1} matches {	-- Kanama işaretleri
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at0106, 	-- Yes
-											at0107]	-- No
+											at0106, 	-- Evet
+											at0107]	-- Hayır
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at3200] occurrences matches {0..*} matches {	-- Congested (Edematous)
+					CLUSTER[at3200] occurrences matches {0..*} matches {	-- Konjesyone
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Extent]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Bleeding]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3130]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Stigmata of bleeding]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Yayılım]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Kanama]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3130]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Kanama işaretleri]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at3300] occurrences matches {0..*} matches {	-- Granular
+					CLUSTER[at3300] occurrences matches {0..*} matches {	-- Granüler
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Extent]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Yayılım]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at3400] occurrences matches {0..*} matches {	-- Friable
+					CLUSTER[at3400] occurrences matches {0..*} matches {	-- Frajil
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Extent]
-							ELEMENT[at3420] occurrences matches {0..1} matches {	-- Bleeding
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Yayılım]
+							ELEMENT[at3420] occurrences matches {0..1} matches {	-- Kanama
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at3421, 	-- Yes: Spontaneous
-											at3422, 	-- Yes: Contact bleeding
-											at0107]	-- No
+											at3421, 	-- Evet: Spontan
+											at3422, 	-- Evet: Temas ile kanama
+											at0107]	-- Hayır
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at3500] occurrences matches {0..*} matches {	-- Nodular
+					CLUSTER[at3500] occurrences matches {0..*} matches {	-- Nodüler
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at3510] occurrences matches {0..1} matches {	-- Extent
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at3510] occurrences matches {0..1} matches {	-- Yayılım
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at3111, 	-- Localised
-											at3113]	-- Diffuse
+											at3111, 	-- Lokalize
+											at3113]	-- Diffüz
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at3600] occurrences matches {0..*} matches {	-- Atrophic
+					CLUSTER[at3600] occurrences matches {0..*} matches {	-- Atrofik
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Extent]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Yayılım]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at3700] occurrences matches {0..*} matches {	-- Hemorrhagic
+					CLUSTER[at3700] occurrences matches {0..*} matches {	-- Hemorajik
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Extent]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Bleeding]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3130]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Stigmata of bleeding]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Yayılım]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Kanama]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3130]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Kanama işaretleri]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
 				}
 			}
-			CLUSTER[at4000] occurrences matches {0..1} matches {	-- FLAT LESIONS
+			CLUSTER[at4000] occurrences matches {0..1} matches {	-- DÜZ LEZYONLAR
 				items cardinality matches {1..*; ordered} matches {
-					CLUSTER[at4100] occurrences matches {0..*} matches {	-- Spot (area)
+					CLUSTER[at4100] occurrences matches {0..*} matches {	-- Lezyon
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at4110] occurrences matches {0..1} matches {	-- Number
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at4110] occurrences matches {0..1} matches {	-- Sayı
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at4111, 	-- Single
-											at4112, 	-- Few
-											at4113]	-- Multiple
+											at4111, 	-- Tek
+											at4112, 	-- Az sayıda
+											at4113]	-- Multipl
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Extent]
-							ELEMENT[at4130] occurrences matches {0..1} matches {	-- Bleeding
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Yayılım]
+							ELEMENT[at4130] occurrences matches {0..1} matches {	-- Kanama
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at0106, 	-- Yes
-											at0107, 	-- No
-											at4133, 	-- Subepithelial
-											at4134]	-- Hematin stained (altered blood)
+											at0106, 	-- Evet
+											at0107, 	-- Hayır
+											at4133, 	-- Subepitelyal
+											at4134]	-- Hematin ile boyanmış
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at4200] occurrences matches {0..*} matches {	-- Angioectasia
+					CLUSTER[at4200] occurrences matches {0..*} matches {	-- Anjiyoektazi
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..1} /items[at4000]/items[at4100]/items[at4110]	-- /items[FLAT LESIONS]/items[Spot (area)]/items[Number]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Extent]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Bleeding]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..1} /items[at4000]/items[at4100]/items[at4110]	-- /items[DÜZ LEZYONLAR]/items[Lezyon]/items[Sayı]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3110]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Yayılım]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Kanama]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
 				}
 			}
-			CLUSTER[at5000] occurrences matches {0..1} matches {	-- PROTRUDING LESIONS
+			CLUSTER[at5000] occurrences matches {0..1} matches {	-- ÇIKINTI YAPMIŞ LEZYONLAR
 				items cardinality matches {1..*; ordered} matches {
-					CLUSTER[at5100] occurrences matches {0..*} matches {	-- Polyp(s)
+					CLUSTER[at5100] occurrences matches {0..*} matches {	-- Polip(ler)
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..1} /items[at4000]/items[at4100]/items[at4110]	-- /items[FLAT LESIONS]/items[Spot (area)]/items[Number]
-							ELEMENT[at5120] occurrences matches {0..1} matches {	-- Size
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..1} /items[at4000]/items[at4100]/items[at4110]	-- /items[DÜZ LEZYONLAR]/items[Lezyon]/items[Sayı]
+							ELEMENT[at5120] occurrences matches {0..1} matches {	-- Boyut
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at5121, 	-- Small (<5 mm)
-											at5122, 	-- Medium (5-20 mm)
-											at5123]	-- Large (>20 mm)
+											at5121, 	-- Küçük (< 5 mm)
+											at5122, 	-- Orta (5-20 mm)
+											at5123]	-- Büyük (> 20 mm)
 										}
 									}
 								}
 							}
-							ELEMENT[at5130] occurrences matches {0..1} matches {	-- Pedicle
+							ELEMENT[at5130] occurrences matches {0..1} matches {	-- Pedikül
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at5131, 	-- Sessile
-											at5132]	-- Pedunculated
+											at5131, 	-- Sessil
+											at5132]	-- Saplı
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Bleeding]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Kanama]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at5200] occurrences matches {0..*} matches {	-- Tumor/Mass
+					CLUSTER[at5200] occurrences matches {0..*} matches {	-- Tümör/Kitle
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at5210] occurrences matches {0..1} matches {	-- Size
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at5210] occurrences matches {0..1} matches {	-- Boyut
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at5211, 	-- Small
-											at5212, 	-- Medium
-											at5213]	-- Large
+											at5211, 	-- Küçük
+											at5212, 	-- Orta
+											at5213]	-- Büyük
 										}
 									}
 								}
 							}
-							ELEMENT[at5220] occurrences matches {0..1} matches {	-- Diameter
+							ELEMENT[at5220] occurrences matches {0..1} matches {	-- mm olarak çap
 								value matches {
 									C_DV_QUANTITY <
 										property = <[openehr::122]>
@@ -420,73 +420,73 @@ definition
 									>
 								}
 							}
-							ELEMENT[at5230] occurrences matches {0..1} matches {	-- Type
+							ELEMENT[at5230] occurrences matches {0..1} matches {	-- Tip
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at5231, 	-- Submucosal
-											at5232, 	-- Fungating
-											at5233, 	-- Ulcerated
-											at5234, 	-- Infiltrative
-											at5235, 	-- Frond-like/Villous
-											at0.2]	-- Ulcero-fungating
+											at5231, 	-- Submukozal
+											at5232, 	-- Vejetan
+											at5233, 	-- Ülsere
+											at5234, 	-- Infiltratif
+											at5235, 	-- Villöz
+											at0.2]	-- Ülsero-vejetan
 										}
 									}
 								}
 							}
-							ELEMENT[at5240] occurrences matches {0..1} matches {	-- Bleeding
+							ELEMENT[at5240] occurrences matches {0..1} matches {	-- Kanama
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at5241, 	-- Yes: Spurting
-											at5242, 	-- Yes: Oozing
-											at0107]	-- No
+											at5241, 	-- Evet: Fışkırır tarzda
+											at5242, 	-- Evet: Sızma tarzında
+											at0107]	-- Hayır
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3130]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Stigmata of bleeding]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3130]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Kanama işaretleri]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
 				}
 			}
-			CLUSTER[at6000] occurrences matches {0..1} matches {	-- EXCAVATED LESIONS
+			CLUSTER[at6000] occurrences matches {0..1} matches {	-- İÇERİ DOĞRU ÇÖKÜK LEZYONLAR
 				items cardinality matches {1..*; ordered} matches {
-					CLUSTER[at6100] occurrences matches {0..*} matches {	-- Erosion
+					CLUSTER[at6100] occurrences matches {0..*} matches {	-- Erozyon
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT /items[at4000]/items[at4100]/items[at4110]	-- /items[FLAT LESIONS]/items[Spot (area)]/items[Number]
-							ELEMENT[at6120] occurrences matches {0..1} matches {	-- Extent
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT /items[at4000]/items[at4100]/items[at4110]	-- /items[DÜZ LEZYONLAR]/items[Lezyon]/items[Sayı]
+							ELEMENT[at6120] occurrences matches {0..1} matches {	-- Yayılım
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at3111, 	-- Localised
-											at6122, 	-- Segmental
-											at3113]	-- Diffuse
+											at3111, 	-- Lokalize
+											at6122, 	-- Segmenter
+											at3113]	-- Diffüz
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Bleeding]
-							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3130]	-- /items[MUCOSA]/items[Erythematous (Hyperemic)]/items[Stigmata of bleeding]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3120]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Kanama]
+							use_node ELEMENT occurrences matches {0..1} /items[at3000]/items[at3100]/items[at3130]	-- /items[MUKOZA]/items[Eritematöz (Hiperemik)]/items[Kanama işaretleri]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at6200] occurrences matches {0..*} matches {	-- Ulcer
+					CLUSTER[at6200] occurrences matches {0..*} matches {	-- Ülser
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at6210] occurrences matches {0..1} matches {	-- Number
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at6210] occurrences matches {0..1} matches {	-- Sayı
 								value matches {
 									DV_COUNT matches {
 										magnitude matches {|0..100|}
 									}
 								}
 							}
-							ELEMENT[at6220] occurrences matches {0..1} matches {	-- Size (largest diameter)
+							ELEMENT[at6220] occurrences matches {0..1} matches {	-- Boyut
 								value matches {
 									C_DV_QUANTITY <
 										property = <[openehr::122]>
@@ -499,73 +499,73 @@ definition
 									>
 								}
 							}
-							ELEMENT[at6230] occurrences matches {0..1} matches {	-- Shape
+							ELEMENT[at6230] occurrences matches {0..1} matches {	-- Biçim
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at6231, 	-- Superficial
-											at6232, 	-- Cratered
-											at6233]	-- Superficial
+											at6231, 	-- Yüzeysel
+											at6232, 	-- Kraterli
+											at6233]	-- Lineer
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..1} /items[at5000]/items[at5200]/items[at5240]	-- /items[PROTRUDING LESIONS]/items[Tumor/Mass]/items[Bleeding]
-							ELEMENT[at6250] occurrences matches {0..1} matches {	-- Stigmata of bleeding
+							use_node ELEMENT occurrences matches {0..1} /items[at5000]/items[at5200]/items[at5240]	-- /items[ÇIKINTI YAPMIŞ LEZYONLAR]/items[Tümör/Kitle]/items[Kanama]
+							ELEMENT[at6250] occurrences matches {0..1} matches {	-- Kanama işaretleri
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at6251, 	-- Visible vessel
-											at6252, 	-- Clot
-											at6253, 	-- Pigmented material
-											at6254]	-- No stigmata
+											at6251, 	-- Görünen damar
+											at6252, 	-- Pıhtı
+											at6253, 	-- Pigmente materyal
+											at6254]	-- İşaret yok
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at6300] occurrences matches {0..*} matches {	-- Scar
+					CLUSTER[at6300] occurrences matches {0..*} matches {	-- Skar
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at6310] occurrences matches {0..1} matches {	-- Number
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at6310] occurrences matches {0..1} matches {	-- Sayı
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at4111, 	-- Single
-											at4113]	-- Multiple
+											at4111, 	-- Tek
+											at4113]	-- Multipl
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at6400] occurrences matches {0..*} matches {	-- Diverticulum
+					CLUSTER[at6400] occurrences matches {0..*} matches {	-- Divertikül
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							ELEMENT[at6410] occurrences matches {0..1} matches {	-- Opening
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							ELEMENT[at6410] occurrences matches {0..1} matches {	-- Açıklık
 								value matches {
 									DV_CODED_TEXT matches {
 										defining_code matches {
 											[local::
-											at6411, 	-- Large
-											at6412]	-- Small
+											at6411, 	-- Büyük
+											at6412]	-- Küçük
 										}
 									}
 								}
 							}
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
-					CLUSTER[at6500] occurrences matches {0..*} matches {	-- Fistula
+					CLUSTER[at6500] occurrences matches {0..*} matches {	-- Fistül
 						items cardinality matches {1..*; ordered} matches {
-							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Present?]
-							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Site(s)]
+							use_node ELEMENT /items[at0050]/items[at0100]/items[at0105]	-- /items[NORMAL]/items[Normal]/items[Mevcut?]
+							use_node ELEMENT occurrences matches {0..*} /items[at0050]/items[at0100]/items[at0500]	-- /items[NORMAL]/items[Normal]/items[Bölge(ler)]
 						}
 					}
 				}
@@ -907,7 +907,7 @@ ontology
 				>
 				["at5200"] = <
 					text = <"Tümör/Kitle">
-					description = <"">
+					description = <"*TERM: Tumor/Mass(en)">
 				>
 				["at5210"] = <
 					text = <"Boyut">
@@ -931,7 +931,7 @@ ontology
 				>
 				["at5230"] = <
 					text = <"Tip">
-					description = <"Ülsero-vejetan sıfat değeri olarak eklendi">
+					description = <"*Attribute: Tumor/Mass==> Type(en)">
 				>
 				["at5231"] = <
 					text = <"Submukozal">
@@ -1407,7 +1407,7 @@ ontology
 				>
 				["at5200"] = <
 					text = <"Tumor/Mass">
-					description = <"Tumor-Mass is used instead of tumour in the USA.">
+					description = <"TERM: Tumor/Mass">
 				>
 				["at5210"] = <
 					text = <"Size">
@@ -1431,7 +1431,7 @@ ontology
 				>
 				["at5230"] = <
 					text = <"Type">
-					description = <"Ulcero-fungating has been added as attribute value">
+					description = <"Attribute: Tumor/Mass==> Type">
 				>
 				["at5231"] = <
 					text = <"Submucosal">

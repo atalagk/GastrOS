@@ -79,26 +79,12 @@ description
 			keywords = <"эндоскопия", "колоноскопии", "ректоскопия", "гастроэнтерологии", "MST", "Эндоскопия нижних отделов желудочно-кишечного тракта", "кишечника">
 			misuse = <"не подходит для использования, кроме эндоскопии">
 		>
-		["fr"] = <
-			language = <[ISO_639-1::fr]>
-			purpose = <"Décrire MST découvertes pour la endoscopie">
-			use = <"Il décrit les découvertes dans le bas endoscopie gastro-intestinale en utilisant MST termes et étendre sa structure ">
-			keywords = <"endoscopie", "coloscopie", "rectoscopie", "gastroentérologie", "MST", "tractus digestif inférieur endoscopie", "côlon">
-			misuse = <"Ne convient pas pour l'utilisation autre que l'endoscopie">
-		>
-		["cs"] = <
-			language = <[ISO_639-1::cs]>
-			purpose = <"Popište MST 2.0 Závěry pro Colon">
-			use = <"Věnuje se v dolní Zjištění gastrointestinální endoskopie pomocí MST podmínky a prodlužuje její struktura">
-			keywords = <"endoskopie", "kolonoskopii", "rectoscopy", "gastroenterologie", "MST", "endoskopie dolní části trávicího ústrojí", "tlusté střevo">
-			misuse = <"není vhodné pro použití jiné než endoskopie">
-		>
-		["hu"] = <
-			language = <[ISO_639-1::hu]>
-			purpose = <"Írja le MST 2,0 vonatkozó megállapításokat kettősponttal">
-			use = <"Írja le a megállapítások alacsonyabb endoscopy gyomor segítségével szempontjából MST kiterjesztésére és szerkezet">
-			keywords = <"endoszkópia", "colonoscopia", "rectoscopia", "gasztroenterolgiai", "MST", "Alsó gastrointestinalis endoscopia", "colon">
-			misuse = <"Nem megfelelő kívüli más célú felhasználásra endoscopy">
+		["tr"] = <
+			language = <[ISO_639-1::tr]>
+			purpose = <"Kolon için MST 2.0 Bulguları">
+			use = <"Alt gastrointestinal sistem endoskopisinde MST terimlerini ve gelişmiş yapısını kullanarak gözlemleri tanımlar.">
+			keywords = <"endoskopi", "kolonoskopi", "rektoskopi", "gastroenteroloji", "MST", "alt gastrointestinal endoskopi", "kolon">
+			misuse = <"endoskopi dışında kullanımı uygun değildir">
 		>
 		["pt"] = <
 			language = <[ISO_639-1::pt]>
@@ -106,6 +92,20 @@ description
 			use = <"Ela descreve os achados de endoscopia digestiva inferior, usando termos MST e ampliando sua estrutura">
 			keywords = <"endoscopia", "colonoscopia", "rectoscopio", "gastroenterologia", "MST", "endoscopia digestiva baixa", "colon">
 			misuse = <"não apropriado para uma utilização diferente endoscopia">
+		>
+		["fr"] = <
+			language = <[ISO_639-1::fr]>
+			purpose = <"Décrire MST découvertes pour la endoscopie">
+			use = <"Il décrit les découvertes dans le bas endoscopie gastro-intestinale en utilisant MST termes et étendre sa structure ">
+			keywords = <"endoscopie", "coloscopie", "rectoscopie", "gastroentérologie", "MST", "tractus digestif inférieur endoscopie", "côlon">
+			misuse = <"Ne convient pas pour l'utilisation autre que l'endoscopie">
+		>
+		["hu"] = <
+			language = <[ISO_639-1::hu]>
+			purpose = <"Írja le MST 2,0 vonatkozó megállapításokat kettősponttal">
+			use = <"Írja le a megállapítások alacsonyabb endoscopy gyomor segítségével szempontjából MST kiterjesztésére és szerkezet">
+			keywords = <"endoszkópia", "colonoscopia", "rectoscopia", "gasztroenterolgiai", "MST", "Alsó gastrointestinalis endoscopia", "colon">
+			misuse = <"Nem megfelelő kívüli más célú felhasználásra endoscopy">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -135,12 +135,12 @@ description
 			keywords = <"endoscopia", "colonoscopia", "rectoscopio", "gastroenterología", "MST", "endoscopia gastrointestinal baja", "colon">
 			misuse = <"no es apropiado para usos distintos de la endoscopia">
 		>
-		["tr"] = <
-			language = <[ISO_639-1::tr]>
-			purpose = <"Kolon için MST 2.0 Bulguları">
-			use = <"Alt gastrointestinal sistem endoskopisinde MST terimlerini ve gelişmiş yapısını kullanarak gözlemleri tanımlar.">
-			keywords = <"endoskopi", "kolonoskopi", "rektoskopi", "gastroenteroloji", "MST", "alt gastrointestinal endoskopi", "kolon">
-			misuse = <"endoskopi dışında kullanımı uygun değildir">
+		["cs"] = <
+			language = <[ISO_639-1::cs]>
+			purpose = <"Popište MST 2.0 Závěry pro Colon">
+			use = <"Věnuje se v dolní Zjištění gastrointestinální endoskopie pomocí MST podmínky a prodlužuje její struktura">
+			keywords = <"endoskopie", "kolonoskopii", "rectoscopy", "gastroenterologie", "MST", "endoskopie dolní části trávicího ústrojí", "tlusté střevo">
+			misuse = <"není vhodné pro použití jiné než endoskopie">
 		>
 	>
 	lifecycle_state = <"AuthorDraft">
@@ -157,7 +157,7 @@ Logan JR, McCashland TM, Lieberman DA. Evaluation of reliability in the use of e
 Tringali M, Hole WT, Srinivasan S. Integration of a standard gastrointestinal endoscopy terminology in the UMLS metathesaurus. Proc AMIA Symp 2002: 801-5.
 Z. Maratka. Terminology, definitions and diagnostic criteria in digestive endoscopy. Scan J Gastroenterol 1984; 19(Suppl.103):1-74.
 Z. Maratka. Terminology, definitions and diagnostic criteria in digestive endoscopy. 4th ed. Bad Homburg: Normed Verlag, 1999.">
-		["MD5-CAM-1.0.1"] = <"37C713A972B9C2BEAED7E204265CB766">
+		["MD5-CAM-1.0.1"] = <"F8848BC12E26EE3B1C7E9ECC5C1F0FE6">
 	>
 
 definition
@@ -1494,1254 +1494,6 @@ ontology
 				>
 			>
 		>
-		["tr"] = <
-			items = <
-				["at0.6701"] = <
-					text = <"*Anal canal(en)">
-					description = <"*1120;Site: Colon(en)">
-				>
-				["at0.6703"] = <
-					text = <"*Ileo-anal pouch(en)">
-					description = <"**(en)">
-				>
-				["at0.6704"] = <
-					text = <"*Colo-rectal anastomosis(en)">
-					description = <"*Attribute value: LUMEN>Evidence of previous surgery>Type(en)">
-				>
-				["at0.6705"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
-				>
-				["at0.6706"] = <
-					text = <"*Internal(en)">
-					description = <"**(en)">
-				>
-				["at0.6707"] = <
-					text = <"*External(en)">
-					description = <"**(en)">
-				>
-				["at0.6708"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
-				>
-				["at0.6709"] = <
-					text = <"*Grade I(en)">
-					description = <"**(en)">
-				>
-				["at0.6710"] = <
-					text = <"*Grade II(en)">
-					description = <"**(en)">
-				>
-				["at0.6711"] = <
-					text = <"*Grade III(en)">
-					description = <"**(en)">
-				>
-				["at0.6712"] = <
-					text = <"*Grade IV(en)">
-					description = <"**(en)">
-				>
-				["at0.6713"] = <
-					text = <"*null(en)">
-					description = <"*Presence=null(en)">
-				>
-				["at0.6714"] = <
-					text = <"*present(en)">
-					description = <"*Presence=present(en)">
-				>
-				["at0.6715"] = <
-					text = <"*unknown(en)">
-					description = <"*Presence=unknown(en)">
-				>
-				["at0.6716"] = <
-					text = <"*absent(en)">
-					description = <"*Presence=absent(en)">
-				>
-				["at0000"] = <
-					text = <"Kolon için MST Bulguları">
-					description = <"Gastrointestinal Endoskopi için Minimal Standart Terminoloji sürüm 2 (MST-2) ye göre endoskopi bulguları. Bu dünya gastrointestinal endoskopi derneğinin (OMED) resmi terminolojisidir. 11 dilde çevirisi vardır ve büyük çalışmalarla valide edilmiştir.">
-				>
-				["at0000.1"] = <
-					text = <"*MST Findings for Colon!(en)">
-					description = <"*Gastrointestinal Endoscopy findings as described by the Minimal Standard Terminology for Gastrointestinal Endoscopy version 2 (MST-2). This is the official terminology endorsed by the World Endoscopy Society (OMED).!(en)">
-				>
-				["at0005"] = <
-					text = <"NORMAL">
-					description = <"BAŞLIK">
-				>
-				["at0100"] = <
-					text = <"Normal">
-					description = <"TERİM: NORMAL">
-				>
-				["at0105"] = <
-					text = <"*Present?(en)">
-					description = <"*Attribute: General(en)">
-				>
-				["at0106"] = <
-					text = <"Evet">
-					description = <"Sıfat değeri: Genel">
-				>
-				["at0107"] = <
-					text = <"Hayır">
-					description = <"Sıfat değeri: Genel">
-				>
-				["at0110"] = <
-					text = <"Bölge(ler)">
-					description = <"Kolon için Bölge(ler)">
-				>
-				["at0111"] = <
-					text = <"*Anus(en)">
-					description = <"*1110;Site: Colon(en)">
-				>
-				["at0112"] = <
-					text = <"*Rectum(en)">
-					description = <"*1130;Site: Colon(en)">
-				>
-				["at0113"] = <
-					text = <"*Sigmoid(en)">
-					description = <"*1140;Site: Colon(en)">
-				>
-				["at0114"] = <
-					text = <"*Descending(en)">
-					description = <"*1150;Site: Colon(en)">
-				>
-				["at0115"] = <
-					text = <"*Splenic(en)">
-					description = <"*1160;Site: Colon(en)">
-				>
-				["at0116"] = <
-					text = <"*Transverse(en)">
-					description = <"*1170;Site: Colon(en)">
-				>
-				["at0117"] = <
-					text = <"*Hepatic(en)">
-					description = <"*1180;Site: Colon(en)">
-				>
-				["at0118"] = <
-					text = <"*Ascending(en)">
-					description = <"*1190;Site: Colon(en)">
-				>
-				["at0119"] = <
-					text = <"*Cecum(en)">
-					description = <"*1200;Site: Colon(en)">
-				>
-				["at0120"] = <
-					text = <"*Ileo-cecal valve(en)">
-					description = <"*1210;Site: Colon(en)">
-				>
-				["at0121"] = <
-					text = <"*Stoma(en)">
-					description = <"*1220;Site: Colon(en)">
-				>
-				["at0122"] = <
-					text = <"*Whole colon(en)">
-					description = <"*1230;Site: Colon(en)">
-				>
-				["at0123"] = <
-					text = <"*Anastomosis(en)">
-					description = <"*1240;Site: Colon(en)">
-				>
-				["at0124"] = <
-					text = <"*Rectal Pouch(en)">
-					description = <"*1250;Site: Colon(en)">
-				>
-				["at0125"] = <
-					text = <"*Ileum(en)">
-					description = <"*1260;Site: Ileum(en)">
-				>
-				["at1000"] = <
-					text = <"LÜMEN">
-					description = <"BAŞLIK">
-				>
-				["at1100"] = <
-					text = <"Dilate">
-					description = <"TERİM: LÜMEN">
-				>
-				["at1200"] = <
-					text = <"Stenoz">
-					description = <"TERİM: LÜMEN">
-				>
-				["at1210"] = <
-					text = <"Görünüm">
-					description = <"Sıfat: LÜMEN>Stenoz">
-				>
-				["at1211"] = <
-					text = <"Ekstrensek">
-					description = <"Sıfat değeri: LÜMEN>Stenoz>Görünüm">
-				>
-				["at1212"] = <
-					text = <"Selim intrensek">
-					description = <"Sıfat değeri: LÜMEN>Stenoz>Görünüm">
-				>
-				["at1213"] = <
-					text = <"Habis intrensek">
-					description = <"Sıfat değeri: LÜMEN>Stenoz>Görünüm">
-				>
-				["at1220"] = <
-					text = <"Uzunluk (cm)">
-					description = <"Sıfat: LÜMEN>Stenoz">
-				>
-				["at1230"] = <
-					text = <"İçinden geçilen">
-					description = <"Sıfat: LÜMEN>Stenoz">
-				>
-				["at1300"] = <
-					text = <"Daha önceki cerrahiye ait kanıt">
-					description = <"TERİM: LÜMEN">
-				>
-				["at1310"] = <
-					text = <"Tip">
-					description = <"Sıfat: LÜMEN>Daha önceki cerrahiye ait kanıt">
-				>
-				["at1311"] = <
-					text = <"Kolo-kolonik anastomoz">
-					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
-				>
-				["at1312"] = <
-					text = <"İleo-kolonik anastomoz">
-					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
-				>
-				["at1313"] = <
-					text = <"Kolo-anal anastomoz">
-					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
-				>
-				["at1314"] = <
-					text = <"İleo-anal anastomoz">
-					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
-				>
-				["at1315"] = <
-					text = <"Kolostomi">
-					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
-				>
-				["at1320"] = <
-					text = <"Sütür materyali görünüyor">
-					description = <"Sıfat: LÜMEN>Daha önceki cerrahiye ait kanıt">
-				>
-				["at2000"] = <
-					text = <"İÇERİKLER">
-					description = <"BAŞLIK">
-				>
-				["at2100"] = <
-					text = <"Kan">
-					description = <"TERİM: İÇERİKLER">
-				>
-				["at2110"] = <
-					text = <"Kanın cinsi">
-					description = <"Sıfat: İÇERİKLER>Kan">
-				>
-				["at2111"] = <
-					text = <"Kırmızı">
-					description = <"Sıfat değeri: İÇERİKLER>Kan>Kanın cinsi">
-				>
-				["at2112"] = <
-					text = <"Pıhtı">
-					description = <"Sıfat değeri: İÇERİKLER>Kan>Kanın cinsi">
-				>
-				["at2113"] = <
-					text = <"Hematin (Değişmiş kan)">
-					description = <"Sıfat değeri: İÇERİKLER>Kan>Kanın cinsi">
-				>
-				["at2200"] = <
-					text = <"Yabancı cisim">
-					description = <"TERİM: İÇERİKLER">
-				>
-				["at2300"] = <
-					text = <"Parazitler">
-					description = <"TERİM: İÇERİKLER">
-				>
-				["at2400"] = <
-					text = <"Eksüda">
-					description = <"TERİM: İÇERİKLER">
-				>
-				["at2500"] = <
-					text = <"Dışkı">
-					description = <"TERİM: İÇERİKLER">
-				>
-				["at2600"] = <
-					text = <"Stent">
-					description = <"TERİM: İÇERİKLER">
-				>
-				["at2610"] = <
-					text = <"Tip">
-					description = <"Sıfat: İÇERİKLER>Stent">
-				>
-				["at3000"] = <
-					text = <"MUKOZA">
-					description = <"BAŞLIK">
-				>
-				["at3100"] = <
-					text = <"Vasküler patern">
-					description = <"TERİM: MUKOZA">
-				>
-				["at3110"] = <
-					text = <"Görünüm">
-					description = <"Sıfat: MUKOZA>Vasküler patern">
-				>
-				["at3111"] = <
-					text = <"Normal">
-					description = <"Sıfat değeri: MUKOZA>Vasküler pattern>Görünüm">
-				>
-				["at3112"] = <
-					text = <"Artmış">
-					description = <"Sıfat değeri: MUKOZA>Vasküler pattern>Görünüm">
-				>
-				["at3113"] = <
-					text = <"Azalmış">
-					description = <"Sıfat değeri: MUKOZA>Vasküler pattern>Görünüm">
-				>
-				["at3120"] = <
-					text = <"Yayılım">
-					description = <"Sıfat: MUKOZA>Vasküler patern">
-				>
-				["at3121"] = <
-					text = <"Lokalize">
-					description = <"Sıfat değeri: MUKOZA>Vasküler patern>Yayılım">
-				>
-				["at3122"] = <
-					text = <"Segmenter">
-					description = <"Sıfat değeri: MUKOZA>Vasküler patern>Yayılım">
-				>
-				["at3123"] = <
-					text = <"Diffüz">
-					description = <"Sıfat değeri: MUKOZA>Vasküler patern>Yayılım">
-				>
-				["at3200"] = <
-					text = <"Eritematöz (Hiperemik)">
-					description = <"TERİM: MUKOZA">
-				>
-				["at3300"] = <
-					text = <"Konjesyone (Ödemli)">
-					description = <"TERİM: MUKOZA">
-				>
-				["at3400"] = <
-					text = <"Granüler">
-					description = <"TERİM: MUKOZA">
-				>
-				["at3500"] = <
-					text = <"Frajil">
-					description = <"TERİM: MUKOZA">
-				>
-				["at3520"] = <
-					text = <"Kanama">
-					description = <"Sıfat: MUKOZA>Frajil">
-				>
-				["at3521"] = <
-					text = <"Evet: Spontan">
-					description = <"Sıfat değeri: MUKOZA>Frajil>Kanama">
-				>
-				["at3522"] = <
-					text = <"Evet: Temas ile kanama">
-					description = <"Sıfat değeri: MUKOZA>Frajil>Kanama">
-				>
-				["at3600"] = <
-					text = <"Ülsere mukoza">
-					description = <"TERİM: MUKOZA">
-				>
-				["at3610"] = <
-					text = <"Devamlılık">
-					description = <"Sıfat: MUKOZA>Ülsere mukoza">
-				>
-				["at3611"] = <
-					text = <"Devamlı değil">
-					description = <"Sıfat değeri: MUKOZA>>Ülsere mukoza>Devamlılık">
-				>
-				["at3612"] = <
-					text = <"Devamlı">
-					description = <"Sıfat değeri: MUKOZA>>Ülsere mukoza>Devamlılık">
-				>
-				["at3620"] = <
-					text = <"Kanama">
-					description = <"Sıfat: MUKOZA>Ülsere mukoza">
-				>
-				["at3630"] = <
-					text = <"Kanama işaretleri">
-					description = <"Sıfat: MUKOZA>Ülsere mukoza">
-				>
-				["at3700"] = <
-					text = <"Peteşi">
-					description = <"TERİM: MUKOZA">
-				>
-				["at3710"] = <
-					text = <"Sayı">
-					description = <"Sıfat: MUKOZA>Peteşi">
-				>
-				["at3711"] = <
-					text = <"Az sayıda">
-					description = <"Sıfat değeri: MUKOZA>Peteşi>Sayı">
-				>
-				["at3712"] = <
-					text = <"Çok sayıda">
-					description = <"Sıfat değeri: MUKOZA>Peteşi>Sayı">
-				>
-				["at3800"] = <
-					text = <"Psödomembran">
-					description = <"TERİM: MUKOZA">
-				>
-				["at3900"] = <
-					text = <"Melanoz">
-					description = <"TERİM: MUKOZA">
-				>
-				["at4000"] = <
-					text = <"DÜZ LEZYONLAR">
-					description = <"BAŞLIK">
-				>
-				["at4100"] = <
-					text = <"Anjiyoektazi">
-					description = <"TERİM: DÜZ LEZYONLAR">
-				>
-				["at4110"] = <
-					text = <"Sayı">
-					description = <"Sıfat: DÜZ LEZYONLAR>Anjiyoektazi">
-				>
-				["at4111"] = <
-					text = <"Tek">
-					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Sayı">
-				>
-				["at4120"] = <
-					text = <"Boyut">
-					description = <"Sıfat: DÜZ LEZYONLAR>Anjiyoektazi">
-				>
-				["at4121"] = <
-					text = <"Küçük">
-					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Boyut">
-				>
-				["at4122"] = <
-					text = <"Orta">
-					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Boyut">
-				>
-				["at4123"] = <
-					text = <"Büyük">
-					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Boyut">
-				>
-				["at4130"] = <
-					text = <"Yayılım">
-					description = <"Sıfat: DÜZ LEZYONLAR>Anjiyoektazi">
-				>
-				["at4132"] = <
-					text = <"Yamalı">
-					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Yayılım">
-				>
-				["at4140"] = <
-					text = <"Kanama">
-					description = <"Sıfat: DÜZ LEZYONLAR>Anjiyoektazi">
-				>
-				["at5000"] = <
-					text = <"ÇIKINTI YAPMIŞ LEZYONLAR">
-					description = <"BAŞLIK">
-				>
-				["at5100"] = <
-					text = <"Polip(ler)">
-					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
-				>
-				["at5110"] = <
-					text = <"Sayı">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)">
-				>
-				["at5111"] = <
-					text = <"Eğer 5den azsa, belirt">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Sayı">
-				>
-				["at5112"] = <
-					text = <"Eğer 5 den fazlaysa: Çok sayıda">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Sayı">
-				>
-				["at5113"] = <
-					text = <"Eğer 5 den fazlaysa: Multipl">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Sayı">
-				>
-				["at5130"] = <
-					text = <"Boyut">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)">
-				>
-				["at5140"] = <
-					text = <"Pedikül">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)">
-				>
-				["at5141"] = <
-					text = <"Sessil">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Pedikül">
-				>
-				["at5142"] = <
-					text = <"Saplı">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Pedikül">
-				>
-				["at5150"] = <
-					text = <"Kanama">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)">
-				>
-				["at5153"] = <
-					text = <"Kanama işaretleri">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Kanama">
-				>
-				["at5200"] = <
-					text = <"Psödopolipler">
-					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
-				>
-				["at5300"] = <
-					text = <"Lipom">
-					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
-				>
-				["at5320"] = <
-					text = <"Çap (mm)">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Lipom">
-				>
-				["at5400"] = <
-					text = <"Tümör/Kitle">
-					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
-				>
-				["at5420"] = <
-					text = <"Çap (mm)">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
-				>
-				["at5430"] = <
-					text = <"Uzunluk (cm)">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
-				>
-				["at5440"] = <
-					text = <"Tip">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
-				>
-				["at5441"] = <
-					text = <"Submukozal">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
-				>
-				["at5442"] = <
-					text = <"Parmak şeklinde">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
-				>
-				["at5443"] = <
-					text = <"Ülsere">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
-				>
-				["at5444"] = <
-					text = <"İnfiltratif">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
-				>
-				["at5445"] = <
-					text = <"Yaprak gibi/villöz">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
-				>
-				["at5450"] = <
-					text = <"Tıkayıcı">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
-				>
-				["at5451"] = <
-					text = <"Kısmi">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tıkayıcı">
-				>
-				["at5452"] = <
-					text = <"Tam">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tıkayıcı">
-				>
-				["at5460"] = <
-					text = <"Çepeçevre">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
-				>
-				["at5470"] = <
-					text = <"Kanama">
-					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
-				>
-				["at5471"] = <
-					text = <"Evet: Fışkırır tarzda">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Kanama">
-				>
-				["at5472"] = <
-					text = <"Evet: Sızma tarzında">
-					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Kanama">
-				>
-				["at5500"] = <
-					text = <"Hipertrofik anal papilla">
-					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
-				>
-				["at5600"] = <
-					text = <"Hemoroidler">
-					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
-				>
-				["at5700"] = <
-					text = <"Sütür granülomu">
-					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
-				>
-				["at5800"] = <
-					text = <"Kondilom">
-					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
-				>
-				["at6000"] = <
-					text = <"İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
-					description = <"BAŞLIK">
-				>
-				["at6100"] = <
-					text = <"Erozyon">
-					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
-				>
-				["at6200"] = <
-					text = <"Aftlar">
-					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
-				>
-				["at6300"] = <
-					text = <"Ülser">
-					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
-				>
-				["at6310"] = <
-					text = <"Sayı">
-					description = <"Sıfat: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Ülser">
-				>
-				["at6311"] = <
-					text = <"Tek (soliter)">
-					description = <"Sıfat değeri: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Ülser>Sayı">
-				>
-				["at6320"] = <
-					text = <"Boyut">
-					description = <"Sıfat: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Ülser">
-				>
-				["at6400"] = <
-					text = <"Skar">
-					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
-				>
-				["at6410"] = <
-					text = <"Sayı">
-					description = <"Sıfat: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Skar">
-				>
-				["at6500"] = <
-					text = <"Divertikül">
-					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
-				>
-				["at6520"] = <
-					text = <"Açıklık">
-					description = <"Sıfat: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Açıklık">
-				>
-				["at6600"] = <
-					text = <"Fistül">
-					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
-				>
-				["at6700"] = <
-					text = <"Anal fissür">
-					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
-				>
-			>
-		>
-		["pt"] = <
-			items = <
-				["at0.6701"] = <
-					text = <"*Anal canal(en)">
-					description = <"*1120;Site: Colon(en)">
-				>
-				["at0.6702"] = <
-					text = <"*Terminal ileum(en)">
-					description = <"*1260;Site: Ileum(en)">
-				>
-				["at0.6703"] = <
-					text = <"*Ileo-anal pouch(en)">
-					description = <"**(en)">
-				>
-				["at0.6704"] = <
-					text = <"*Colo-rectal anastomosis(en)">
-					description = <"*Attribute value: LUMEN>Evidence of previous surgery>Type(en)">
-				>
-				["at0.6705"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
-				>
-				["at0.6706"] = <
-					text = <"*Internal(en)">
-					description = <"**(en)">
-				>
-				["at0.6707"] = <
-					text = <"*External(en)">
-					description = <"**(en)">
-				>
-				["at0.6708"] = <
-					text = <"*New element(en)">
-					description = <"**(en)">
-				>
-				["at0.6709"] = <
-					text = <"*Grade I(en)">
-					description = <"**(en)">
-				>
-				["at0.6710"] = <
-					text = <"*Grade II(en)">
-					description = <"**(en)">
-				>
-				["at0.6711"] = <
-					text = <"*Grade III(en)">
-					description = <"**(en)">
-				>
-				["at0.6712"] = <
-					text = <"*Grade IV(en)">
-					description = <"**(en)">
-				>
-				["at0.6713"] = <
-					text = <"*null(en)">
-					description = <"*Presence=null(en)">
-				>
-				["at0.6714"] = <
-					text = <"*present(en)">
-					description = <"*Presence=present(en)">
-				>
-				["at0.6715"] = <
-					text = <"*unknown(en)">
-					description = <"*Presence=unknown(en)">
-				>
-				["at0.6716"] = <
-					text = <"*absent(en)">
-					description = <"*Presence=absent(en)">
-				>
-				["at0000"] = <
-					text = <"MST achados de cólon">
-					description = <"Endoscopia gastrointestinal conclusões, tal como descrita por Mínimas da terminologia padrão para Endoscopia Gastrintestinal versão 2 (MST-2). Esta é a terminologia oficial aprovada pelo Mundo Endoscopy Society (OMED).">
-				>
-				["at0000.1"] = <
-					text = <"*MST Findings for Colon!(en)">
-					description = <"*Gastrointestinal Endoscopy findings as described by the Minimal Standard Terminology for Gastrointestinal Endoscopy version 2 (MST-2). This is the official terminology endorsed by the World Endoscopy Society (OMED).!(en)">
-				>
-				["at0005"] = <
-					text = <"NORMAL">
-					description = <"TÍTULOS">
-				>
-				["at0100"] = <
-					text = <"Normal">
-					description = <"TERMOS: NORMAL">
-				>
-				["at0105"] = <
-					text = <"*Present?(en)">
-					description = <"*Attribute: General(en)">
-				>
-				["at0106"] = <
-					text = <"Sim">
-					description = <"Especificações: Geral">
-				>
-				["at0107"] = <
-					text = <"Não">
-					description = <"Especificações: Geral">
-				>
-				["at0110"] = <
-					text = <"Regiões">
-					description = <"Regiões para colon">
-				>
-				["at0111"] = <
-					text = <"*Anus(en)">
-					description = <"*1110;Site: Colon(en)">
-				>
-				["at0112"] = <
-					text = <"*Rectum(en)">
-					description = <"*1130;Site: Colon(en)">
-				>
-				["at0113"] = <
-					text = <"*Sigmoid(en)">
-					description = <"*1140;Site: Colon(en)">
-				>
-				["at0114"] = <
-					text = <"*Descending(en)">
-					description = <"*1150;Site: Colon(en)">
-				>
-				["at0115"] = <
-					text = <"*Splenic(en)">
-					description = <"*1160;Site: Colon(en)">
-				>
-				["at0116"] = <
-					text = <"*Transverse(en)">
-					description = <"*1170;Site: Colon(en)">
-				>
-				["at0117"] = <
-					text = <"*Hepatic(en)">
-					description = <"*1180;Site: Colon(en)">
-				>
-				["at0118"] = <
-					text = <"*Ascending(en)">
-					description = <"*1190;Site: Colon(en)">
-				>
-				["at0119"] = <
-					text = <"*Cecum(en)">
-					description = <"*1200;Site: Colon(en)">
-				>
-				["at0120"] = <
-					text = <"*Ileo-cecal valve(en)">
-					description = <"*1210;Site: Colon(en)">
-				>
-				["at0121"] = <
-					text = <"*Stoma(en)">
-					description = <"*1220;Site: Colon(en)">
-				>
-				["at0122"] = <
-					text = <"*Whole colon(en)">
-					description = <"*1230;Site: Colon(en)">
-				>
-				["at0123"] = <
-					text = <"*Anastomosis(en)">
-					description = <"*1240;Site: Colon(en)">
-				>
-				["at0124"] = <
-					text = <"*Rectal Pouch(en)">
-					description = <"*1250;Site: Colon(en)">
-				>
-				["at1000"] = <
-					text = <"LÚMEN">
-					description = <"TÍTULOS">
-				>
-				["at1100"] = <
-					text = <"Dilatado">
-					description = <"TERMOS: LÚMEN">
-				>
-				["at1200"] = <
-					text = <"Estenose">
-					description = <"TERMOS: LÚMEN">
-				>
-				["at1210"] = <
-					text = <"Aspecto">
-					description = <"Características: LÚMEN>Estenose">
-				>
-				["at1211"] = <
-					text = <"Extrínseca">
-					description = <"Especificações: LÚMEN>Estenose>Aspecto">
-				>
-				["at1212"] = <
-					text = <"Intrínseca: benigna">
-					description = <"Especificações: LÚMEN>Estenose>Aspecto">
-				>
-				["at1213"] = <
-					text = <"Intrínseca: maligna">
-					description = <"Especificações: LÚMEN>Estenose>Aspecto">
-				>
-				["at1220"] = <
-					text = <"Comprimento">
-					description = <"Características: LÚMEN>Estenose">
-				>
-				["at1230"] = <
-					text = <"Possibilidade de ser franqueada">
-					description = <"Características: LÚMEN>Estenose">
-				>
-				["at1300"] = <
-					text = <"Cirurgia prévia">
-					description = <"TERMOS: LÚMEN">
-				>
-				["at1310"] = <
-					text = <"Tipo">
-					description = <"Características: LÚMEN>Cirurgia prévia">
-				>
-				["at1311"] = <
-					text = <"Anastomose colo-cólica">
-					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
-				>
-				["at1312"] = <
-					text = <"Anastomose íleo-cólica ">
-					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
-				>
-				["at1313"] = <
-					text = <"Anastomose colo-anal">
-					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
-				>
-				["at1314"] = <
-					text = <"Anastomose íleo-anal ">
-					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
-				>
-				["at1315"] = <
-					text = <"Colostomia">
-					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
-				>
-				["at1320"] = <
-					text = <"Material de sutura visível">
-					description = <"Características: LÚMEN>Cirurgia prévia">
-				>
-				["at2000"] = <
-					text = <"CONTEÚDOS">
-					description = <"TÍTULOS">
-				>
-				["at2100"] = <
-					text = <"Sangue">
-					description = <"TERMOS: CONTEÚDOS">
-				>
-				["at2110"] = <
-					text = <"Tipo de sangue">
-					description = <"Características: CONTEÚDOS>Sangue">
-				>
-				["at2111"] = <
-					text = <"Vermelho">
-					description = <"Especificações: CONTEÚDOS>Sangue>Tipo de sangue">
-				>
-				["at2112"] = <
-					text = <"Coágulo">
-					description = <"Especificações: CONTEÚDOS>Sangue>Tipo de sangue">
-				>
-				["at2113"] = <
-					text = <"Hematina (sangue alterado)">
-					description = <"Especificações: CONTEÚDOS>Sangue>Tipo de sangue">
-				>
-				["at2200"] = <
-					text = <"Corpo estranho">
-					description = <"TERMOS: CONTEÚDOS">
-				>
-				["at2300"] = <
-					text = <"Parasitas">
-					description = <"TERMOS: CONTEÚDOS">
-				>
-				["at2400"] = <
-					text = <"Exsudado">
-					description = <"TERMOS: CONTEÚDOS">
-				>
-				["at2500"] = <
-					text = <"Fezes">
-					description = <"TERMOS: CONTEÚDOS">
-				>
-				["at2600"] = <
-					text = <"Prótese">
-					description = <"TERMOS: CONTEÚDOS">
-				>
-				["at2610"] = <
-					text = <"Tipo">
-					description = <"Características: CONTEÚDOS>Prótese">
-				>
-				["at3000"] = <
-					text = <"MUCOSA">
-					description = <"TÍTULOS">
-				>
-				["at3100"] = <
-					text = <"Padrão vascular">
-					description = <"TERMOS: MUCOSA">
-				>
-				["at3110"] = <
-					text = <"Aspecto">
-					description = <"Características: MUCOSA>Padrão vascular">
-				>
-				["at3111"] = <
-					text = <"Normal">
-					description = <"Especificações: MUCOSA>Padrão vascular>Aspecto">
-				>
-				["at3112"] = <
-					text = <"Aumentado">
-					description = <"Especificações: MUCOSA>Padrão vascular>Aspecto">
-				>
-				["at3113"] = <
-					text = <"Diminuído">
-					description = <"Especificações: MUCOSA>Padrão vascular>Aspecto">
-				>
-				["at3120"] = <
-					text = <"Extensão">
-					description = <"Características: MUCOSA>Padrão vascular">
-				>
-				["at3121"] = <
-					text = <"Localizado">
-					description = <"Especificações: MUCOSA>Padrão vascular>Extensão">
-				>
-				["at3122"] = <
-					text = <"Segmentar">
-					description = <"Especificações: MUCOSA>Padrão vascular>Extensão">
-				>
-				["at3123"] = <
-					text = <"Difuso">
-					description = <"Especificações: MUCOSA>Padrão vascular>Extensão">
-				>
-				["at3200"] = <
-					text = <"Eritematosa (Hiperemia)">
-					description = <"TERMOS: MUCOSA">
-				>
-				["at3300"] = <
-					text = <"Congestionada (Edematosa)">
-					description = <"TERMOS: MUCOSA">
-				>
-				["at3400"] = <
-					text = <"Granular">
-					description = <"TERMOS: MUCOSA">
-				>
-				["at3500"] = <
-					text = <"Friável">
-					description = <"TERMOS: MUCOSA">
-				>
-				["at3520"] = <
-					text = <"Hemorragia">
-					description = <"Características: MUCOSA>Friável">
-				>
-				["at3521"] = <
-					text = <"Sim: espontânea">
-					description = <"Especificações: MUCOSA>Friável>Hemorragia">
-				>
-				["at3522"] = <
-					text = <"Sim: ao toque ">
-					description = <"Especificações: MUCOSA>Friável>Hemorragia">
-				>
-				["at3600"] = <
-					text = <"Mucosa Ulcerada">
-					description = <"TERMOS: MUCOSA">
-				>
-				["at3610"] = <
-					text = <"Continuidade">
-					description = <"Características: MUCOSA>Mucosa Ulcerada">
-				>
-				["at3611"] = <
-					text = <"Descontínua">
-					description = <"Especificações: MUCOSA>Mucosa Ulcerada>Continuidade">
-				>
-				["at3612"] = <
-					text = <"Contínua">
-					description = <"Especificações: MUCOSA>Mucosa Ulcerada>Continuidade">
-				>
-				["at3620"] = <
-					text = <"Hemorragia">
-					description = <"Características: MUCOSA>Mucosa Ulcerada">
-				>
-				["at3630"] = <
-					text = <"Estigmas de hemorragia">
-					description = <"Características: MUCOSA>Mucosa Ulcerada">
-				>
-				["at3700"] = <
-					text = <"Petéquias">
-					description = <"TERMOS: MUCOSA">
-				>
-				["at3710"] = <
-					text = <"Número">
-					description = <"Características: MUCOSA>Petéquias">
-				>
-				["at3711"] = <
-					text = <"Algumas">
-					description = <"Especificações: MUCOSA>Petéquias>Número">
-				>
-				["at3712"] = <
-					text = <"Múltiplas">
-					description = <"Especificações: MUCOSA>Petéquias>Número">
-				>
-				["at3800"] = <
-					text = <"Pseudomembrana">
-					description = <"TERMOS: MUCOSA">
-				>
-				["at3900"] = <
-					text = <"Melanose">
-					description = <"TERMOS: MUCOSA">
-				>
-				["at4000"] = <
-					text = <"LESÕES PLANAS">
-					description = <"TÍTULOS">
-				>
-				["at4100"] = <
-					text = <"Angiectasia">
-					description = <"TERMOS: LESÕES PLANAS">
-				>
-				["at4110"] = <
-					text = <"Número">
-					description = <"Características: LESÕES PLANAS>Angiectasia">
-				>
-				["at4111"] = <
-					text = <"Única">
-					description = <"Especificações: LESÕES PLANAS>Angiectasia>Número">
-				>
-				["at4120"] = <
-					text = <"Dimensão">
-					description = <"Características: LESÕES PLANAS>Angiectasia">
-				>
-				["at4121"] = <
-					text = <"Pequena">
-					description = <"Especificações: LESÕES PLANAS>Angiectasia>Dimensão">
-				>
-				["at4122"] = <
-					text = <"Média">
-					description = <"Especificações: LESÕES PLANAS>Angiectasia>Dimensão">
-				>
-				["at4123"] = <
-					text = <"Grande">
-					description = <"Especificações: LESÕES PLANAS>Angiectasia>Dimensão">
-				>
-				["at4130"] = <
-					text = <"Extensão">
-					description = <"Características: LESÕES PLANAS>Angiectasia">
-				>
-				["at4132"] = <
-					text = <"Focal">
-					description = <"Especificações: LESÕES PLANAS>Angiectasia>Extensão">
-				>
-				["at4140"] = <
-					text = <"Hemorragia">
-					description = <"Características: LESÕES PLANAS>Angiectasia">
-				>
-				["at5000"] = <
-					text = <"LESÕES PROTUBERANTES">
-					description = <"TÍTULOS">
-				>
-				["at5100"] = <
-					text = <"Pólipo(s)">
-					description = <"TERMOS: LESÕES PROTUBERANTES">
-				>
-				["at5110"] = <
-					text = <"Número">
-					description = <"Características: LESÕES PROTUBERANTES>Pólipo(s)">
-				>
-				["at5111"] = <
-					text = <"Se < 5, especificar">
-					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Número">
-				>
-				["at5112"] = <
-					text = <"Se > 5: Muitos">
-					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Número">
-				>
-				["at5113"] = <
-					text = <"Múltiplos">
-					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Número">
-				>
-				["at5130"] = <
-					text = <"Dimensão">
-					description = <"Características: LESÕES PROTUBERANTES>Pólipo(s)">
-				>
-				["at5140"] = <
-					text = <"Pedículo">
-					description = <"Características: LESÕES PROTUBERANTES>Pólipo(s)">
-				>
-				["at5141"] = <
-					text = <"Séssil">
-					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Pedículo">
-				>
-				["at5142"] = <
-					text = <"Pediculado">
-					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Pedículo">
-				>
-				["at5150"] = <
-					text = <"Hemorragia">
-					description = <"Características: LESÕES PROTUBERANTES>Pólipo(s)">
-				>
-				["at5153"] = <
-					text = <"Estigmas de hemorragia">
-					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Hemorragia">
-				>
-				["at5200"] = <
-					text = <"Pseudopólipos">
-					description = <"TERMOS: LESÕES PROTUBERANTES">
-				>
-				["at5300"] = <
-					text = <"Lipoma">
-					description = <"TERMOS: LESÕES PROTUBERANTES">
-				>
-				["at5320"] = <
-					text = <"Diâmetro">
-					description = <"Características: LESÕES PROTUBERANTES>Lipoma">
-				>
-				["at5400"] = <
-					text = <"Tumor/Massa">
-					description = <"TERMOS: LESÕES PROTUBERANTES">
-				>
-				["at5420"] = <
-					text = <"Diâmetro">
-					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
-				>
-				["at5430"] = <
-					text = <"Comprimento">
-					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
-				>
-				["at5440"] = <
-					text = <"Tipo">
-					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
-				>
-				["at5441"] = <
-					text = <"Submucoso">
-					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
-				>
-				["at5442"] = <
-					text = <"Vegetante">
-					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
-				>
-				["at5443"] = <
-					text = <"Ulcerado">
-					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
-				>
-				["at5444"] = <
-					text = <"Infiltrativo">
-					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
-				>
-				["at5445"] = <
-					text = <"Tipo viloso">
-					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
-				>
-				["at5450"] = <
-					text = <"Obstrução">
-					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
-				>
-				["at5451"] = <
-					text = <"Parcial">
-					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Obstrução">
-				>
-				["at5452"] = <
-					text = <"Completa">
-					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Obstrução">
-				>
-				["at5460"] = <
-					text = <"Circunferencial">
-					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
-				>
-				["at5470"] = <
-					text = <"Hemorragia">
-					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
-				>
-				["at5471"] = <
-					text = <"Sim: em jacto">
-					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Hemorragia">
-				>
-				["at5472"] = <
-					text = <"Sim: em toalha">
-					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Hemorragia">
-				>
-				["at5500"] = <
-					text = <"Papila Hipertrófica Anal">
-					description = <"TERMOS: LESÕES PROTUBERANTES">
-				>
-				["at5600"] = <
-					text = <"Hemorróidas">
-					description = <"TERMOS: LESÕES PROTUBERANTES">
-				>
-				["at5700"] = <
-					text = <"Granuloma de Sutura">
-					description = <"TERMOS: LESÕES PROTUBERANTES">
-				>
-				["at5800"] = <
-					text = <"Condilomas">
-					description = <"TERMOS: LESÕES PROTUBERANTES">
-				>
-				["at6000"] = <
-					text = <"LESÕES ESCAVADAS">
-					description = <"TÍTULOS">
-				>
-				["at6100"] = <
-					text = <"Erosão">
-					description = <"TERMOS: LESÕES ESCAVADAS">
-				>
-				["at6200"] = <
-					text = <"Afta">
-					description = <"TERMOS: LESÕES ESCAVADAS">
-				>
-				["at6300"] = <
-					text = <"Úlcera">
-					description = <"TERMOS: LESÕES ESCAVADAS">
-				>
-				["at6310"] = <
-					text = <"Número">
-					description = <"Características: LESÕES ESCAVADAS>Úlcera">
-				>
-				["at6311"] = <
-					text = <"Única (Solitária)">
-					description = <"Especificações: LESÕES ESCAVADAS>Úlcera>Número">
-				>
-				["at6320"] = <
-					text = <"Dimensão">
-					description = <"Características: LESÕES ESCAVADAS>Úlcera">
-				>
-				["at6400"] = <
-					text = <"Cicatriz">
-					description = <"TERMOS: LESÕES ESCAVADAS">
-				>
-				["at6410"] = <
-					text = <"Número">
-					description = <"Características: LESÕES ESCAVADAS>Cicatriz">
-				>
-				["at6500"] = <
-					text = <"Divertículo">
-					description = <"TERMOS: LESÕES ESCAVADAS">
-				>
-				["at6520"] = <
-					text = <"Abertura">
-					description = <"Características: LESÕES ESCAVADAS>Divertículo">
-				>
-				["at6600"] = <
-					text = <"Fístula">
-					description = <"TERMOS: LESÕES ESCAVADAS">
-				>
-				["at6700"] = <
-					text = <"Fissura anal">
-					description = <"TERMOS: LESÕES ESCAVADAS">
-				>
-			>
-		>
 		["fr"] = <
 			items = <
 				["at0.6701"] = <
@@ -3363,6 +2115,630 @@ ontology
 				["at6700"] = <
 					text = <"Fissure anale">
 					description = <"TERMES: LÉSIONS EXCAVÉES">
+				>
+			>
+		>
+		["cs"] = <
+			items = <
+				["at0.6701"] = <
+					text = <"*Anal canal(en)">
+					description = <"*1120;Site: Colon(en)">
+				>
+				["at0.6702"] = <
+					text = <"*Terminal ileum(en)">
+					description = <"*1260;Site: Ileum(en)">
+				>
+				["at0.6703"] = <
+					text = <"*Ileo-anal pouch(en)">
+					description = <"**(en)">
+				>
+				["at0.6704"] = <
+					text = <"*Colo-rectal anastomosis(en)">
+					description = <"*Attribute value: LUMEN>Evidence of previous surgery>Type(en)">
+				>
+				["at0.6705"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0.6706"] = <
+					text = <"*Internal(en)">
+					description = <"**(en)">
+				>
+				["at0.6707"] = <
+					text = <"*External(en)">
+					description = <"**(en)">
+				>
+				["at0.6708"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0.6709"] = <
+					text = <"*Grade I(en)">
+					description = <"**(en)">
+				>
+				["at0.6710"] = <
+					text = <"*Grade II(en)">
+					description = <"**(en)">
+				>
+				["at0.6711"] = <
+					text = <"*Grade III(en)">
+					description = <"**(en)">
+				>
+				["at0.6712"] = <
+					text = <"*Grade IV(en)">
+					description = <"**(en)">
+				>
+				["at0.6713"] = <
+					text = <"*null(en)">
+					description = <"*Presence=null(en)">
+				>
+				["at0.6714"] = <
+					text = <"*present(en)">
+					description = <"*Presence=present(en)">
+				>
+				["at0.6715"] = <
+					text = <"*unknown(en)">
+					description = <"*Presence=unknown(en)">
+				>
+				["at0.6716"] = <
+					text = <"*absent(en)">
+					description = <"*Presence=absent(en)">
+				>
+				["at0000"] = <
+					text = <"MST zjištění pro Colon">
+					description = <"Gastrointestinální Endoskopie zjištění, jak je popsáno v Minimální standardní terminologie pro Gastrointestinální Endoskopie verze 2 (MST-2). Toto je oficiální terminologie schválila Světová Endoskopie Společnost (OMED)">
+				>
+				["at0000.1"] = <
+					text = <"*MST Findings for Colon!(en)">
+					description = <"*Gastrointestinal Endoscopy findings as described by the Minimal Standard Terminology for Gastrointestinal Endoscopy version 2 (MST-2). This is the official terminology endorsed by the World Endoscopy Society (OMED).!(en)">
+				>
+				["at0005"] = <
+					text = <"NORMÁLNÍ">
+					description = <"NADPIS">
+				>
+				["at0100"] = <
+					text = <"normální">
+					description = <"TERMÍN: NORMÁLNÍ">
+				>
+				["at0105"] = <
+					text = <"*Present?(en)">
+					description = <"*Attribute: General(en)">
+				>
+				["at0106"] = <
+					text = <"Ano">
+					description = <"Specifikace znaku: Obecné">
+				>
+				["at0107"] = <
+					text = <"Ne">
+					description = <"Specifikace znaku: Obecné">
+				>
+				["at0110"] = <
+					text = <"Lokalizace">
+					description = <"lokalit pro tlustého střeva">
+				>
+				["at0111"] = <
+					text = <"*Anus(en)">
+					description = <"*1110;Site: Colon(en)">
+				>
+				["at0112"] = <
+					text = <"*Rectum(en)">
+					description = <"*1130;Site: Colon(en)">
+				>
+				["at0113"] = <
+					text = <"*Sigmoid(en)">
+					description = <"*1140;Site: Colon(en)">
+				>
+				["at0114"] = <
+					text = <"*Descending(en)">
+					description = <"*1150;Site: Colon(en)">
+				>
+				["at0115"] = <
+					text = <"*Splenic(en)">
+					description = <"*1160;Site: Colon(en)">
+				>
+				["at0116"] = <
+					text = <"*Transverse(en)">
+					description = <"*1170;Site: Colon(en)">
+				>
+				["at0117"] = <
+					text = <"*Hepatic(en)">
+					description = <"*1180;Site: Colon(en)">
+				>
+				["at0118"] = <
+					text = <"*Ascending(en)">
+					description = <"*1190;Site: Colon(en)">
+				>
+				["at0119"] = <
+					text = <"*Cecum(en)">
+					description = <"*1200;Site: Colon(en)">
+				>
+				["at0120"] = <
+					text = <"*Ileo-cecal valve(en)">
+					description = <"*1210;Site: Colon(en)">
+				>
+				["at0121"] = <
+					text = <"*Stoma(en)">
+					description = <"*1220;Site: Colon(en)">
+				>
+				["at0122"] = <
+					text = <"*Whole colon(en)">
+					description = <"*1230;Site: Colon(en)">
+				>
+				["at0123"] = <
+					text = <"*Anastomosis(en)">
+					description = <"*1240;Site: Colon(en)">
+				>
+				["at0124"] = <
+					text = <"*Rectal Pouch(en)">
+					description = <"*1250;Site: Colon(en)">
+				>
+				["at1000"] = <
+					text = <"LUMEN">
+					description = <"NADPIS">
+				>
+				["at1100"] = <
+					text = <"Rozšířené">
+					description = <"TERMÍN: LUMEN">
+				>
+				["at1200"] = <
+					text = <"Stenoza">
+					description = <"TERMÍN: LUMEN">
+				>
+				["at1210"] = <
+					text = <"Vzhled">
+					description = <"Znak: LUMEN>Stenoza">
+				>
+				["at1211"] = <
+					text = <"Zevní">
+					description = <"Specifikace znaku: LUMEN>Stenoza>Vzhled">
+				>
+				["at1212"] = <
+					text = <"Benigní vnitřní">
+					description = <"Specifikace znaku: LUMEN>Stenoza>Vzhled">
+				>
+				["at1213"] = <
+					text = <"Maligní vnitřní">
+					description = <"Specifikace znaku: LUMEN>Stenoza>Vzhled">
+				>
+				["at1220"] = <
+					text = <"Délka (cm)">
+					description = <"Znak: LUMEN>Stenoza">
+				>
+				["at1230"] = <
+					text = <"Průchodná">
+					description = <"Znak: LUMEN>Stenoza">
+				>
+				["at1300"] = <
+					text = <"Známky předchozího chirurgického výkonu">
+					description = <"TERMÍN: LUMEN">
+				>
+				["at1310"] = <
+					text = <"Typ">
+					description = <"Znak: LUMEN>Známky předchozího chirurgického výkonu">
+				>
+				["at1311"] = <
+					text = <"Kolokolická anastomoza">
+					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+				>
+				["at1312"] = <
+					text = <"Ileokolická anastomoza">
+					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+				>
+				["at1313"] = <
+					text = <"Koloanální anastomoza">
+					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+				>
+				["at1314"] = <
+					text = <"Ileoanální anastomoza">
+					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+				>
+				["at1315"] = <
+					text = <"Kolostomie">
+					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+				>
+				["at1320"] = <
+					text = <"Viditelný šicí materiál">
+					description = <"Znak: LUMEN>Známky předchozího chirurgického výkonu">
+				>
+				["at2000"] = <
+					text = <"OBSAH">
+					description = <"NADPIS">
+				>
+				["at2100"] = <
+					text = <"Krev">
+					description = <"TERMÍN: OBSAH">
+				>
+				["at2110"] = <
+					text = <"Druh krve">
+					description = <"Znak: OBSAH>Krev">
+				>
+				["at2111"] = <
+					text = <"Červená">
+					description = <"Specifikace znaku: OBSAH>Krev>Druh krve">
+				>
+				["at2112"] = <
+					text = <"Sraženina">
+					description = <"Specifikace znaku: OBSAH>Krev>Druh krve">
+				>
+				["at2113"] = <
+					text = <"Hematin (natrávená krev)">
+					description = <"Specifikace znaku: OBSAH>Krev>Druh krve">
+				>
+				["at2200"] = <
+					text = <"Cizí těleso">
+					description = <"TERMÍN: OBSAH">
+				>
+				["at2300"] = <
+					text = <"Paraziti">
+					description = <"TERMÍN: OBSAH">
+				>
+				["at2400"] = <
+					text = <"Exsudát">
+					description = <"TERMÍN: OBSAH">
+				>
+				["at2500"] = <
+					text = <"Stolice">
+					description = <"TERMÍN: OBSAH">
+				>
+				["at2600"] = <
+					text = <"Stent">
+					description = <"TERMÍN: OBSAH">
+				>
+				["at2610"] = <
+					text = <"Typ">
+					description = <"Znak: OBSAH>Stent">
+				>
+				["at3000"] = <
+					text = <"SLIZNICE">
+					description = <"NADPIS">
+				>
+				["at3100"] = <
+					text = <"Cévní kresba">
+					description = <"TERMÍN: SLIZNICE">
+				>
+				["at3110"] = <
+					text = <"Vzhled">
+					description = <"Znak: SLIZNICE>Cévní kresba">
+				>
+				["at3111"] = <
+					text = <"Normální">
+					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Vzhled">
+				>
+				["at3112"] = <
+					text = <"Zvýšená">
+					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Vzhled">
+				>
+				["at3113"] = <
+					text = <"Snížená">
+					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Vzhled">
+				>
+				["at3120"] = <
+					text = <"Rozsah">
+					description = <"Znak: SLIZNICE>Cévní kresba">
+				>
+				["at3121"] = <
+					text = <"Ložiskově">
+					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Rozsah">
+				>
+				["at3122"] = <
+					text = <"Segmentalně">
+					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Rozsah">
+				>
+				["at3123"] = <
+					text = <"Difuzně">
+					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Rozsah">
+				>
+				["at3200"] = <
+					text = <"Zarudlá (hyperemická)">
+					description = <"TERMÍN: SLIZNICE">
+				>
+				["at3300"] = <
+					text = <"Městnavá (edematozní)">
+					description = <"TERMÍN: SLIZNICE">
+				>
+				["at3400"] = <
+					text = <"Granulární (zrnitá)">
+					description = <"TERMÍN: SLIZNICE">
+				>
+				["at3500"] = <
+					text = <"Křehká">
+					description = <"TERMÍN: SLIZNICE">
+				>
+				["at3520"] = <
+					text = <"Krvácení">
+					description = <"Znak: SLIZNICE>Křehká">
+				>
+				["at3521"] = <
+					text = <"Ano: spontánní">
+					description = <"Specifikace znaku: SLIZNICE>Křehká>Krvácení">
+				>
+				["at3522"] = <
+					text = <"Ano: kontaktní krvácení ">
+					description = <"Specifikace znaku: SLIZNICE>Křehká>Krvácení">
+				>
+				["at3600"] = <
+					text = <"Zvředovatělá sliznice">
+					description = <"TERMÍN: SLIZNICE">
+				>
+				["at3610"] = <
+					text = <"Kontinuita">
+					description = <"Znak: SLIZNICE>Zvředovatělá sliznice">
+				>
+				["at3611"] = <
+					text = <"Diskontinuální">
+					description = <"Specifikace znaku: SLIZNICE>Zvředovatělá sliznice>Kontinuita">
+				>
+				["at3612"] = <
+					text = <"Kontinuální">
+					description = <"Specifikace znaku: SLIZNICE>Zvředovatělá sliznice>Kontinuita">
+				>
+				["at3620"] = <
+					text = <"Krvácení">
+					description = <"Znak: SLIZNICE>Zvředovatělá sliznice">
+				>
+				["at3630"] = <
+					text = <"Stigmata krvácení">
+					description = <"Znak: SLIZNICE>Zvředovatělá sliznice">
+				>
+				["at3700"] = <
+					text = <"Petechie">
+					description = <"TERMÍN: SLIZNICE">
+				>
+				["at3710"] = <
+					text = <"Počet">
+					description = <"Znak: SLIZNICE>Petechie">
+				>
+				["at3711"] = <
+					text = <"Několik">
+					description = <"Specifikace znaku: SLIZNICE>Petechie>Počet">
+				>
+				["at3712"] = <
+					text = <"Mnohočetné">
+					description = <"Specifikace znaku: SLIZNICE>Petechie>Počet">
+				>
+				["at3800"] = <
+					text = <"Pseudomembrány">
+					description = <"TERMÍN: SLIZNICE">
+				>
+				["at3900"] = <
+					text = <"Melanoza">
+					description = <"TERMÍN: SLIZNICE">
+				>
+				["at4000"] = <
+					text = <"PLOCHÉ LEZE">
+					description = <"NADPIS">
+				>
+				["at4100"] = <
+					text = <"Angiektazie">
+					description = <"TERMÍN: PLOCHÉ LEZE">
+				>
+				["at4110"] = <
+					text = <"Počet">
+					description = <"Znak: PLOCHÉ LEZE>Angiektazie">
+				>
+				["at4111"] = <
+					text = <"Jedna">
+					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Počet">
+				>
+				["at4120"] = <
+					text = <"Velikost">
+					description = <"Znak: PLOCHÉ LEZE>Angiektazie">
+				>
+				["at4121"] = <
+					text = <"Malé">
+					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Velikost">
+				>
+				["at4122"] = <
+					text = <"Středně velké">
+					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Velikost">
+				>
+				["at4123"] = <
+					text = <"Velké">
+					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Velikost">
+				>
+				["at4130"] = <
+					text = <"Rozsah">
+					description = <"Znak: PLOCHÉ LEZE>Angiektazie">
+				>
+				["at4132"] = <
+					text = <"Skvrnitě">
+					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Rozsah">
+				>
+				["at4140"] = <
+					text = <"Krvácení">
+					description = <"Znak: PLOCHÉ LEZE>Angiektazie">
+				>
+				["at5000"] = <
+					text = <"PROMINUJÍCÍ LEZE">
+					description = <"NADPIS">
+				>
+				["at5100"] = <
+					text = <"Polyp">
+					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+				>
+				["at5110"] = <
+					text = <"Počet">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Polyp">
+				>
+				["at5111"] = <
+					text = <"Je-li jich méně než 5, specifikuj">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Počet">
+				>
+				["at5112"] = <
+					text = <"Mnoho">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Počet">
+				>
+				["at5113"] = <
+					text = <"Mnohočetné">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Počet">
+				>
+				["at5130"] = <
+					text = <"Velikost">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Polyp">
+				>
+				["at5140"] = <
+					text = <"Stopka">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Polyp">
+				>
+				["at5141"] = <
+					text = <"Přisedlý">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Stopka">
+				>
+				["at5142"] = <
+					text = <"Stopkatý">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Stopka">
+				>
+				["at5150"] = <
+					text = <"Krvácení">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Polyp">
+				>
+				["at5153"] = <
+					text = <"Stigmata krvácení">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Krvácení">
+				>
+				["at5200"] = <
+					text = <"Pseudopolyp">
+					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+				>
+				["at5300"] = <
+					text = <"Lipom">
+					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+				>
+				["at5320"] = <
+					text = <"Průměr">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Lipom">
+				>
+				["at5400"] = <
+					text = <"Útvar">
+					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+				>
+				["at5420"] = <
+					text = <"Průměr">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+				>
+				["at5430"] = <
+					text = <"Délka">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+				>
+				["at5440"] = <
+					text = <"Typ">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+				>
+				["at5441"] = <
+					text = <"Submukozní">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+				>
+				["at5442"] = <
+					text = <"Houbovitý">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+				>
+				["at5443"] = <
+					text = <"Vředovitý">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+				>
+				["at5444"] = <
+					text = <"Infiltrativní">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+				>
+				["at5445"] = <
+					text = <"Vilozní (klkovitý)">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+				>
+				["at5450"] = <
+					text = <"Obturující">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+				>
+				["at5451"] = <
+					text = <"Částečně">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Obturující">
+				>
+				["at5452"] = <
+					text = <"Úplně">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Obturující">
+				>
+				["at5460"] = <
+					text = <"Cirkulární">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+				>
+				["at5470"] = <
+					text = <"Krvácení">
+					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+				>
+				["at5471"] = <
+					text = <"Ano: prudké">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Krvácení">
+				>
+				["at5472"] = <
+					text = <"Ano: prosakující">
+					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Krvácení">
+				>
+				["at5500"] = <
+					text = <"Hypertrofické anální papily">
+					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+				>
+				["at5600"] = <
+					text = <"Hemoroidy">
+					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+				>
+				["at5700"] = <
+					text = <"Stehový granulom">
+					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+				>
+				["at5800"] = <
+					text = <"Kondylomata">
+					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+				>
+				["at6000"] = <
+					text = <"VYHLOUBENÉ LEZE">
+					description = <"NADPIS">
+				>
+				["at6100"] = <
+					text = <"Eroze">
+					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+				>
+				["at6200"] = <
+					text = <"Afty">
+					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+				>
+				["at6300"] = <
+					text = <"Vřed">
+					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+				>
+				["at6310"] = <
+					text = <"Počet">
+					description = <"Znak: VYHLOUBENÉ LEZE>Vřed">
+				>
+				["at6311"] = <
+					text = <"Jeden/ojedinělý (solitární)">
+					description = <"Specifikace znaku: VYHLOUBENÉ LEZE>Vřed>Počet">
+				>
+				["at6320"] = <
+					text = <"Velikost">
+					description = <"Znak: VYHLOUBENÉ LEZE>Vřed">
+				>
+				["at6400"] = <
+					text = <"Jizva">
+					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+				>
+				["at6410"] = <
+					text = <"Počet">
+					description = <"Znak: VYHLOUBENÉ LEZE>Jizva">
+				>
+				["at6500"] = <
+					text = <"Divertikl">
+					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+				>
+				["at6520"] = <
+					text = <"Ústí">
+					description = <"Znak: VYHLOUBENÉ LEZE>Divertikl">
+				>
+				["at6600"] = <
+					text = <"Píštěl">
+					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+				>
+				["at6700"] = <
+					text = <"Anální fisura">
+					description = <"TERMÍN: VYHLOUBENÉ LEZE">
 				>
 			>
 		>
@@ -3990,6 +3366,630 @@ ontology
 				>
 			>
 		>
+		["pt"] = <
+			items = <
+				["at0.6701"] = <
+					text = <"*Anal canal(en)">
+					description = <"*1120;Site: Colon(en)">
+				>
+				["at0.6702"] = <
+					text = <"*Terminal ileum(en)">
+					description = <"*1260;Site: Ileum(en)">
+				>
+				["at0.6703"] = <
+					text = <"*Ileo-anal pouch(en)">
+					description = <"**(en)">
+				>
+				["at0.6704"] = <
+					text = <"*Colo-rectal anastomosis(en)">
+					description = <"*Attribute value: LUMEN>Evidence of previous surgery>Type(en)">
+				>
+				["at0.6705"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0.6706"] = <
+					text = <"*Internal(en)">
+					description = <"**(en)">
+				>
+				["at0.6707"] = <
+					text = <"*External(en)">
+					description = <"**(en)">
+				>
+				["at0.6708"] = <
+					text = <"*New element(en)">
+					description = <"**(en)">
+				>
+				["at0.6709"] = <
+					text = <"*Grade I(en)">
+					description = <"**(en)">
+				>
+				["at0.6710"] = <
+					text = <"*Grade II(en)">
+					description = <"**(en)">
+				>
+				["at0.6711"] = <
+					text = <"*Grade III(en)">
+					description = <"**(en)">
+				>
+				["at0.6712"] = <
+					text = <"*Grade IV(en)">
+					description = <"**(en)">
+				>
+				["at0.6713"] = <
+					text = <"*null(en)">
+					description = <"*Presence=null(en)">
+				>
+				["at0.6714"] = <
+					text = <"*present(en)">
+					description = <"*Presence=present(en)">
+				>
+				["at0.6715"] = <
+					text = <"*unknown(en)">
+					description = <"*Presence=unknown(en)">
+				>
+				["at0.6716"] = <
+					text = <"*absent(en)">
+					description = <"*Presence=absent(en)">
+				>
+				["at0000"] = <
+					text = <"MST achados de cólon">
+					description = <"Endoscopia gastrointestinal conclusões, tal como descrita por Mínimas da terminologia padrão para Endoscopia Gastrintestinal versão 2 (MST-2). Esta é a terminologia oficial aprovada pelo Mundo Endoscopy Society (OMED).">
+				>
+				["at0000.1"] = <
+					text = <"*MST Findings for Colon!(en)">
+					description = <"*Gastrointestinal Endoscopy findings as described by the Minimal Standard Terminology for Gastrointestinal Endoscopy version 2 (MST-2). This is the official terminology endorsed by the World Endoscopy Society (OMED).!(en)">
+				>
+				["at0005"] = <
+					text = <"NORMAL">
+					description = <"TÍTULOS">
+				>
+				["at0100"] = <
+					text = <"Normal">
+					description = <"TERMOS: NORMAL">
+				>
+				["at0105"] = <
+					text = <"*Present?(en)">
+					description = <"*Attribute: General(en)">
+				>
+				["at0106"] = <
+					text = <"Sim">
+					description = <"Especificações: Geral">
+				>
+				["at0107"] = <
+					text = <"Não">
+					description = <"Especificações: Geral">
+				>
+				["at0110"] = <
+					text = <"Regiões">
+					description = <"Regiões para colon">
+				>
+				["at0111"] = <
+					text = <"*Anus(en)">
+					description = <"*1110;Site: Colon(en)">
+				>
+				["at0112"] = <
+					text = <"*Rectum(en)">
+					description = <"*1130;Site: Colon(en)">
+				>
+				["at0113"] = <
+					text = <"*Sigmoid(en)">
+					description = <"*1140;Site: Colon(en)">
+				>
+				["at0114"] = <
+					text = <"*Descending(en)">
+					description = <"*1150;Site: Colon(en)">
+				>
+				["at0115"] = <
+					text = <"*Splenic(en)">
+					description = <"*1160;Site: Colon(en)">
+				>
+				["at0116"] = <
+					text = <"*Transverse(en)">
+					description = <"*1170;Site: Colon(en)">
+				>
+				["at0117"] = <
+					text = <"*Hepatic(en)">
+					description = <"*1180;Site: Colon(en)">
+				>
+				["at0118"] = <
+					text = <"*Ascending(en)">
+					description = <"*1190;Site: Colon(en)">
+				>
+				["at0119"] = <
+					text = <"*Cecum(en)">
+					description = <"*1200;Site: Colon(en)">
+				>
+				["at0120"] = <
+					text = <"*Ileo-cecal valve(en)">
+					description = <"*1210;Site: Colon(en)">
+				>
+				["at0121"] = <
+					text = <"*Stoma(en)">
+					description = <"*1220;Site: Colon(en)">
+				>
+				["at0122"] = <
+					text = <"*Whole colon(en)">
+					description = <"*1230;Site: Colon(en)">
+				>
+				["at0123"] = <
+					text = <"*Anastomosis(en)">
+					description = <"*1240;Site: Colon(en)">
+				>
+				["at0124"] = <
+					text = <"*Rectal Pouch(en)">
+					description = <"*1250;Site: Colon(en)">
+				>
+				["at1000"] = <
+					text = <"LÚMEN">
+					description = <"TÍTULOS">
+				>
+				["at1100"] = <
+					text = <"Dilatado">
+					description = <"TERMOS: LÚMEN">
+				>
+				["at1200"] = <
+					text = <"Estenose">
+					description = <"TERMOS: LÚMEN">
+				>
+				["at1210"] = <
+					text = <"Aspecto">
+					description = <"Características: LÚMEN>Estenose">
+				>
+				["at1211"] = <
+					text = <"Extrínseca">
+					description = <"Especificações: LÚMEN>Estenose>Aspecto">
+				>
+				["at1212"] = <
+					text = <"Intrínseca: benigna">
+					description = <"Especificações: LÚMEN>Estenose>Aspecto">
+				>
+				["at1213"] = <
+					text = <"Intrínseca: maligna">
+					description = <"Especificações: LÚMEN>Estenose>Aspecto">
+				>
+				["at1220"] = <
+					text = <"Comprimento">
+					description = <"Características: LÚMEN>Estenose">
+				>
+				["at1230"] = <
+					text = <"Possibilidade de ser franqueada">
+					description = <"Características: LÚMEN>Estenose">
+				>
+				["at1300"] = <
+					text = <"Cirurgia prévia">
+					description = <"TERMOS: LÚMEN">
+				>
+				["at1310"] = <
+					text = <"Tipo">
+					description = <"Características: LÚMEN>Cirurgia prévia">
+				>
+				["at1311"] = <
+					text = <"Anastomose colo-cólica">
+					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
+				>
+				["at1312"] = <
+					text = <"Anastomose íleo-cólica ">
+					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
+				>
+				["at1313"] = <
+					text = <"Anastomose colo-anal">
+					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
+				>
+				["at1314"] = <
+					text = <"Anastomose íleo-anal ">
+					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
+				>
+				["at1315"] = <
+					text = <"Colostomia">
+					description = <"Especificações: LÚMEN>Cirurgia prévia>Tipo">
+				>
+				["at1320"] = <
+					text = <"Material de sutura visível">
+					description = <"Características: LÚMEN>Cirurgia prévia">
+				>
+				["at2000"] = <
+					text = <"CONTEÚDOS">
+					description = <"TÍTULOS">
+				>
+				["at2100"] = <
+					text = <"Sangue">
+					description = <"TERMOS: CONTEÚDOS">
+				>
+				["at2110"] = <
+					text = <"Tipo de sangue">
+					description = <"Características: CONTEÚDOS>Sangue">
+				>
+				["at2111"] = <
+					text = <"Vermelho">
+					description = <"Especificações: CONTEÚDOS>Sangue>Tipo de sangue">
+				>
+				["at2112"] = <
+					text = <"Coágulo">
+					description = <"Especificações: CONTEÚDOS>Sangue>Tipo de sangue">
+				>
+				["at2113"] = <
+					text = <"Hematina (sangue alterado)">
+					description = <"Especificações: CONTEÚDOS>Sangue>Tipo de sangue">
+				>
+				["at2200"] = <
+					text = <"Corpo estranho">
+					description = <"TERMOS: CONTEÚDOS">
+				>
+				["at2300"] = <
+					text = <"Parasitas">
+					description = <"TERMOS: CONTEÚDOS">
+				>
+				["at2400"] = <
+					text = <"Exsudado">
+					description = <"TERMOS: CONTEÚDOS">
+				>
+				["at2500"] = <
+					text = <"Fezes">
+					description = <"TERMOS: CONTEÚDOS">
+				>
+				["at2600"] = <
+					text = <"Prótese">
+					description = <"TERMOS: CONTEÚDOS">
+				>
+				["at2610"] = <
+					text = <"Tipo">
+					description = <"Características: CONTEÚDOS>Prótese">
+				>
+				["at3000"] = <
+					text = <"MUCOSA">
+					description = <"TÍTULOS">
+				>
+				["at3100"] = <
+					text = <"Padrão vascular">
+					description = <"TERMOS: MUCOSA">
+				>
+				["at3110"] = <
+					text = <"Aspecto">
+					description = <"Características: MUCOSA>Padrão vascular">
+				>
+				["at3111"] = <
+					text = <"Normal">
+					description = <"Especificações: MUCOSA>Padrão vascular>Aspecto">
+				>
+				["at3112"] = <
+					text = <"Aumentado">
+					description = <"Especificações: MUCOSA>Padrão vascular>Aspecto">
+				>
+				["at3113"] = <
+					text = <"Diminuído">
+					description = <"Especificações: MUCOSA>Padrão vascular>Aspecto">
+				>
+				["at3120"] = <
+					text = <"Extensão">
+					description = <"Características: MUCOSA>Padrão vascular">
+				>
+				["at3121"] = <
+					text = <"Localizado">
+					description = <"Especificações: MUCOSA>Padrão vascular>Extensão">
+				>
+				["at3122"] = <
+					text = <"Segmentar">
+					description = <"Especificações: MUCOSA>Padrão vascular>Extensão">
+				>
+				["at3123"] = <
+					text = <"Difuso">
+					description = <"Especificações: MUCOSA>Padrão vascular>Extensão">
+				>
+				["at3200"] = <
+					text = <"Eritematosa (Hiperemia)">
+					description = <"TERMOS: MUCOSA">
+				>
+				["at3300"] = <
+					text = <"Congestionada (Edematosa)">
+					description = <"TERMOS: MUCOSA">
+				>
+				["at3400"] = <
+					text = <"Granular">
+					description = <"TERMOS: MUCOSA">
+				>
+				["at3500"] = <
+					text = <"Friável">
+					description = <"TERMOS: MUCOSA">
+				>
+				["at3520"] = <
+					text = <"Hemorragia">
+					description = <"Características: MUCOSA>Friável">
+				>
+				["at3521"] = <
+					text = <"Sim: espontânea">
+					description = <"Especificações: MUCOSA>Friável>Hemorragia">
+				>
+				["at3522"] = <
+					text = <"Sim: ao toque ">
+					description = <"Especificações: MUCOSA>Friável>Hemorragia">
+				>
+				["at3600"] = <
+					text = <"Mucosa Ulcerada">
+					description = <"TERMOS: MUCOSA">
+				>
+				["at3610"] = <
+					text = <"Continuidade">
+					description = <"Características: MUCOSA>Mucosa Ulcerada">
+				>
+				["at3611"] = <
+					text = <"Descontínua">
+					description = <"Especificações: MUCOSA>Mucosa Ulcerada>Continuidade">
+				>
+				["at3612"] = <
+					text = <"Contínua">
+					description = <"Especificações: MUCOSA>Mucosa Ulcerada>Continuidade">
+				>
+				["at3620"] = <
+					text = <"Hemorragia">
+					description = <"Características: MUCOSA>Mucosa Ulcerada">
+				>
+				["at3630"] = <
+					text = <"Estigmas de hemorragia">
+					description = <"Características: MUCOSA>Mucosa Ulcerada">
+				>
+				["at3700"] = <
+					text = <"Petéquias">
+					description = <"TERMOS: MUCOSA">
+				>
+				["at3710"] = <
+					text = <"Número">
+					description = <"Características: MUCOSA>Petéquias">
+				>
+				["at3711"] = <
+					text = <"Algumas">
+					description = <"Especificações: MUCOSA>Petéquias>Número">
+				>
+				["at3712"] = <
+					text = <"Múltiplas">
+					description = <"Especificações: MUCOSA>Petéquias>Número">
+				>
+				["at3800"] = <
+					text = <"Pseudomembrana">
+					description = <"TERMOS: MUCOSA">
+				>
+				["at3900"] = <
+					text = <"Melanose">
+					description = <"TERMOS: MUCOSA">
+				>
+				["at4000"] = <
+					text = <"LESÕES PLANAS">
+					description = <"TÍTULOS">
+				>
+				["at4100"] = <
+					text = <"Angiectasia">
+					description = <"TERMOS: LESÕES PLANAS">
+				>
+				["at4110"] = <
+					text = <"Número">
+					description = <"Características: LESÕES PLANAS>Angiectasia">
+				>
+				["at4111"] = <
+					text = <"Única">
+					description = <"Especificações: LESÕES PLANAS>Angiectasia>Número">
+				>
+				["at4120"] = <
+					text = <"Dimensão">
+					description = <"Características: LESÕES PLANAS>Angiectasia">
+				>
+				["at4121"] = <
+					text = <"Pequena">
+					description = <"Especificações: LESÕES PLANAS>Angiectasia>Dimensão">
+				>
+				["at4122"] = <
+					text = <"Média">
+					description = <"Especificações: LESÕES PLANAS>Angiectasia>Dimensão">
+				>
+				["at4123"] = <
+					text = <"Grande">
+					description = <"Especificações: LESÕES PLANAS>Angiectasia>Dimensão">
+				>
+				["at4130"] = <
+					text = <"Extensão">
+					description = <"Características: LESÕES PLANAS>Angiectasia">
+				>
+				["at4132"] = <
+					text = <"Focal">
+					description = <"Especificações: LESÕES PLANAS>Angiectasia>Extensão">
+				>
+				["at4140"] = <
+					text = <"Hemorragia">
+					description = <"Características: LESÕES PLANAS>Angiectasia">
+				>
+				["at5000"] = <
+					text = <"LESÕES PROTUBERANTES">
+					description = <"TÍTULOS">
+				>
+				["at5100"] = <
+					text = <"Pólipo(s)">
+					description = <"TERMOS: LESÕES PROTUBERANTES">
+				>
+				["at5110"] = <
+					text = <"Número">
+					description = <"Características: LESÕES PROTUBERANTES>Pólipo(s)">
+				>
+				["at5111"] = <
+					text = <"Se < 5, especificar">
+					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Número">
+				>
+				["at5112"] = <
+					text = <"Se > 5: Muitos">
+					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Número">
+				>
+				["at5113"] = <
+					text = <"Múltiplos">
+					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Número">
+				>
+				["at5130"] = <
+					text = <"Dimensão">
+					description = <"Características: LESÕES PROTUBERANTES>Pólipo(s)">
+				>
+				["at5140"] = <
+					text = <"Pedículo">
+					description = <"Características: LESÕES PROTUBERANTES>Pólipo(s)">
+				>
+				["at5141"] = <
+					text = <"Séssil">
+					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Pedículo">
+				>
+				["at5142"] = <
+					text = <"Pediculado">
+					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Pedículo">
+				>
+				["at5150"] = <
+					text = <"Hemorragia">
+					description = <"Características: LESÕES PROTUBERANTES>Pólipo(s)">
+				>
+				["at5153"] = <
+					text = <"Estigmas de hemorragia">
+					description = <"Especificações: LESÕES PROTUBERANTES>Pólipo(s)>Hemorragia">
+				>
+				["at5200"] = <
+					text = <"Pseudopólipos">
+					description = <"TERMOS: LESÕES PROTUBERANTES">
+				>
+				["at5300"] = <
+					text = <"Lipoma">
+					description = <"TERMOS: LESÕES PROTUBERANTES">
+				>
+				["at5320"] = <
+					text = <"Diâmetro">
+					description = <"Características: LESÕES PROTUBERANTES>Lipoma">
+				>
+				["at5400"] = <
+					text = <"Tumor/Massa">
+					description = <"TERMOS: LESÕES PROTUBERANTES">
+				>
+				["at5420"] = <
+					text = <"Diâmetro">
+					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
+				>
+				["at5430"] = <
+					text = <"Comprimento">
+					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
+				>
+				["at5440"] = <
+					text = <"Tipo">
+					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
+				>
+				["at5441"] = <
+					text = <"Submucoso">
+					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
+				>
+				["at5442"] = <
+					text = <"Vegetante">
+					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
+				>
+				["at5443"] = <
+					text = <"Ulcerado">
+					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
+				>
+				["at5444"] = <
+					text = <"Infiltrativo">
+					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
+				>
+				["at5445"] = <
+					text = <"Tipo viloso">
+					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Tipo">
+				>
+				["at5450"] = <
+					text = <"Obstrução">
+					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
+				>
+				["at5451"] = <
+					text = <"Parcial">
+					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Obstrução">
+				>
+				["at5452"] = <
+					text = <"Completa">
+					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Obstrução">
+				>
+				["at5460"] = <
+					text = <"Circunferencial">
+					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
+				>
+				["at5470"] = <
+					text = <"Hemorragia">
+					description = <"Características: LESÕES PROTUBERANTES>Tumor/Massa">
+				>
+				["at5471"] = <
+					text = <"Sim: em jacto">
+					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Hemorragia">
+				>
+				["at5472"] = <
+					text = <"Sim: em toalha">
+					description = <"Especificações: LESÕES PROTUBERANTES>Tumor/Massa>Hemorragia">
+				>
+				["at5500"] = <
+					text = <"Papila Hipertrófica Anal">
+					description = <"TERMOS: LESÕES PROTUBERANTES">
+				>
+				["at5600"] = <
+					text = <"Hemorróidas">
+					description = <"TERMOS: LESÕES PROTUBERANTES">
+				>
+				["at5700"] = <
+					text = <"Granuloma de Sutura">
+					description = <"TERMOS: LESÕES PROTUBERANTES">
+				>
+				["at5800"] = <
+					text = <"Condilomas">
+					description = <"TERMOS: LESÕES PROTUBERANTES">
+				>
+				["at6000"] = <
+					text = <"LESÕES ESCAVADAS">
+					description = <"TÍTULOS">
+				>
+				["at6100"] = <
+					text = <"Erosão">
+					description = <"TERMOS: LESÕES ESCAVADAS">
+				>
+				["at6200"] = <
+					text = <"Afta">
+					description = <"TERMOS: LESÕES ESCAVADAS">
+				>
+				["at6300"] = <
+					text = <"Úlcera">
+					description = <"TERMOS: LESÕES ESCAVADAS">
+				>
+				["at6310"] = <
+					text = <"Número">
+					description = <"Características: LESÕES ESCAVADAS>Úlcera">
+				>
+				["at6311"] = <
+					text = <"Única (Solitária)">
+					description = <"Especificações: LESÕES ESCAVADAS>Úlcera>Número">
+				>
+				["at6320"] = <
+					text = <"Dimensão">
+					description = <"Características: LESÕES ESCAVADAS>Úlcera">
+				>
+				["at6400"] = <
+					text = <"Cicatriz">
+					description = <"TERMOS: LESÕES ESCAVADAS">
+				>
+				["at6410"] = <
+					text = <"Número">
+					description = <"Características: LESÕES ESCAVADAS>Cicatriz">
+				>
+				["at6500"] = <
+					text = <"Divertículo">
+					description = <"TERMOS: LESÕES ESCAVADAS">
+				>
+				["at6520"] = <
+					text = <"Abertura">
+					description = <"Características: LESÕES ESCAVADAS>Divertículo">
+				>
+				["at6600"] = <
+					text = <"Fístula">
+					description = <"TERMOS: LESÕES ESCAVADAS">
+				>
+				["at6700"] = <
+					text = <"Fissura anal">
+					description = <"TERMOS: LESÕES ESCAVADAS">
+				>
+			>
+		>
 		["en"] = <
 			items = <
 				["at0.6701"] = <
@@ -4394,7 +4394,7 @@ ontology
 				>
 				["at4120"] = <
 					text = <"Size">
-					description = <"Size could in this case also be given in mm for small angioectasia">
+					description = <"Attribute: FLAT LESIONS>Angioectasia">
 				>
 				["at4121"] = <
 					text = <"Small">
@@ -4450,7 +4450,7 @@ ontology
 				>
 				["at5140"] = <
 					text = <"Pedicle">
-					description = <"In case of multiple polyps, the application would allow the recording of multiple entries">
+					description = <"Attribute: PROTRUDING LESIONS>Polyp(s)">
 				>
 				["at5141"] = <
 					text = <"Sessile">
@@ -4482,7 +4482,7 @@ ontology
 				>
 				["at5400"] = <
 					text = <"Tumor/Mass">
-					description = <"Tumor-Mass is used instead of tumour in the USA.">
+					description = <"TERM: PROTRUDING LESIONS">
 				>
 				["at5420"] = <
 					text = <"Diameter (mm)">
@@ -4610,7 +4610,7 @@ ontology
 				>
 				["at6700"] = <
 					text = <"Anal fissure">
-					description = <"Fissure is the preferred term instead of erosion which could be confused with colonic erosions">
+					description = <"TERM: EXCAVATED LESIONS">
 				>
 			>
 		>
@@ -6487,15 +6487,11 @@ ontology
 				>
 			>
 		>
-		["cs"] = <
+		["tr"] = <
 			items = <
 				["at0.6701"] = <
 					text = <"*Anal canal(en)">
 					description = <"*1120;Site: Colon(en)">
-				>
-				["at0.6702"] = <
-					text = <"*Terminal ileum(en)">
-					description = <"*1260;Site: Ileum(en)">
 				>
 				["at0.6703"] = <
 					text = <"*Ileo-anal pouch(en)">
@@ -6554,36 +6550,36 @@ ontology
 					description = <"*Presence=absent(en)">
 				>
 				["at0000"] = <
-					text = <"MST zjištění pro Colon">
-					description = <"Gastrointestinální Endoskopie zjištění, jak je popsáno v Minimální standardní terminologie pro Gastrointestinální Endoskopie verze 2 (MST-2). Toto je oficiální terminologie schválila Světová Endoskopie Společnost (OMED)">
+					text = <"Kolon için MST Bulguları">
+					description = <"Gastrointestinal Endoskopi için Minimal Standart Terminoloji sürüm 2 (MST-2) ye göre endoskopi bulguları. Bu dünya gastrointestinal endoskopi derneğinin (OMED) resmi terminolojisidir. 11 dilde çevirisi vardır ve büyük çalışmalarla valide edilmiştir.">
 				>
 				["at0000.1"] = <
 					text = <"*MST Findings for Colon!(en)">
 					description = <"*Gastrointestinal Endoscopy findings as described by the Minimal Standard Terminology for Gastrointestinal Endoscopy version 2 (MST-2). This is the official terminology endorsed by the World Endoscopy Society (OMED).!(en)">
 				>
 				["at0005"] = <
-					text = <"NORMÁLNÍ">
-					description = <"NADPIS">
+					text = <"NORMAL">
+					description = <"BAŞLIK">
 				>
 				["at0100"] = <
-					text = <"normální">
-					description = <"TERMÍN: NORMÁLNÍ">
+					text = <"Normal">
+					description = <"TERİM: NORMAL">
 				>
 				["at0105"] = <
 					text = <"*Present?(en)">
 					description = <"*Attribute: General(en)">
 				>
 				["at0106"] = <
-					text = <"Ano">
-					description = <"Specifikace znaku: Obecné">
+					text = <"Evet">
+					description = <"Sıfat değeri: Genel">
 				>
 				["at0107"] = <
-					text = <"Ne">
-					description = <"Specifikace znaku: Obecné">
+					text = <"Hayır">
+					description = <"Sıfat değeri: Genel">
 				>
 				["at0110"] = <
-					text = <"Lokalizace">
-					description = <"lokalit pro tlustého střeva">
+					text = <"Bölge(ler)">
+					description = <"Kolon için Bölge(ler)">
 				>
 				["at0111"] = <
 					text = <"*Anus(en)">
@@ -6641,473 +6637,477 @@ ontology
 					text = <"*Rectal Pouch(en)">
 					description = <"*1250;Site: Colon(en)">
 				>
+				["at0125"] = <
+					text = <"*Ileum(en)">
+					description = <"*1260;Site: Ileum(en)">
+				>
 				["at1000"] = <
-					text = <"LUMEN">
-					description = <"NADPIS">
+					text = <"LÜMEN">
+					description = <"BAŞLIK">
 				>
 				["at1100"] = <
-					text = <"Rozšířené">
-					description = <"TERMÍN: LUMEN">
+					text = <"Dilate">
+					description = <"TERİM: LÜMEN">
 				>
 				["at1200"] = <
-					text = <"Stenoza">
-					description = <"TERMÍN: LUMEN">
+					text = <"Stenoz">
+					description = <"TERİM: LÜMEN">
 				>
 				["at1210"] = <
-					text = <"Vzhled">
-					description = <"Znak: LUMEN>Stenoza">
+					text = <"Görünüm">
+					description = <"Sıfat: LÜMEN>Stenoz">
 				>
 				["at1211"] = <
-					text = <"Zevní">
-					description = <"Specifikace znaku: LUMEN>Stenoza>Vzhled">
+					text = <"Ekstrensek">
+					description = <"Sıfat değeri: LÜMEN>Stenoz>Görünüm">
 				>
 				["at1212"] = <
-					text = <"Benigní vnitřní">
-					description = <"Specifikace znaku: LUMEN>Stenoza>Vzhled">
+					text = <"Selim intrensek">
+					description = <"Sıfat değeri: LÜMEN>Stenoz>Görünüm">
 				>
 				["at1213"] = <
-					text = <"Maligní vnitřní">
-					description = <"Specifikace znaku: LUMEN>Stenoza>Vzhled">
+					text = <"Habis intrensek">
+					description = <"Sıfat değeri: LÜMEN>Stenoz>Görünüm">
 				>
 				["at1220"] = <
-					text = <"Délka (cm)">
-					description = <"Znak: LUMEN>Stenoza">
+					text = <"Uzunluk (cm)">
+					description = <"Sıfat: LÜMEN>Stenoz">
 				>
 				["at1230"] = <
-					text = <"Průchodná">
-					description = <"Znak: LUMEN>Stenoza">
+					text = <"İçinden geçilen">
+					description = <"Sıfat: LÜMEN>Stenoz">
 				>
 				["at1300"] = <
-					text = <"Známky předchozího chirurgického výkonu">
-					description = <"TERMÍN: LUMEN">
+					text = <"Daha önceki cerrahiye ait kanıt">
+					description = <"TERİM: LÜMEN">
 				>
 				["at1310"] = <
-					text = <"Typ">
-					description = <"Znak: LUMEN>Známky předchozího chirurgického výkonu">
+					text = <"Tip">
+					description = <"Sıfat: LÜMEN>Daha önceki cerrahiye ait kanıt">
 				>
 				["at1311"] = <
-					text = <"Kolokolická anastomoza">
-					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+					text = <"Kolo-kolonik anastomoz">
+					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
 				>
 				["at1312"] = <
-					text = <"Ileokolická anastomoza">
-					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+					text = <"İleo-kolonik anastomoz">
+					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
 				>
 				["at1313"] = <
-					text = <"Koloanální anastomoza">
-					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+					text = <"Kolo-anal anastomoz">
+					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
 				>
 				["at1314"] = <
-					text = <"Ileoanální anastomoza">
-					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+					text = <"İleo-anal anastomoz">
+					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
 				>
 				["at1315"] = <
-					text = <"Kolostomie">
-					description = <"Specifikace znaku: LUMEN>Známky předchozího chirurgického výkonu>Typ">
+					text = <"Kolostomi">
+					description = <"Sıfat değeri: LÜMEN>Daha önceki cerrahiye ait kanıt>Tip">
 				>
 				["at1320"] = <
-					text = <"Viditelný šicí materiál">
-					description = <"Znak: LUMEN>Známky předchozího chirurgického výkonu">
+					text = <"Sütür materyali görünüyor">
+					description = <"Sıfat: LÜMEN>Daha önceki cerrahiye ait kanıt">
 				>
 				["at2000"] = <
-					text = <"OBSAH">
-					description = <"NADPIS">
+					text = <"İÇERİKLER">
+					description = <"BAŞLIK">
 				>
 				["at2100"] = <
-					text = <"Krev">
-					description = <"TERMÍN: OBSAH">
+					text = <"Kan">
+					description = <"TERİM: İÇERİKLER">
 				>
 				["at2110"] = <
-					text = <"Druh krve">
-					description = <"Znak: OBSAH>Krev">
+					text = <"Kanın cinsi">
+					description = <"Sıfat: İÇERİKLER>Kan">
 				>
 				["at2111"] = <
-					text = <"Červená">
-					description = <"Specifikace znaku: OBSAH>Krev>Druh krve">
+					text = <"Kırmızı">
+					description = <"Sıfat değeri: İÇERİKLER>Kan>Kanın cinsi">
 				>
 				["at2112"] = <
-					text = <"Sraženina">
-					description = <"Specifikace znaku: OBSAH>Krev>Druh krve">
+					text = <"Pıhtı">
+					description = <"Sıfat değeri: İÇERİKLER>Kan>Kanın cinsi">
 				>
 				["at2113"] = <
-					text = <"Hematin (natrávená krev)">
-					description = <"Specifikace znaku: OBSAH>Krev>Druh krve">
+					text = <"Hematin (Değişmiş kan)">
+					description = <"Sıfat değeri: İÇERİKLER>Kan>Kanın cinsi">
 				>
 				["at2200"] = <
-					text = <"Cizí těleso">
-					description = <"TERMÍN: OBSAH">
+					text = <"Yabancı cisim">
+					description = <"TERİM: İÇERİKLER">
 				>
 				["at2300"] = <
-					text = <"Paraziti">
-					description = <"TERMÍN: OBSAH">
+					text = <"Parazitler">
+					description = <"TERİM: İÇERİKLER">
 				>
 				["at2400"] = <
-					text = <"Exsudát">
-					description = <"TERMÍN: OBSAH">
+					text = <"Eksüda">
+					description = <"TERİM: İÇERİKLER">
 				>
 				["at2500"] = <
-					text = <"Stolice">
-					description = <"TERMÍN: OBSAH">
+					text = <"Dışkı">
+					description = <"TERİM: İÇERİKLER">
 				>
 				["at2600"] = <
 					text = <"Stent">
-					description = <"TERMÍN: OBSAH">
+					description = <"TERİM: İÇERİKLER">
 				>
 				["at2610"] = <
-					text = <"Typ">
-					description = <"Znak: OBSAH>Stent">
+					text = <"Tip">
+					description = <"Sıfat: İÇERİKLER>Stent">
 				>
 				["at3000"] = <
-					text = <"SLIZNICE">
-					description = <"NADPIS">
+					text = <"MUKOZA">
+					description = <"BAŞLIK">
 				>
 				["at3100"] = <
-					text = <"Cévní kresba">
-					description = <"TERMÍN: SLIZNICE">
+					text = <"Vasküler patern">
+					description = <"TERİM: MUKOZA">
 				>
 				["at3110"] = <
-					text = <"Vzhled">
-					description = <"Znak: SLIZNICE>Cévní kresba">
+					text = <"Görünüm">
+					description = <"Sıfat: MUKOZA>Vasküler patern">
 				>
 				["at3111"] = <
-					text = <"Normální">
-					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Vzhled">
+					text = <"Normal">
+					description = <"Sıfat değeri: MUKOZA>Vasküler pattern>Görünüm">
 				>
 				["at3112"] = <
-					text = <"Zvýšená">
-					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Vzhled">
+					text = <"Artmış">
+					description = <"Sıfat değeri: MUKOZA>Vasküler pattern>Görünüm">
 				>
 				["at3113"] = <
-					text = <"Snížená">
-					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Vzhled">
+					text = <"Azalmış">
+					description = <"Sıfat değeri: MUKOZA>Vasküler pattern>Görünüm">
 				>
 				["at3120"] = <
-					text = <"Rozsah">
-					description = <"Znak: SLIZNICE>Cévní kresba">
+					text = <"Yayılım">
+					description = <"Sıfat: MUKOZA>Vasküler patern">
 				>
 				["at3121"] = <
-					text = <"Ložiskově">
-					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Rozsah">
+					text = <"Lokalize">
+					description = <"Sıfat değeri: MUKOZA>Vasküler patern>Yayılım">
 				>
 				["at3122"] = <
-					text = <"Segmentalně">
-					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Rozsah">
+					text = <"Segmenter">
+					description = <"Sıfat değeri: MUKOZA>Vasküler patern>Yayılım">
 				>
 				["at3123"] = <
-					text = <"Difuzně">
-					description = <"Specifikace znaku: SLIZNICE>Cévní kresba>Rozsah">
+					text = <"Diffüz">
+					description = <"Sıfat değeri: MUKOZA>Vasküler patern>Yayılım">
 				>
 				["at3200"] = <
-					text = <"Zarudlá (hyperemická)">
-					description = <"TERMÍN: SLIZNICE">
+					text = <"Eritematöz (Hiperemik)">
+					description = <"TERİM: MUKOZA">
 				>
 				["at3300"] = <
-					text = <"Městnavá (edematozní)">
-					description = <"TERMÍN: SLIZNICE">
+					text = <"Konjesyone (Ödemli)">
+					description = <"TERİM: MUKOZA">
 				>
 				["at3400"] = <
-					text = <"Granulární (zrnitá)">
-					description = <"TERMÍN: SLIZNICE">
+					text = <"Granüler">
+					description = <"TERİM: MUKOZA">
 				>
 				["at3500"] = <
-					text = <"Křehká">
-					description = <"TERMÍN: SLIZNICE">
+					text = <"Frajil">
+					description = <"TERİM: MUKOZA">
 				>
 				["at3520"] = <
-					text = <"Krvácení">
-					description = <"Znak: SLIZNICE>Křehká">
+					text = <"Kanama">
+					description = <"Sıfat: MUKOZA>Frajil">
 				>
 				["at3521"] = <
-					text = <"Ano: spontánní">
-					description = <"Specifikace znaku: SLIZNICE>Křehká>Krvácení">
+					text = <"Evet: Spontan">
+					description = <"Sıfat değeri: MUKOZA>Frajil>Kanama">
 				>
 				["at3522"] = <
-					text = <"Ano: kontaktní krvácení ">
-					description = <"Specifikace znaku: SLIZNICE>Křehká>Krvácení">
+					text = <"Evet: Temas ile kanama">
+					description = <"Sıfat değeri: MUKOZA>Frajil>Kanama">
 				>
 				["at3600"] = <
-					text = <"Zvředovatělá sliznice">
-					description = <"TERMÍN: SLIZNICE">
+					text = <"Ülsere mukoza">
+					description = <"TERİM: MUKOZA">
 				>
 				["at3610"] = <
-					text = <"Kontinuita">
-					description = <"Znak: SLIZNICE>Zvředovatělá sliznice">
+					text = <"Devamlılık">
+					description = <"Sıfat: MUKOZA>Ülsere mukoza">
 				>
 				["at3611"] = <
-					text = <"Diskontinuální">
-					description = <"Specifikace znaku: SLIZNICE>Zvředovatělá sliznice>Kontinuita">
+					text = <"Devamlı değil">
+					description = <"Sıfat değeri: MUKOZA>>Ülsere mukoza>Devamlılık">
 				>
 				["at3612"] = <
-					text = <"Kontinuální">
-					description = <"Specifikace znaku: SLIZNICE>Zvředovatělá sliznice>Kontinuita">
+					text = <"Devamlı">
+					description = <"Sıfat değeri: MUKOZA>>Ülsere mukoza>Devamlılık">
 				>
 				["at3620"] = <
-					text = <"Krvácení">
-					description = <"Znak: SLIZNICE>Zvředovatělá sliznice">
+					text = <"Kanama">
+					description = <"Sıfat: MUKOZA>Ülsere mukoza">
 				>
 				["at3630"] = <
-					text = <"Stigmata krvácení">
-					description = <"Znak: SLIZNICE>Zvředovatělá sliznice">
+					text = <"Kanama işaretleri">
+					description = <"Sıfat: MUKOZA>Ülsere mukoza">
 				>
 				["at3700"] = <
-					text = <"Petechie">
-					description = <"TERMÍN: SLIZNICE">
+					text = <"Peteşi">
+					description = <"TERİM: MUKOZA">
 				>
 				["at3710"] = <
-					text = <"Počet">
-					description = <"Znak: SLIZNICE>Petechie">
+					text = <"Sayı">
+					description = <"Sıfat: MUKOZA>Peteşi">
 				>
 				["at3711"] = <
-					text = <"Několik">
-					description = <"Specifikace znaku: SLIZNICE>Petechie>Počet">
+					text = <"Az sayıda">
+					description = <"Sıfat değeri: MUKOZA>Peteşi>Sayı">
 				>
 				["at3712"] = <
-					text = <"Mnohočetné">
-					description = <"Specifikace znaku: SLIZNICE>Petechie>Počet">
+					text = <"Çok sayıda">
+					description = <"Sıfat değeri: MUKOZA>Peteşi>Sayı">
 				>
 				["at3800"] = <
-					text = <"Pseudomembrány">
-					description = <"TERMÍN: SLIZNICE">
+					text = <"Psödomembran">
+					description = <"TERİM: MUKOZA">
 				>
 				["at3900"] = <
-					text = <"Melanoza">
-					description = <"TERMÍN: SLIZNICE">
+					text = <"Melanoz">
+					description = <"TERİM: MUKOZA">
 				>
 				["at4000"] = <
-					text = <"PLOCHÉ LEZE">
-					description = <"NADPIS">
+					text = <"DÜZ LEZYONLAR">
+					description = <"BAŞLIK">
 				>
 				["at4100"] = <
-					text = <"Angiektazie">
-					description = <"TERMÍN: PLOCHÉ LEZE">
+					text = <"Anjiyoektazi">
+					description = <"TERİM: DÜZ LEZYONLAR">
 				>
 				["at4110"] = <
-					text = <"Počet">
-					description = <"Znak: PLOCHÉ LEZE>Angiektazie">
+					text = <"Sayı">
+					description = <"Sıfat: DÜZ LEZYONLAR>Anjiyoektazi">
 				>
 				["at4111"] = <
-					text = <"Jedna">
-					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Počet">
+					text = <"Tek">
+					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Sayı">
 				>
 				["at4120"] = <
-					text = <"Velikost">
-					description = <"Znak: PLOCHÉ LEZE>Angiektazie">
+					text = <"Boyut">
+					description = <"Sıfat: DÜZ LEZYONLAR>Anjiyoektazi">
 				>
 				["at4121"] = <
-					text = <"Malé">
-					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Velikost">
+					text = <"Küçük">
+					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Boyut">
 				>
 				["at4122"] = <
-					text = <"Středně velké">
-					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Velikost">
+					text = <"Orta">
+					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Boyut">
 				>
 				["at4123"] = <
-					text = <"Velké">
-					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Velikost">
+					text = <"Büyük">
+					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Boyut">
 				>
 				["at4130"] = <
-					text = <"Rozsah">
-					description = <"Znak: PLOCHÉ LEZE>Angiektazie">
+					text = <"Yayılım">
+					description = <"Sıfat: DÜZ LEZYONLAR>Anjiyoektazi">
 				>
 				["at4132"] = <
-					text = <"Skvrnitě">
-					description = <"Specifikace znaku: PLOCHÉ LEZE>Angiektazie>Rozsah">
+					text = <"Yamalı">
+					description = <"Sıfat değeri: DÜZ LEZYONLAR>Anjiyoektazi>Yayılım">
 				>
 				["at4140"] = <
-					text = <"Krvácení">
-					description = <"Znak: PLOCHÉ LEZE>Angiektazie">
+					text = <"Kanama">
+					description = <"Sıfat: DÜZ LEZYONLAR>Anjiyoektazi">
 				>
 				["at5000"] = <
-					text = <"PROMINUJÍCÍ LEZE">
-					description = <"NADPIS">
+					text = <"ÇIKINTI YAPMIŞ LEZYONLAR">
+					description = <"BAŞLIK">
 				>
 				["at5100"] = <
-					text = <"Polyp">
-					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+					text = <"Polip(ler)">
+					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
 				>
 				["at5110"] = <
-					text = <"Počet">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Polyp">
+					text = <"Sayı">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)">
 				>
 				["at5111"] = <
-					text = <"Je-li jich méně než 5, specifikuj">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Počet">
+					text = <"Eğer 5den azsa, belirt">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Sayı">
 				>
 				["at5112"] = <
-					text = <"Mnoho">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Počet">
+					text = <"Eğer 5 den fazlaysa: Çok sayıda">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Sayı">
 				>
 				["at5113"] = <
-					text = <"Mnohočetné">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Počet">
+					text = <"Eğer 5 den fazlaysa: Multipl">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Sayı">
 				>
 				["at5130"] = <
-					text = <"Velikost">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Polyp">
+					text = <"Boyut">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)">
 				>
 				["at5140"] = <
-					text = <"Stopka">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Polyp">
+					text = <"Pedikül">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)">
 				>
 				["at5141"] = <
-					text = <"Přisedlý">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Stopka">
+					text = <"Sessil">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Pedikül">
 				>
 				["at5142"] = <
-					text = <"Stopkatý">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Stopka">
+					text = <"Saplı">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Pedikül">
 				>
 				["at5150"] = <
-					text = <"Krvácení">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Polyp">
+					text = <"Kanama">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)">
 				>
 				["at5153"] = <
-					text = <"Stigmata krvácení">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Polyp>Krvácení">
+					text = <"Kanama işaretleri">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Polip(ler)>Kanama">
 				>
 				["at5200"] = <
-					text = <"Pseudopolyp">
-					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+					text = <"Psödopolipler">
+					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
 				>
 				["at5300"] = <
 					text = <"Lipom">
-					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
 				>
 				["at5320"] = <
-					text = <"Průměr">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Lipom">
+					text = <"Çap (mm)">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Lipom">
 				>
 				["at5400"] = <
-					text = <"Útvar">
-					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+					text = <"Tümör/Kitle">
+					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
 				>
 				["at5420"] = <
-					text = <"Průměr">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+					text = <"Çap (mm)">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
 				>
 				["at5430"] = <
-					text = <"Délka">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+					text = <"Uzunluk (cm)">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
 				>
 				["at5440"] = <
-					text = <"Typ">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+					text = <"Tip">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
 				>
 				["at5441"] = <
-					text = <"Submukozní">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+					text = <"Submukozal">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
 				>
 				["at5442"] = <
-					text = <"Houbovitý">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+					text = <"Parmak şeklinde">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
 				>
 				["at5443"] = <
-					text = <"Vředovitý">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+					text = <"Ülsere">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
 				>
 				["at5444"] = <
-					text = <"Infiltrativní">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+					text = <"İnfiltratif">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
 				>
 				["at5445"] = <
-					text = <"Vilozní (klkovitý)">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Typ">
+					text = <"Yaprak gibi/villöz">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tip">
 				>
 				["at5450"] = <
-					text = <"Obturující">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+					text = <"Tıkayıcı">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
 				>
 				["at5451"] = <
-					text = <"Částečně">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Obturující">
+					text = <"Kısmi">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tıkayıcı">
 				>
 				["at5452"] = <
-					text = <"Úplně">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Obturující">
+					text = <"Tam">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Tıkayıcı">
 				>
 				["at5460"] = <
-					text = <"Cirkulární">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+					text = <"Çepeçevre">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
 				>
 				["at5470"] = <
-					text = <"Krvácení">
-					description = <"Znak: PROMINUJÍCÍ LEZE>Útvar">
+					text = <"Kanama">
+					description = <"Sıfat: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle">
 				>
 				["at5471"] = <
-					text = <"Ano: prudké">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Krvácení">
+					text = <"Evet: Fışkırır tarzda">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Kanama">
 				>
 				["at5472"] = <
-					text = <"Ano: prosakující">
-					description = <"Specifikace znaku: PROMINUJÍCÍ LEZE>Útvar>Krvácení">
+					text = <"Evet: Sızma tarzında">
+					description = <"Sıfat değeri: ÇIKINTI YAPMIŞ LEZYONLAR>Tümör/Kitle>Kanama">
 				>
 				["at5500"] = <
-					text = <"Hypertrofické anální papily">
-					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+					text = <"Hipertrofik anal papilla">
+					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
 				>
 				["at5600"] = <
-					text = <"Hemoroidy">
-					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+					text = <"Hemoroidler">
+					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
 				>
 				["at5700"] = <
-					text = <"Stehový granulom">
-					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+					text = <"Sütür granülomu">
+					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
 				>
 				["at5800"] = <
-					text = <"Kondylomata">
-					description = <"TERMÍN: PROMINUJÍCÍ LEZE">
+					text = <"Kondilom">
+					description = <"TERİM: ÇIKINTI YAPMIŞ LEZYONLAR">
 				>
 				["at6000"] = <
-					text = <"VYHLOUBENÉ LEZE">
-					description = <"NADPIS">
+					text = <"İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
+					description = <"BAŞLIK">
 				>
 				["at6100"] = <
-					text = <"Eroze">
-					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+					text = <"Erozyon">
+					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
 				>
 				["at6200"] = <
-					text = <"Afty">
-					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+					text = <"Aftlar">
+					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
 				>
 				["at6300"] = <
-					text = <"Vřed">
-					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+					text = <"Ülser">
+					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
 				>
 				["at6310"] = <
-					text = <"Počet">
-					description = <"Znak: VYHLOUBENÉ LEZE>Vřed">
+					text = <"Sayı">
+					description = <"Sıfat: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Ülser">
 				>
 				["at6311"] = <
-					text = <"Jeden/ojedinělý (solitární)">
-					description = <"Specifikace znaku: VYHLOUBENÉ LEZE>Vřed>Počet">
+					text = <"Tek (soliter)">
+					description = <"Sıfat değeri: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Ülser>Sayı">
 				>
 				["at6320"] = <
-					text = <"Velikost">
-					description = <"Znak: VYHLOUBENÉ LEZE>Vřed">
+					text = <"Boyut">
+					description = <"Sıfat: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Ülser">
 				>
 				["at6400"] = <
-					text = <"Jizva">
-					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+					text = <"Skar">
+					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
 				>
 				["at6410"] = <
-					text = <"Počet">
-					description = <"Znak: VYHLOUBENÉ LEZE>Jizva">
+					text = <"Sayı">
+					description = <"Sıfat: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Skar">
 				>
 				["at6500"] = <
-					text = <"Divertikl">
-					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+					text = <"Divertikül">
+					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
 				>
 				["at6520"] = <
-					text = <"Ústí">
-					description = <"Znak: VYHLOUBENÉ LEZE>Divertikl">
+					text = <"Açıklık">
+					description = <"Sıfat: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR>Açıklık">
 				>
 				["at6600"] = <
-					text = <"Píštěl">
-					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+					text = <"Fistül">
+					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
 				>
 				["at6700"] = <
-					text = <"Anální fisura">
-					description = <"TERMÍN: VYHLOUBENÉ LEZE">
+					text = <"Anal fissür">
+					description = <"TERİM: İÇERİ DOĞRU ÇÖKÜK LEZYONLAR">
 				>
 			>
 		>
